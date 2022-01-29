@@ -4,7 +4,7 @@ import github from 'assets/images/icons/github.svg'
 
 const data = [
   {
-    href: 'https://www.linkedin.com/in/sebastian-siejek/',
+    href: 'https://www.linkedin.com/in/sebastiansiejek',
     icon: linkedin,
     name: 'LinkedIn',
   },
