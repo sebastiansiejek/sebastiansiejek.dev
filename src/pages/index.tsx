@@ -1,4 +1,4 @@
-import Socials from 'components/containers/Socials'
+import PageTemplate from 'components/views/templates/PageTemplate'
 import type { NextPage } from 'next'
 import { NextSeo } from 'next-seo'
 
@@ -18,12 +18,7 @@ const Home: NextPage = () => {
           },
         ]}
       />
-      <div className="bg-n w-screen h-screen flex flex-col justify-center items-center text-center">
-        <h1 className="text-primary text-5xl md:text-7xl uppercase font-mono">
-          Sebastian Siejek
-        </h1>
-        <Socials />
-      </div>
+      <PageTemplate title="Sebastian Siejek" />
     </>
   )
 }
