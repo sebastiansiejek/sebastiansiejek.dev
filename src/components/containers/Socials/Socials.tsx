@@ -1,8 +1,14 @@
 import Image from 'next/image'
 import linkedin from 'assets/images/icons/linkedin.svg'
 import github from 'assets/images/icons/github.svg'
+import email from 'assets/images/icons/email.svg'
 
 const data = [
+  {
+    href: 'mailto:siejeksebastian@gmail.com',
+    icon: email,
+    name: 'Email',
+  },
   {
     href: 'https://www.linkedin.com/in/sebastiansiejek',
     icon: linkedin,
@@ -17,7 +23,7 @@ const data = [
 
 const Socials: React.FunctionComponent = () => {
   return (
-    <div className="grid grid-cols-2 gap-2 mt-4">
+    <div className="flex gap-2 mt-4">
       {data.map(({ href, icon, name }) => {
         return (
           <a
@@ -25,7 +31,7 @@ const Socials: React.FunctionComponent = () => {
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-opacity hover:opacity-70"
+            className="transition-opacity block w-[40px] h-[40px] hover:opacity-70"
           >
             <Image src={icon} width={40} height={40} alt={name} />
           </a>
