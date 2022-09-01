@@ -9,6 +9,7 @@ module.exports = {
         DEFAULT: '#3CEAB8',
       },
       n: {
+        0: '#fff',
         DEFAULT: '#17181D',
       },
     },
