@@ -1,27 +1,14 @@
-import { ReactNode } from 'react'
+import { ButtonHTMLAttributes } from 'react'
 import ButtonOutline from './ButtonOutline'
 
-export interface IButton {
-  title: ReactNode
+export interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
   isActive?: boolean
   variant?: 'outline'
   isFullWidth?: boolean
 }
 
-const Button = ({
-  title,
-  isActive,
-  variant = 'outline',
-  isFullWidth = false,
-}: IButton) => {
-  if (variant === 'outline')
-    return (
-      <ButtonOutline
-        title={title}
-        isActive={isActive}
-        isFullWidth={isFullWidth}
-      />
-    )
+const Button = ({ variant, ...props }: IButton) => {
+  if (variant === 'outline') return <ButtonOutline {...props} />
 
   return null
 }
