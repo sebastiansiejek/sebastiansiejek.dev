@@ -5,6 +5,7 @@ export interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
   isActive?: boolean
   variant?: 'outline'
   isFullWidth?: boolean
+  isLoading?: boolean
 }
 
 const Button = ({ variant, ...props }: IButton) => {

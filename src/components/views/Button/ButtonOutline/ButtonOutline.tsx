@@ -1,5 +1,7 @@
 import clsx from 'clsx'
 import { IButton } from '../Button'
+import { ClipLoader } from 'react-spinners'
+import tailwindConfig from './../../../../../tailwind.config'
 
 interface IButtonOutline extends Omit<IButton, 'variant'> {}
 
@@ -8,15 +10,17 @@ const ButtonOutline = ({
   isFullWidth,
   title,
   children,
+  isLoading,
   ...props
 }: IButtonOutline) => {
   return (
     <button
       className={clsx(
-        'transition-colors cursor-pointer relative border-2 group px-4 py-2 overflow-hidden hover:border-n-0',
+        'transition-colors flex justify-center items-center cursor-pointer relative border-2 group px-4 py-2 overflow-hidden hover:border-n-0',
         {
           'border-n-0': isActive,
           'w-full': isFullWidth,
+          'pointer-events-none': isLoading,
         },
       )}
       {...props}
@@ -35,6 +39,13 @@ const ButtonOutline = ({
       >
         {children || title}
       </div>
+      {isLoading && (
+        <ClipLoader
+          color={tailwindConfig.theme.colors.primary.DEFAULT}
+          className={'ml-4'}
+          size={24}
+        />
+      )}
     </button>
   )
 }
