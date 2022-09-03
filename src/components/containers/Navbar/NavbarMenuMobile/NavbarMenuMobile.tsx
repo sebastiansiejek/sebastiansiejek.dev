@@ -7,6 +7,7 @@ import Button from '../../../views/Button'
 import clsx from 'clsx'
 import Socials from '../../Socials'
 import { Router } from 'next/router'
+import ModalOverlay from '../../../views/ModalOverlay/ModalOverlay'
 
 interface INavbarMenuMobile {
   menu: INavbarMenu['data']
@@ -52,6 +53,7 @@ const NavbarMenuMobile = ({ menu }: INavbarMenuMobile) => {
 
   return (
     <div className={'lg:hidden'}>
+      <ModalOverlay isOpen={isOpen} toggle={() => setOpen(!isOpen)} />
       <Hamburger toggle={setOpen} toggled={isOpen} />
       <div
         className={clsx(
