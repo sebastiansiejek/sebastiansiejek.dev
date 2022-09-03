@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Button from '../../../views/Button'
 
-interface INavbarMenu {
+export interface INavbarMenu {
   data: { title: string; path: string }[]
 }
 
