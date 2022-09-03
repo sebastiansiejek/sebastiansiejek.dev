@@ -5,11 +5,23 @@ export interface IButton {
   title: ReactNode
   isActive?: boolean
   variant?: 'outline'
+  isFullWidth?: boolean
 }
 
-const Button = ({ title, isActive, variant = 'outline' }: IButton) => {
+const Button = ({
+  title,
+  isActive,
+  variant = 'outline',
+  isFullWidth = false,
+}: IButton) => {
   if (variant === 'outline')
-    return <ButtonOutline title={title} isActive={isActive} />
+    return (
+      <ButtonOutline
+        title={title}
+        isActive={isActive}
+        isFullWidth={isFullWidth}
+      />
+    )
 
   return null
 }
