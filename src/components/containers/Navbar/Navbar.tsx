@@ -1,6 +1,7 @@
 import SiteBranding from '../../views/SiteBranding'
 import Container from '../../views/Container'
 import NavbarMenu from './NavbarMenu'
+import NavbarMenuMobile from './NavbarMenuMobile'
 
 const menu = [
   {
@@ -19,9 +20,10 @@ const Navbar = () => {
       <Container>
         <div className={'flex items-center justify-between'}>
           <SiteBranding />
-          <div className="ml-10">
+          <div className="ml-10 hidden lg:block">
             <NavbarMenu data={menu} />
           </div>
+          <NavbarMenuMobile menu={menu} />
         </div>
       </Container>
     </nav>
