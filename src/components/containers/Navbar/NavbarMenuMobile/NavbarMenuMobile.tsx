@@ -6,9 +6,45 @@ import Link from 'next/link'
 import Button from '../../../views/Button'
 import clsx from 'clsx'
 import Socials from '../../Socials'
+import { Router } from 'next/router'
 
 interface INavbarMenuMobile {
   menu: INavbarMenu['data']
+}
+
+function NavbarMenuMobileItemLink(props: {
+  href: string
+  title: string
+  setOpen: (isOpen: boolean) => void
+}) {
+  const [isLoading, setLoading] = useState(false)
+
+  Router.events.on('routeChangeComplete', () => {
+    props.setOpen(false)
+    setLoading(false)
+  })
+
+  return (
+    <li
+      className={
+        'relative group text-primary font-mono flex font-medium w-full'
+      }
+    >
+      <Link href={props.href} passHref>
+        <a className={'w-full flex'}>
+          <Button
+            title={props.title}
+            variant={'outline'}
+            isFullWidth
+            isLoading={isLoading}
+            onClick={() => {
+              setLoading(true)
+            }}
+          />
+        </a>
+      </Link>
+    </li>
+  )
 }
 
 const NavbarMenuMobile = ({ menu }: INavbarMenuMobile) => {
@@ -33,18 +69,12 @@ const NavbarMenuMobile = ({ menu }: INavbarMenuMobile) => {
           <nav className={'py-10'}>
             <ul className={'flex items-end flex-col w-full gap-6'}>
               {menu.map(({ title, path }) => (
-                <li
-                  className={
-                    'relative group text-primary font-mono flex font-medium w-full'
-                  }
+                <NavbarMenuMobileItemLink
                   key={path}
-                >
-                  <Link href={path} passHref>
-                    <a className={'w-full flex'}>
-                      <Button title={title} variant={'outline'} isFullWidth />
-                    </a>
-                  </Link>
-                </li>
+                  href={path}
+                  title={title}
+                  setOpen={setOpen}
+                />
               ))}
             </ul>
           </nav>
