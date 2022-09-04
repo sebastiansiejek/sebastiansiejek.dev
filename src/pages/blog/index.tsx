@@ -11,7 +11,7 @@ interface IBlogProps {
 const Blog = (props: IBlogProps) => {
   return (
     <>
-      <NextSeo title={'Sebastian Siejek - Blog'} />
+      <NextSeo title={'Blog - SebastianSiejek.dev'} />
       <Navbar />
       <main className="py-12 min-h-[100vw]">
         <BlogPosts posts={props.posts} />
