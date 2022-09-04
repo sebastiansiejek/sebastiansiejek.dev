@@ -10,9 +10,10 @@ module.exports = {
       },
       n: {
         0: '#fff',
+        1: '#EDF2F6',
         DEFAULT: '#17181D',
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/line-clamp')],
 }
