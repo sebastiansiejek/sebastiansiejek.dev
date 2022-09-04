@@ -16,7 +16,7 @@ const menu = [
 
 const Navbar = () => {
   return (
-    <nav aria-label={'Navigation'} className={'bg-n py-8 text-n-0 text-xl'}>
+    <nav aria-label={'Navigation'} className={'bg-n py-2 text-n-0 text-xl'}>
       <Container>
         <div className={'flex items-center justify-between'}>
           <SiteBranding />
