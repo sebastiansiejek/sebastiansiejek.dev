@@ -1,6 +1,6 @@
 interface IPost {
   content: string
-  excerpt: string
+  excerpt?: string
   publishedAt: string
   slug: string
   title: string
