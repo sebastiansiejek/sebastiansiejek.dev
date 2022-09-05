@@ -4,7 +4,7 @@ interface IPost {
   publishedAt: string
   slug: string
   title: string
-  thumbnail: string
+  thumbnail?: string
   tags: string
 }
 
