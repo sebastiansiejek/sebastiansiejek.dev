@@ -6,7 +6,7 @@ const BlogCard = ({ slug, thumbnail, tags, content, title }: IPost) => {
     <Link href={`/blog/${slug}`} key={slug} passHref>
       <a
         className={
-          'group transition-transform max-w-sm rounded shadow-lg flex-col flex cur cursor-pointer hover:-translate-y-1'
+          'group transition-transform rounded shadow-lg flex-col flex cur cursor-pointer hover:-translate-y-1'
         }
       >
         <div className="relative h-[200px]">

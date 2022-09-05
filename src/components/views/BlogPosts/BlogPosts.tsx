@@ -8,7 +8,7 @@ interface IBlogPosts {
 const BlogPosts = ({ posts }: IBlogPosts) => {
   return (
     <section aria-label={'Posts'}>
-      <Container className={'grid md:grid-cols-3 gap-10'}>
+      <Container className={'grid gap-8'} size={'tight'}>
         {posts.map((post) => {
           return <BlogCard key={post.slug} {...post} />
         })}
