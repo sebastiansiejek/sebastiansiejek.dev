@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-const BlogCard = ({ slug, thumbnail, tags, content, title }: IPost) => {
+const BlogCard = ({ slug, thumbnail, tags, title, excerpt }: IPost) => {
   return (
     <Link href={`/blog/${slug}`} key={slug} passHref>
       <a
@@ -25,7 +25,7 @@ const BlogCard = ({ slug, thumbnail, tags, content, title }: IPost) => {
             <h2 className="transition-colors group-hover:text-primary font-bold text-xl mb-2">
               {title}
             </h2>
-            <p className="text-gray-700 line-clamp-3">{content}</p>
+            {excerpt && <p className="text-gray-700 line-clamp-3">{excerpt}</p>}
           </div>
           {tags && !!tags.length && (
             <div className="px-6 pt-4 pb-2">
