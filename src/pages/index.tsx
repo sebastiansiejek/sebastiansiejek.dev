@@ -1,4 +1,4 @@
-import PageTemplate from 'components/views/templates/PageTemplate'
+import FullPageTemplate from 'components/views/templates/FullPageTemplate'
 import type { NextPage } from 'next'
 import { NextSeo } from 'next-seo'
 
@@ -18,7 +18,7 @@ const Home: NextPage = () => {
           },
         ]}
       />
-      <PageTemplate title="Sebastian Siejek" />
+      <FullPageTemplate title="Sebastian Siejek" />
     </>
   )
 }

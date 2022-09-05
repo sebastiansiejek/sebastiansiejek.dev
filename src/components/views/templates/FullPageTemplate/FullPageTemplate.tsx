@@ -4,7 +4,7 @@ interface IPageTemplateProps {
   title: string
 }
 
-const PageTemplate = ({ title }: IPageTemplateProps) => {
+const FullPageTemplate = ({ title }: IPageTemplateProps) => {
   return (
     <div className="bg-n w-screen h-screen flex flex-col justify-center items-center text-center">
       <h1 className="text-primary text-5xl md:text-7xl uppercase font-mono">
@@ -15,4 +15,4 @@ const PageTemplate = ({ title }: IPageTemplateProps) => {
   )
 }
 
-export default PageTemplate
+export default FullPageTemplate
