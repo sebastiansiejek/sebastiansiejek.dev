@@ -9,16 +9,17 @@ const BlogCard = ({ slug, thumbnail, tags, content, title }: IPost) => {
           'group transition-transform rounded shadow-lg flex-col flex cur cursor-pointer hover:-translate-y-1'
         }
       >
-        <div className="relative h-[200px]">
-          <Image
-            src={thumbnail}
-            className="w-full"
-            height={200}
-            layout={'fill'}
-            objectFit={'cover'}
-            alt=""
-          />
-        </div>
+        {thumbnail && (
+          <div className="relative h-[180px]">
+            <Image
+              src={thumbnail}
+              className="w-full"
+              layout={'fill'}
+              objectFit={'cover'}
+              alt=""
+            />
+          </div>
+        )}
         <div className="bg-n-2">
           <div className="px-6 py-4">
             <h2 className="transition-colors group-hover:text-primary font-bold text-xl mb-2">
