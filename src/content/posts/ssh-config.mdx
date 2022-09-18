@@ -11,8 +11,9 @@ tags: shell,ssh
    - np. `ssh-copy-id -i ~/.ssh/id_rsa.pub seba 111.222.333 -p 222`
 3. Zapisz dane logowania w pliku `~/.ssh/config` i loguj się samym ***aliasem***!
 
-~/.ssh/config.sh
-```text
+```shell
+# ~/.ssh/config.sh
+
 Host seba
     HostName sample-server.pl
     User seba
@@ -23,6 +24,5 @@ Host twitter
     User bird
 ```
 
-```shell
-- `ssh seba`
-```
+Wystarczy, że wpiszesz w terminu `ssh seba` lub `ssh twitter` i zostaniesz zalogowany do serwera.
+
