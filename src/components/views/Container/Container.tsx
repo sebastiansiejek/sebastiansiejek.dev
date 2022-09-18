@@ -11,7 +11,7 @@ const Container: FC<{
       className={clsx('mx-auto px-8 xl:px-0 w-full', {
         [className || '']: className,
         'max-w-[1168px]': size === 'medium',
-        'max-w-screen-sm': size === 'tight',
+        'max-w-screen-md': size === 'tight',
       })}
     >
       {children}
