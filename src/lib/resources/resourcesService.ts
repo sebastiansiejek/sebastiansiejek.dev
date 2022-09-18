@@ -2,6 +2,7 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
 import { serialize } from 'next-mdx-remote/serialize'
+import mdxPrism from 'mdx-prism'
 
 const MDX_PATTERN = /\.mdx?$/
 
@@ -18,7 +19,9 @@ export const getResourceBySlug = async (slug: string, resourcePath: string) => {
   }
 
   const transformedMdx = await serialize(content, {
-    mdxOptions: {},
+    mdxOptions: {
+      rehypePlugins: [mdxPrism],
+    },
     scope: data,
   })
 

@@ -1,5 +1,5 @@
 import { NextSeo } from 'next-seo'
-import { getAllResources } from '../../lib/resourcesService'
+import { getAllResources } from '../../lib/resources/resourcesService'
 import path from 'path'
 import BlogPosts from '../../components/views/BlogPosts'
 import PageTemplate from '../../components/views/templates/PageTemplate'
