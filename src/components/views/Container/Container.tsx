@@ -8,7 +8,7 @@ const Container: FC<{
 }> = ({ children, className, size = 'medium' }) => {
   return (
     <div
-      className={clsx('mx-auto px-8 xl:px-0 w-full', {
+      className={clsx('mx-auto px-5 xl:px-0 w-full', {
         [className || '']: className,
         'max-w-[1168px]': size === 'medium',
         'max-w-screen-md': size === 'tight',
