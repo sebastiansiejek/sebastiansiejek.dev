@@ -1,0 +1,28 @@
+---
+title: 'Jak łączyć się z serwerem za pomocą SSH bez wpisywania hasła?'
+publishedAt: '2022-08-26'
+thumbnail: /images/posts/test/thumbnail.jpg
+tags: shell,ssh
+---
+
+1. Jeśli nie masz utworzonych kluczy ***SSH*** wygeneruj je z wykorzystaniem polecenia `ssh-keygen`
+   - Jeśli masz to znajdziesz je w katalogu `~/.ssh`
+2. Wykonaj polecenie `ssh-copy-id -i <nazwa_pliku_klucza_publicznego> <user_login><host_ip>` do przesłania swojego klucza publicznego na serwer
+   - np. `ssh-copy-id -i ~/.ssh/id_rsa.pub seba 111.222.333 -p 222`
+3. Zapisz dane logowania w pliku `~/.ssh/config` i loguj się samym ***aliasem***!
+
+```shell
+# ~/.ssh/config.sh
+
+Host seba
+    HostName sample-server.pl
+    User seba
+    Port 222
+
+Host twitter
+    HostName 44.191.22.112
+    User bird
+```
+
+Wystarczy, że wpiszesz w terminu `ssh seba` lub `ssh twitter` i zostaniesz zalogowany do serwera.
+

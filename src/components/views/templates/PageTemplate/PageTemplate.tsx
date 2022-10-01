@@ -1,17 +1,25 @@
-import Socials from 'components/containers/Socials'
+import Socials from '../../../containers/Socials'
+import Navbar from '../../../containers/Navbar'
+import { ReactNode } from 'react'
 
-interface IPageTemplateProps {
-  title: string
+interface IPageTemplate {
+  children: ReactNode
 }
 
-const PageTemplate = ({ title }: IPageTemplateProps) => {
+const PageTemplate = ({ children }: IPageTemplate) => {
   return (
-    <div className="bg-n w-screen h-screen flex flex-col justify-center items-center text-center">
-      <h1 className="text-primary text-5xl md:text-7xl uppercase font-mono">
-        {title}
-      </h1>
-      <Socials />
-    </div>
+    <>
+      <Navbar />
+      <main className="py-12">{children}</main>
+      <footer className={'bg-n py-12 text-n-0'}>
+        <div className="flex items-center justify-center flex-col">
+          <Socials />
+          <p className={'mt-5'}>
+            © 2022 sebastiansiejek.dev. All rights reserved
+          </p>
+        </div>
+      </footer>
+    </>
   )
 }
 
