@@ -20,7 +20,7 @@ const BlogCard = ({ slug, thumbnail, tags, title, excerpt }: IPost) => {
             />
           </div>
         )}
-        <div className="bg-n-2">
+        <div className="bg-n-0 dark:bg-n">
           <div className="px-6 py-4">
             <h2 className="transition-colors group-hover:text-primary font-bold text-xl mb-2">
               {title}
@@ -33,7 +33,7 @@ const BlogCard = ({ slug, thumbnail, tags, title, excerpt }: IPost) => {
                 return (
                   <span
                     key={tag}
-                    className="inline-block bg-n-1 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+                    className="inline-block bg-n-1 dark:bg-n dark:border-n-0 border rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
                   >
                     #{tag}
                   </span>
