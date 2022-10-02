@@ -3,6 +3,7 @@ import Container from '../../views/Container'
 import NavbarMenu from './NavbarMenu'
 import NavbarMenuMobile from './NavbarMenuMobile'
 import Link from 'next/link'
+import ThemeModeSwitcher from '../ThemeModeSwitcher'
 
 const menu = [
   {
@@ -25,8 +26,11 @@ const Navbar = () => {
               <SiteBranding />
             </a>
           </Link>
-          <div className="ml-10 hidden lg:block">
+          <div className="ml-10 hidden lg:flex items-center">
             <NavbarMenu data={menu} />
+            <div className="flex items-center justify-center ml-4">
+              <ThemeModeSwitcher />
+            </div>
           </div>
           <NavbarMenuMobile menu={menu} />
         </div>

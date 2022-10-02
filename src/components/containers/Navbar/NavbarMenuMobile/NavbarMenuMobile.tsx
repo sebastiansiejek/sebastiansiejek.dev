@@ -8,6 +8,7 @@ import clsx from 'clsx'
 import Socials from '../../Socials'
 import { Router } from 'next/router'
 import ModalOverlay from '../../../views/ModalOverlay/ModalOverlay'
+import ThemeModeSwitcher from '../../ThemeModeSwitcher'
 
 interface INavbarMenuMobile {
   menu: INavbarMenu['data']
@@ -65,7 +66,8 @@ const NavbarMenuMobile = ({ menu }: INavbarMenuMobile) => {
         )}
       >
         <Container className={'flex flex-col'}>
-          <div className="flex w-full justify-end ">
+          <div className="flex w-full items-center justify-between ">
+            <ThemeModeSwitcher />
             <Hamburger toggle={() => setOpen(!isOpen)} toggled={isOpen} />
           </div>
           <nav className={'py-10'}>
