@@ -1,22 +1,19 @@
 import Image from 'next/image'
-import linkedin from 'assets/images/icons/linkedin.svg'
-import github from 'assets/images/icons/github.svg'
-import email from 'assets/images/icons/email.svg'
 
 const data = [
   {
     href: 'mailto:siejeksebastian@gmail.com',
-    icon: email,
+    icon: '/images/icons/email.svg',
     name: 'Email',
   },
   {
     href: 'https://www.linkedin.com/in/sebastiansiejek',
-    icon: linkedin,
+    icon: '/images/icons/linkedin.svg',
     name: 'LinkedIn',
   },
   {
     href: 'https://github.com/sebastiansiejek',
-    icon: github,
+    icon: '/images/icons/github.svg',
     name: 'GitHub',
   },
 ]
