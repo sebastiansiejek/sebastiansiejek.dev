@@ -13,7 +13,11 @@ module.exports = {
         1: '#EDF2F6',
         DEFAULT: '#17181D',
       },
+      dark: {
+        body: '#0c121a',
+      },
     },
   },
   plugins: [require('@tailwindcss/line-clamp')],
+  darkMode: 'class',
 }
