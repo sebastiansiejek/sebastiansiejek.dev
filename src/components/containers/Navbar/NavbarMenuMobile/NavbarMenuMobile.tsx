@@ -37,7 +37,7 @@ function NavbarMenuMobileItemLink(props: {
       }
     >
       <Link href={props.href} passHref>
-        <a className={'w-full flex'}>
+        <a className={'w-full flex justify-end'}>
           <Button
             title={props.title}
             variant={'link'}
