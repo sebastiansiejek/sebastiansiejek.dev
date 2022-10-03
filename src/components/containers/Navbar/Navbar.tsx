@@ -11,12 +11,12 @@ const ThemeModeSwitcher = dynamic(() => import('../ThemeModeSwitcher'), {
 
 const menu = [
   {
-    title: 'O mnie',
-    path: '/',
-  },
-  {
     title: 'Artykuły',
     path: '/blog',
+  },
+  {
+    title: 'Kontakt',
+    path: '/',
   },
 ]
 
