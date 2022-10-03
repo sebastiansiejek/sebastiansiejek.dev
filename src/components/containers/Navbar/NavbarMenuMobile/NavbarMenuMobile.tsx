@@ -40,7 +40,7 @@ function NavbarMenuMobileItemLink(props: {
         <a className={'w-full flex'}>
           <Button
             title={props.title}
-            variant={'outline'}
+            variant={'link'}
             isFullWidth
             isLoading={isLoading}
             onClick={() => {

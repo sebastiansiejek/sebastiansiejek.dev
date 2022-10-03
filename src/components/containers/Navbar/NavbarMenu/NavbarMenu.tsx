@@ -15,7 +15,7 @@ const NavbarMenu = ({ data }: INavbarMenu) => {
         >
           <Link href={path} passHref>
             <a>
-              <Button title={title} variant={'outline'} />
+              <Button title={title} variant={'link'} />
             </a>
           </Link>
         </li>
