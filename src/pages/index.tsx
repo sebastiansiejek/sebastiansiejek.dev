@@ -1,6 +1,7 @@
-import FullPageTemplate from 'components/views/templates/FullPageTemplate'
 import type { NextPage } from 'next'
 import { NextSeo } from 'next-seo'
+import Navbar from '../components/containers/Navbar'
+import Socials from '../components/containers/Socials'
 
 const Home: NextPage = () => {
   return (
@@ -18,7 +19,14 @@ const Home: NextPage = () => {
           },
         ]}
       />
-      <FullPageTemplate title="Sebastian Siejek" />
+      <div>
+        <div className={'fixed w-full'}>
+          <Navbar />
+        </div>
+        <div className="bg-n w-screen h-screen flex flex-col justify-center items-center text-center">
+          <Socials />
+        </div>
+      </div>
     </>
   )
 }
