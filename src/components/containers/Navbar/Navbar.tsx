@@ -3,7 +3,11 @@ import Container from '../../views/Container'
 import NavbarMenu from './NavbarMenu'
 import NavbarMenuMobile from './NavbarMenuMobile'
 import Link from 'next/link'
-import ThemeModeSwitcher from '../ThemeModeSwitcher'
+import dynamic from 'next/dynamic'
+
+const ThemeModeSwitcher = dynamic(() => import('../ThemeModeSwitcher'), {
+  ssr: false,
+})
 
 const menu = [
   {
