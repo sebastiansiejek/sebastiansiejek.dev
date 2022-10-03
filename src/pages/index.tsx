@@ -20,7 +20,7 @@ const Home: NextPage = () => {
         ]}
       />
       <div>
-        <div className={'fixed w-full'}>
+        <div className={'fixed w-full z-10'}>
           <Navbar />
         </div>
         <div className="bg-n w-screen h-screen flex flex-col justify-center items-center text-center">
