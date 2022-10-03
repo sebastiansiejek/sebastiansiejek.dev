@@ -16,6 +16,15 @@ const SinglePost = ({ post }: any) => {
     <>
       <NextSeo title={`${post.slug} - sebastiansiejek.dev`} />
       <PageTemplate>
+        <Container>
+          <h1
+            className={
+              'font-mono text-3xl mb-12 dark:text-primary font-bold md:text-center'
+            }
+          >
+            {post.frontmatter.title}
+          </h1>
+        </Container>
         <Container size={'tight'}>
           <ContentStyled>
             <MDXRemote
