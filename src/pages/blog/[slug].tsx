@@ -14,7 +14,7 @@ import ContentStyled from '../../styles/ContentStyled'
 const SinglePost = ({ post }: any) => {
   return (
     <>
-      <NextSeo title={`${post.slug} - sebastiansiejek.dev`} />
+      <NextSeo title={`${post.frontmatter.title} - sebastiansiejek.dev`} />
       <PageTemplate>
         <Container>
           <h1
