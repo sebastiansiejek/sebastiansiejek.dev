@@ -7,7 +7,7 @@ const ThemeModeSwitcher = () => {
   const toggleTheme = useAppStore((state) => state.toggleTheme)
   const theme = useAppStore((state) => state.theme)
   const isDarkMode = theme === 'dark'
-  const iconClasses = 'w-6 h-6 fill-n-0'
+  const iconClasses = 'w-4 h-4 fill-n-0'
   const router = useRouter()
 
   if (router.pathname === '/') return null
