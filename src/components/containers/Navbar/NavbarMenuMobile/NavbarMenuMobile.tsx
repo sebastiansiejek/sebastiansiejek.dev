@@ -72,7 +72,9 @@ const NavbarMenuMobile = ({ menu }: INavbarMenuMobile) => {
         <Container className={'flex flex-col'}>
           <div className="flex w-full items-center justify-between ">
             <ThemeModeSwitcher />
-            <Hamburger toggle={() => setOpen(!isOpen)} toggled={isOpen} />
+            <div className="ml-auto">
+              <Hamburger toggle={() => setOpen(!isOpen)} toggled={isOpen} />
+            </div>
           </div>
           <nav className={'py-10'}>
             <ul className={'flex items-end flex-col w-full gap-6'}>
