@@ -11,12 +11,9 @@ const useBrowserTheme = () => {
       ? 'dark'
       : 'light'
 
-    if (!theme) toggleTheme(preferTheme)
-    if (theme) toggleTheme(theme)
-
     if (theme === 'dark' || (!theme && preferTheme === 'dark'))
       document.documentElement.classList.add('dark')
-  }, [])
+  }, [theme, toggleTheme])
 }
 
 export default useBrowserTheme
