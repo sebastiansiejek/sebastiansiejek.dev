@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import BlogCardExternalProvider from './BlogCardExternalProvider'
 
 const BlogCard = ({ slug, thumbnail, tags, title, excerpt, url }: IPost) => {
   const href = url || `/blog/${slug}`
@@ -21,9 +22,10 @@ const BlogCard = ({ slug, thumbnail, tags, title, excerpt, url }: IPost) => {
               objectFit={'cover'}
               alt=""
             />
+            {url && <BlogCardExternalProvider providerUrl={url} />}
           </div>
         )}
-        <div className="bg-n-0 dark:bg-n">
+        <div className="bg-n-0 dark:bg-n relative">
           <div className="px-6 py-4">
             <h2 className="transition-colors group-hover:text-primary font-bold text-xl mb-2">
               {title}
