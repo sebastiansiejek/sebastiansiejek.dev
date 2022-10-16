@@ -12,7 +12,7 @@ const BlogCard = ({ slug, thumbnail, tags, title, excerpt, url }: IPost) => {
           'group transition-transform rounded shadow-lg flex-col flex cur cursor-pointer hover:-translate-y-1'
         }
         target={url && '_blank'}
-        rel={url && 'noopener noreferrer'}
+        rel={url && 'noopener noreferrer nofollow'}
       >
         {thumbnail && (
           <div className="relative h-[180px]">
