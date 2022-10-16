@@ -48,7 +48,7 @@ export const getResourceFrontmatter = ({
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const { content, data } = matter(fileContents)
 
-  return { ...data, slug, content }
+  return { ...data, publishedAt: data.publishedAt || '', slug, content }
 }
 
 export const getAllResources = (resourcePath: string) => {
@@ -61,3 +61,6 @@ export const getAllResources = (resourcePath: string) => {
     })
   })
 }
+
+export const sortResources = (resources: any[]) =>
+  resources.sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1))
