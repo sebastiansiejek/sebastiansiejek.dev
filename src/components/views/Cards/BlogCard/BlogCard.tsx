@@ -1,13 +1,16 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-const BlogCard = ({ slug, thumbnail, tags, title, excerpt }: IPost) => {
+const BlogCard = ({ slug, thumbnail, tags, title, excerpt, url }: IPost) => {
+  const href = url || `/blog/${slug}`
+
   return (
-    <Link href={`/blog/${slug}`} key={slug} passHref>
+    <Link href={href} key={slug} passHref>
       <a
         className={
           'group transition-transform rounded shadow-lg flex-col flex cur cursor-pointer hover:-translate-y-1'
         }
+        target={url && '_blank'}
       >
         {thumbnail && (
           <div className="relative h-[180px]">
