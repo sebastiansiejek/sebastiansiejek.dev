@@ -1,13 +1,18 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import BlogCardExternalProvider from './BlogCardExternalProvider'
 
-const BlogCard = ({ slug, thumbnail, tags, title, excerpt }: IPost) => {
+const BlogCard = ({ slug, thumbnail, tags, title, excerpt, url }: IPost) => {
+  const href = url || `/blog/${slug}`
+
   return (
-    <Link href={`/blog/${slug}`} key={slug} passHref>
+    <Link href={href} key={slug} passHref>
       <a
         className={
           'group transition-transform rounded shadow-lg flex-col flex cur cursor-pointer hover:-translate-y-1'
         }
+        target={url && '_blank'}
+        rel={url && 'noopener noreferrer nofollow'}
       >
         {thumbnail && (
           <div className="relative h-[180px]">
@@ -18,9 +23,10 @@ const BlogCard = ({ slug, thumbnail, tags, title, excerpt }: IPost) => {
               objectFit={'cover'}
               alt=""
             />
+            {url && <BlogCardExternalProvider providerUrl={url} />}
           </div>
         )}
-        <div className="bg-n-0 dark:bg-n">
+        <div className="bg-n-0 dark:bg-n relative">
           <div className="px-6 py-4">
             <h2 className="transition-colors group-hover:text-primary font-bold text-xl mb-2">
               {title}

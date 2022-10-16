@@ -6,6 +6,7 @@ interface IPost {
   title: string
   thumbnail?: string
   tags: string
+  url?: string
 }
 
 type IPosts = IPost[]

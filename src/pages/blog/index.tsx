@@ -1,5 +1,8 @@
 import { NextSeo } from 'next-seo'
-import { getAllResources } from '../../lib/resources/resourcesService'
+import {
+  getAllResources,
+  sortResources,
+} from '../../lib/resources/resourcesService'
 import path from 'path'
 import BlogPosts from '../../components/views/BlogPosts'
 import PageTemplate from '../../components/views/templates/PageTemplate'
@@ -20,7 +23,9 @@ const Blog = (props: IBlogProps) => {
 }
 
 export const getStaticProps = async () => {
-  const posts = getAllResources(path.join(process.cwd(), 'src/content/posts'))
+  const posts = sortResources(
+    getAllResources(path.join(process.cwd(), 'src/content/posts')),
+  )
 
   return {
     props: { posts },
