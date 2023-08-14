@@ -14,9 +14,7 @@ const NavbarMenu = ({ data }: INavbarMenu) => {
           key={path}
         >
           <Link href={path} passHref>
-            <a>
-              <Button title={title} variant={'link'} />
-            </a>
+            <Button title={title} variant={'link'} />
           </Link>
         </li>
       ))}

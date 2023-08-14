@@ -36,18 +36,16 @@ function NavbarMenuMobileItemLink(props: {
         'relative group text-primary font-mono flex font-medium w-full'
       }
     >
-      <Link href={props.href} passHref>
-        <a className={'w-full flex justify-end'}>
-          <Button
-            title={props.title}
-            variant={'link'}
-            isFullWidth
-            isLoading={isLoading}
-            onClick={() => {
-              setLoading(true)
-            }}
-          />
-        </a>
+      <Link href={props.href} passHref className={'w-full flex justify-end'}>
+        <Button
+          title={props.title}
+          variant={'link'}
+          isFullWidth
+          isLoading={isLoading}
+          onClick={() => {
+            setLoading(true)
+          }}
+        />
       </Link>
     </li>
   )

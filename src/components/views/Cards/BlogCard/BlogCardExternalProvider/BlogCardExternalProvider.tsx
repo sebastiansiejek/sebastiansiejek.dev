@@ -1,5 +1,5 @@
-import Image from 'next/image'
-import { getProviderLogo } from '../../../../../utils/getProviderLogo'
+import Image from 'next/legacy/image'
+import { getProviderLogo } from 'utils/getProviderLogo'
 
 interface IBlogCardExternalProvider {
   providerUrl: string
@@ -14,7 +14,13 @@ const BlogCardExternalProvider = ({
 
   return (
     <div className="bg-n-0 p-1 flex absolute top-0 right-0">
-      <Image src={src} width={80} height={25} objectFit={'contain'} alt={src} />
+      <Image
+        src={src}
+        width={80}
+        height={25}
+        className={'object-contain'}
+        alt={src}
+      />
     </div>
   )
 }

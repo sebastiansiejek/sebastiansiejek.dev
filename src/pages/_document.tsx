@@ -1,4 +1,4 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document'
+import Document, { Head, Html, Main, NextScript } from 'next/document'
 
 class MyDocument extends Document {
   render() {
@@ -9,7 +9,7 @@ class MyDocument extends Document {
           <link
             rel="preconnect"
             href="https://fonts.gstatic.com"
-            crossOrigin="1"
+            crossOrigin={'anonymous'}
           />
           <link
             href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap"

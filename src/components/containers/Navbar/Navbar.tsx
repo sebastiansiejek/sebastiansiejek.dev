@@ -26,9 +26,9 @@ const Navbar = () => {
       <Container>
         <div className={'flex items-center justify-between'}>
           <Link href={'/'} passHref>
-            <a>
-              <SiteBranding />
-            </a>
+
+            <SiteBranding />
+
           </Link>
           <div className="ml-10 hidden lg:flex items-center">
             <NavbarMenu data={menu} />
@@ -40,7 +40,7 @@ const Navbar = () => {
         </div>
       </Container>
     </nav>
-  )
+  );
 }
 
 export default Navbar
