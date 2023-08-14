@@ -13,7 +13,7 @@ const useAppStore = create<AppStore>()(
         theme: '',
         toggleTheme: (by) => {
           document.documentElement.classList.toggle('dark')
-          return set((state) => ({ theme: by }))
+          return set(() => ({ theme: by }))
         },
       }),
       {
