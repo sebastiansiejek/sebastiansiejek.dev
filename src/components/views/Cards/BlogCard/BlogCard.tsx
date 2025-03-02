@@ -11,7 +11,7 @@ const BlogCard = ({ slug, thumbnail, tags, title, excerpt, url }: IPost) => {
       key={slug}
       passHref
       className={
-        'group transition-transform rounded shadow-lg flex-col flex cur cursor-pointer hover:-translate-y-1'
+        'group transition-transform rounded-sm shadow-lg flex-col flex cur cursor-pointer hover:-translate-y-1'
       }
       target={url && '_blank'}
       rel={url && 'noopener noreferrer nofollow'}

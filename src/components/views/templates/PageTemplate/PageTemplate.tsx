@@ -14,9 +14,7 @@ const PageTemplate = ({ children }: IPageTemplate) => {
       <footer className={'bg-n py-12 text-n-0'}>
         <div className="flex items-center justify-center flex-col">
           <Socials />
-          <p className={'mt-5'}>
-            © 2022 sebastiansiejek.dev. All rights reserved
-          </p>
+          <p className={'mt-5'}>sebastiansiejek.dev</p>
         </div>
       </footer>
     </>

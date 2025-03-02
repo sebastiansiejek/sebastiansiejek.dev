@@ -69,7 +69,7 @@ const NavbarMenuMobile = ({ menu }: INavbarMenuMobile) => {
       >
         <Container className={'flex flex-col'}>
           <div className="flex w-full items-center justify-between ">
-            <ThemeModeSwitcher />
+            {/*<ThemeModeSwitcher />*/}
             <div className="ml-auto">
               <Hamburger toggle={() => setOpen(!isOpen)} toggled={isOpen} />
             </div>
