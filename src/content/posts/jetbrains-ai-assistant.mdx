@@ -1,0 +1,89 @@
+---
+title: 'Kilka słów o AI Assistant od JetBrains'
+publishedAt: '2025-03-02'
+thumbnail: /images/posts/jetbrains-ai-assistant/jetbrains-ai.webp
+tags: JetBrains, Intellij, ai, assistant, IDE
+---
+
+Przez ostatni tydzień testowałem JetBrains AI, eksplorując jego możliwości w codziennej pracy. 
+
+## 🚀 Pierwsze Wrażenia
+
+Nie jest to moje pierwsze zderzenie z tego typu rozwiązaniem. Wcześniej testowałem przez dłuższy czas [GitHub Copilot](https://github.com/features/copilot), lokalne rozwiązanie za pomocą pluginu [Continue](https://www.continue.dev/) w połączeniu z [Ollama](https://ollama.com/) z modelem `llama3.1:8b` do czatu oraz model `qwen2.5-coder:1.5b-base` do podpowiedzi w kodzie oraz miałem krótką przygodę z [Cursorem](https://www.cursor.com/). Pierwsze co wyróżnia JetBrains AI to, to, że jest to integralna część IDE, niejako jego uzupełnienie. Dzięki temu wszystkie opcje doskonale wpasowują się w aplikacje, tworząc integralną całość.
+
+## Code completion
+W tym przypadku Jetbrains oferuje [Full Line Code Completion](https://www.jetbrains.com/help/idea/full-line-code-completion.html) działający lokalnie oraz bardziej rozbudowany [moduł AI](https://www.jetbrains.com/help/idea/use-ai-in-editor.html#enable-inline-code-completion) działający w chmurze.
+
+### Full line code Completion
+- Działa lokalnie na urządzeniu użytkownika, bez wysyłania kodu przez internet
+- Używa lokalnego modelu uczenia maszynowego
+- Sugeruje tylko pojedyncze linie kodu
+- Jest wbudowaną funkcją IDE, która nie wymaga AI Assistant
+
+### Inline Code Completion (AI Assistant)
+Bierze pod uwagę:
+- język programowania i technologie używane w projekcie
+- lokalne zmiany
+- commity z systemu kontroli wersji
+- kontekst projektu
+
+Dzięki asystentowi AI, możemy w prosty sposób z poziomu edytora kodu wejść w integracje z chatem. Aby wyświetlić menu AI actions możemy skorzystać z kombinacji (`opt` + `enter`). Do dyspozycji mamy kilka opcji
+#### Generate code (`cmd` + `\`) 
+- Generuje kod na podstawie opisu
+#### Explain Code 
+- Analizuje i wyjaśnia zaznaczony fragment kodu
+#### Suggest Refactoring
+- Proponuje ulepszenia i optymalizacje kodu
+- Pozwala porównać zmiany w widoku diff
+- Można zaakceptować wszystkie lub wybrane zmiany
+#### Find Problems
+- Analizuje kod pod kątem potencjalnych problemów i błędów. Zdarzało mi się wykorzystać w przypadku gdy esLint wykrył błąd
+#### Write Documentation
+- Tworzy dokumentacje kodu w postaci komentarza 
+#### Generate Unit Tests
+- Generuje testy w nowym pliku, wykorzystując odpowiedną konwencje np. `*.test.ts` o czym więcej w dziale poświęconym testom
+
+## 🗣️ Chat
+Oprócz podpowiedzi inline, mamy oczywiście dostęp do chatu. Możemy tutaj wybrać model, ja korzystałem głównie z `Claude 3.5 sonnet` (pod koniec moich testów pojawił się już wersja 3.7, ale nie została jeszcze tutaj dodana). Co ciekawe sam plugin umożliwia również skorzystanie z lokalnym LLM przez wspomnianą wcześniej Ollame. Do contextu automatycznie dołączają się otwarte pliki, co oczywiście możemy personalizować. 
+Ciekawym rozwiązaniem są również wbudowane komendy takie jak:
+- `/docs` - wyszukuje w dokumentacji JetBrains informacji na dany temat
+- `/explain` - służy do analizy i wyjaśnienia kodu
+- `/help` - pokazuje listę dostępnych komend i ich opis
+- `/refactor` - pomaga w refaktoryzacji kodu poprzez sugestie usprawnień
+Dzięki nim, możemy zasugerować AI w jaki sposób ma przeanalizować na prompt. Sam prompt może być również spersonalizowany pod nasze potrzeby co możliwe do zmiany w ustawieniach. Każdy z rozpoczętych czatów jest zapisywany i dostępny z poziomu listy.
+
+## 🧪 Generowanie testów 
+Test możemy wygenerować zaznaczając nazwę funkcji i z menu AI wybierając `Generate Unit Tests`
+- Można doprecyzować wymagania używając przycisku `Specify`
+- Możliwe jest ponowne wygenerowanie testów przyciskiem `Regenerate`
+- Po zaakceptowaniu (przycisk `Accept all`), testy są zapisywane w odpowiednim folderze testowym
+
+![options](/images/posts/jetbrains-ai-assistant/tests.png)
+
+### 📊 SQl
+Mimo, że na co dzień głównie pracuje na frontendzie, zdarza mi się również sporadycznie napisać jakąś SQL'ke. Tutaj niestety nie mam tak dobrego zdania jak przy innych funkcjonalnościach. AI niby stara się wykorzystywać schema bazy ale robi to raczej mało skutecznie. Można wykorzystać to jako draft, ale raczej w większości przypadków skończy się na tym, że będziemy zrobić to sami.
+
+## 🤓 Terminal
+Będąc już w terminalu, dzięki skrótowi `cmd` + `\` (taki sam skrót jak w przypadku Code Completion) możemy szybko zlecić AI wygenerowanie tam polecenie na podstawie naszego prompta, bez żadnego copy-paste.
+
+## 🗂️ GIT
+Integracja z AI umożliwia m.in. generowanie wiadomości commitu na podstawie wybranych plików lub tworzenie opisu do pull requestu. Tutaj do ustawień prompta można przykładowo dodać, aby asystent korzystał z [conventional commit](https://www.conventionalcommits.org). 
+
+## ⚙️ Dostęp do opcji IDE
+Przez fakt, że asystent AI jest integralną częścią IDE, możemy w prosty sposób poprosić go o odnalezienie w dokumentacji potrzebnej opcji. AI nie tylko wygeneruje podpowiedź, ale w oknie czatu pojawi się tez przycisk bezpośrednio do konkretnego ustawienia.
+
+![options](/images/posts/jetbrains-ai-assistant/ide-options.png)
+
+## ⚙️ Personalizacja
+Świetnym uzupełnieniem możliwości asystenta AI jest możliwość personalizacji w zależności od konkretnych sytuacji.
+
+![options](/images/posts/jetbrains-ai-assistant/prompt-library.png)
+
+### 🤺 Konkurencja
+Naturalnie głównym konkurentem jest GitHub Copilot i najpewniej korzystając z VsCode zdecydowałbym się na niego. Plugin continue zapowiadał się na prawdę ciekawie, ale nieco mnie rozczarował. Podczas moich testów plugin lubił się zawieszać, a lokalne LLM mocno obciążały mój komputer. Co do Cursora, to mimo szczerych chęci nie zdołałem się do niego przekonać. Jest to jednak nieco inne rozwiązanie, bo nie jest to plugin a całe IDE. Po kilku latach w ekosystemie Jetbrains ciężko było mi się przestawić z powrotem na coś innego, natomiast głównym powodem było chyba to, że Cursor w mojej opinii mimo, że jest na prawdę świetnym narzędziem trochę za bardzo ingeruje w kod, który nie rzadko i tak musiałem poprawiać. Na ten moment bardziej swobodnie czuje się mając asystenta, który pomaga mi w codziennej pracy niż asystenta, który "próbuję" wykonać ją całkowicie za mnie.
+
+## 💰 Cena
+Obecnie JetBrains AI jest dostępny w ramach subskrypcji. W rozliczeniu rocznym cena wynosi 100EUR (netto). Do porównania GitHub Copilot kosztuje 100$, a cursor 192$. Aktualne ceny można zobaczyć na https://www.jetbrains.com/ai/#plans-and-pricing 
+
+## Podsumowanie
+ Biorąc pod uwagę wszystkie powyższe kwestie, na prawdę ciężko jest mi się do czegokolwiek przeczepić. Jetbrains AI Asystent to bardzo solidne narzędzie i z czystym sumieniem mogę go polecić. Po tym krótkim czasie, jestem w pełni przekonany, że zostanę z nim na dłużej.
