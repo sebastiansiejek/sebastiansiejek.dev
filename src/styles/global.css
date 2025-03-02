@@ -6,6 +6,7 @@
 
 @theme {
   --font-*: initial;
+  --font-sans: 'Inter', sans-serif;
   --font-mono: 'Inconsolata', monospace;
 
   --color-*: initial;
