@@ -7,8 +7,6 @@ interface IPageTemplate {
 }
 
 const PageTemplate = ({ children }: IPageTemplate) => {
-  const year = new Date().getFullYear()
-
   return (
     <>
       <Navbar />
@@ -16,7 +14,7 @@ const PageTemplate = ({ children }: IPageTemplate) => {
       <footer className={'bg-n py-12 text-n-0'}>
         <div className="flex items-center justify-center flex-col">
           <Socials />
-          <p className={'mt-5'}>© {year} sebastiansiejek.dev.</p>
+          <p className={'mt-5'}>sebastiansiejek.dev</p>
         </div>
       </footer>
     </>
