@@ -1,6 +1,5 @@
 import useAppStore from '../../../store/app.store'
-import DarkModeIcon from '../../../../public/images/icons/dark-mode.svg'
-import LightModeIcon from '../../../../public/images/icons/light-mode.svg'
+import { CiDark, CiLight } from 'react-icons/ci'
 import { useRouter } from 'next/router'
 
 const ThemeModeSwitcher = () => {
@@ -15,9 +14,9 @@ const ThemeModeSwitcher = () => {
   return (
     <button onClick={() => toggleTheme(isDarkMode ? 'light' : 'dark')}>
       {isDarkMode ? (
-        <DarkModeIcon className={iconClasses} />
+        <CiDark className={iconClasses} />
       ) : (
-        <LightModeIcon className={iconClasses} />
+        <CiLight className={iconClasses} />
       )}
     </button>
   )
