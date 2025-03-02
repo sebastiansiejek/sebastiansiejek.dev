@@ -1,7 +1,6 @@
 import clsx from 'clsx'
 import { IButton } from '../Button'
 import { ClipLoader } from 'react-spinners'
-import tailwindConfig from './../../../../../tailwind.config'
 
 interface IButtonOutline extends Omit<IButton, 'variant'> {}
 
@@ -40,11 +39,7 @@ const ButtonOutline = ({
         {children || title}
       </div>
       {isLoading && (
-        <ClipLoader
-          color={tailwindConfig.theme.colors.primary.DEFAULT}
-          className={'ml-4'}
-          size={24}
-        />
+        <ClipLoader color={'#3ceab8'} className={'ml-4'} size={24} />
       )}
     </button>
   )
