@@ -12,6 +12,7 @@ import 'dracula-prism/dist/css/dracula-prism.min.css'
 import Image from 'next/image'
 
 import './blog.styles.css'
+import { TextLink } from 'shared/ui/TextLink/TextLink'
 
 const SinglePost = ({ post }: any) => {
   return (
@@ -65,6 +66,7 @@ const SinglePost = ({ post }: any) => {
                     height={300}
                   />
                 ),
+                a: TextLink,
               }}
             />
           </main>
