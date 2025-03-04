@@ -1,4 +1,4 @@
-.dark {
+[data-theme='dark'] {
   @apply bg-dark-body;
   @apply text-n-0;
 }
