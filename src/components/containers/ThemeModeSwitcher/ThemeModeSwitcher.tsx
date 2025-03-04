@@ -1,22 +1,25 @@
-import useAppStore from '../../../store/app.store'
 import { CiDark, CiLight } from 'react-icons/ci'
 import { useRouter } from 'next/router'
+import { useTheme } from 'next-themes'
 
 const ThemeModeSwitcher = () => {
-  const toggleTheme = useAppStore((state) => state.toggleTheme)
-  const theme = useAppStore((state) => state.theme)
-  const isDarkMode = theme === 'dark'
   const iconClasses = 'w-4 h-4 fill-n-0'
+  const { theme, setTheme } = useTheme()
+  const isDarkMode = theme === 'dark'
   const router = useRouter()
+  console.log(theme)
 
   if (router.pathname === '/') return null
 
   return (
-    <button onClick={() => toggleTheme(isDarkMode ? 'light' : 'dark')}>
+    <button
+      onClick={() => setTheme(isDarkMode ? 'light' : 'dark')}
+      className={'transition cursor-pointer hover:opacity-80'}
+    >
       {isDarkMode ? (
-        <CiDark className={iconClasses} />
-      ) : (
         <CiLight className={iconClasses} />
+      ) : (
+        <CiDark className={iconClasses} />
       )}
     </button>
   )
