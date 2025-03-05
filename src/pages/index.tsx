@@ -9,7 +9,7 @@ const Home: NextPage = () => {
       <NextSeo
         title="Sebastian Siejek"
         description="Sebastian Siejek - Software Engineer"
-        canonical="https://sebastiansiejek.dev"
+        canonical="https://sebastiansiejek.dev/"
         additionalMetaTags={[
           { name: 'author', content: 'Sebastian Siejek' },
           {
