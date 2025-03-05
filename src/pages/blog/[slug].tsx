@@ -11,7 +11,6 @@ import { NextSeo } from 'next-seo'
 import 'dracula-prism/dist/css/dracula-prism.min.css'
 import Image from 'next/image'
 
-import './blog.styles.css'
 import { TextLink } from 'shared/ui/TextLink/TextLink'
 
 const SinglePost = ({ post }: any) => {
@@ -29,7 +28,7 @@ const SinglePost = ({ post }: any) => {
           </h1>
         </Container>
         <Container size={'tight'}>
-          <main>
+          <main className={'flex flex-col gap-6'}>
             <MDXRemote
               {...post.transformedMdx}
               components={{
