@@ -11,11 +11,11 @@ const ThemeModeSwitcher = dynamic(() => import('../ThemeModeSwitcher'), {
 
 const menu = [
   {
-    title: 'Artykuły',
+    title: 'Blog',
     path: '/blog',
   },
   {
-    title: 'Kontakt',
+    title: 'Contact',
     path: '/',
   },
 ]
@@ -26,9 +26,7 @@ const Navbar = () => {
       <Container>
         <div className={'flex items-center justify-between'}>
           <Link href={'/'} passHref>
-
             <SiteBranding />
-
           </Link>
           <div className="ml-10 hidden lg:flex items-center">
             <NavbarMenu data={menu} />
@@ -40,7 +38,7 @@ const Navbar = () => {
         </div>
       </Container>
     </nav>
-  );
+  )
 }
 
 export default Navbar
