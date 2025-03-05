@@ -65,6 +65,14 @@ const SinglePost = ({ post }: any) => {
                     height={300}
                   />
                 ),
+                blockquote: (props) => {
+                  return (
+                    <blockquote
+                      {...props}
+                      className={'p-4 bg-n/40 text-n-0 dark:bg-n/90 '}
+                    />
+                  )
+                },
                 a: TextLink,
               }}
             />
