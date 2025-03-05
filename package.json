@@ -8,7 +8,6 @@
     "lint": "next lint",
     "prepare": "husky install",
     "format": "prettier src/**/*.* --write",
-    "postbuild": "next-sitemap",
     "test": "jest"
   },
   "dependencies": {
