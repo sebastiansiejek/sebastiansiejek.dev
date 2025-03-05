@@ -1,0 +1,60 @@
+---
+title: 'Kilka słów o AI Assistant od JetBrains'
+publishedAt: '2025-03-02'
+thumbnail: /images/posts/jetbrains-ai-assistant/jetbrains-ai.webp
+tags: JetBrains, Intellij, ai, assistant, IDE
+---
+
+Przez ostatni tydzień testowałem JetBrains AI, eksplorując jego możliwości w codziennej pracy.
+
+## 🚀 Pierwsze wrażenia
+
+Nie jest to moje pierwsze zderzenie z tego typu rozwiązaniem. Wcześniej testowałem przez dłuższy czas [GitHub Copilot](https://github.com/features/copilot), lokalne rozwiązanie za pomocą pluginu [Continue](https://www.continue.dev/) w połączeniu z [Ollama](https://ollama.com/) z modelem `llama3.1:8b` do czatu oraz modelem `qwen2.5-coder:1.5b-base` do podpowiedzi w kodzie. Miałem też krótką przygodę z [Cursorem](https://www.cursor.com/). Pierwszą rzeczą, która wyróżnia JetBrains AI, jest fakt, że stanowi integralną część IDE, niejako jego uzupełnienie. Dzięki temu wszystkie opcje doskonale wpasowują się w aplikację, tworząc spójną całość.
+
+## Code Completion
+JetBrains oferuje [Full Line Completion](https://www.jetbrains.com/help/idea/full-line-code-completion.html) działający lokalnie oraz bardziej rozbudowany [moduł AI](https://www.jetbrains.com/help/idea/use-ai-in-editor.html#enable-inline-code-completion) działający w chmurze.
+
+### Full Line Completion
+- Działa lokalnie na urządzeniu użytkownika, bez wysyłania kodu przez internet
+- Używa lokalnego modelu uczenia maszynowego
+- Sugeruje tylko pojedyncze linie kodu
+- Jest wbudowaną funkcją IDE, która nie wymaga AI Assistant
+
+### Inline Code Completion (AI Assistant)
+Bierze pod uwagę:
+- język programowania i technologie używane w projekcie
+- lokalne zmiany
+- commity z systemu kontroli wersji
+- kontekst projektu
+
+Dzięki asystentowi AI możemy bezpośrednio z edytora kodu skorzystać z integracji z chatem. Aby wyświetlić menu AI Actions, możemy skorzystać z kombinacji (`opt` + `enter`). Do dyspozycji mamy kilka opcji:
+#### Generate code (`cmd` + `\`)
+- Generuje kod na podstawie opisu
+#### Explain Code
+- Analizuje i wyjaśnia zaznaczony fragment kodu
+#### Suggest Refactoring
+- Proponuje ulepszenia i optymalizacje kodu
+- Pozwala porównać zmiany w widoku diff
+- Można zaakceptować wszystkie lub wybrane zmiany
+#### Find Problems
+- Analizuje kod pod kątem potencjalnych problemów i błędów. Zdarzało mi się z niego korzystać, gdy ESLint wykrył błąd.
+#### Write Documentation
+- Tworzy dokumentację kodu w postaci komentarza
+#### Generate Unit Tests
+- Generuje testy w nowym pliku, stosując odpowiednią konwencję, np. `*.test.ts`. Więcej o tym w sekcji dotyczącej testów.
+
+> Warto zaznaczyć, że AI w tym przypadku jest dość oszczędne w podpowiedziach. Rzadko kiedy zdarzało mu się, aby wygenerował więcej niż kilka linii.
+
+## 🗣️ Chat
+Oprócz podpowiedzi inline mamy oczywiście dostęp do chatu. Możemy tutaj wybrać model — ja korzystałem głównie z `Claude 3.5 Sonnet` (pod koniec moich testów pojawiła się już wersja 3.7, ale nie została jeszcze tutaj dodana). Co ciekawe, sam plugin umożliwia również korzystanie z lokalnego modelu LLM przez wspomnianą wcześniej Ollamę. Kontekst automatycznie obejmuje otwarte pliki, co możemy dostosować do własnych potrzeb.
+
+Ciekawym rozwiązaniem są również wbudowane komendy:
+- `/docs` - wyszukuje w dokumentacji JetBrains informacji na dany temat
+- `/explain` - służy do analizy i wyjaśnienia kodu
+- `/help` - pokazuje listę dostępnych komend i ich opis
+- `/refactor` - pomaga w refaktoryzacji kodu poprzez sugestie usprawnień
+  Dzięki nim możemy zasugerować AI, w jaki sposób ma przeanalizować prompt. Sam prompt może być również spersonalizowany w ustawieniach. Każdy rozpoczęty czat jest zapisywany i dostępny z poziomu listy.
+
+## Podsumowanie
+Biorąc pod uwagę wszystkie powyższe kwestie, naprawdę ciężko mi się do czegokolwiek przyczepić. JetBrains AI Assistant to bardzo solidne narzędzie i z czystym sumieniem mogę je polecić. Już po krótkim czasie wiem, że zostanę z nim na dłużej.
+

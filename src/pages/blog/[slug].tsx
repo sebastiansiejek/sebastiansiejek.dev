@@ -9,7 +9,9 @@ import { GetStaticProps } from 'next'
 import { MDXRemote } from 'next-mdx-remote'
 import { NextSeo } from 'next-seo'
 import 'dracula-prism/dist/css/dracula-prism.min.css'
-import ContentStyled from '../../styles/ContentStyled'
+import Image from 'next/image'
+
+import { TextLink } from 'shared/ui/TextLink/TextLink'
 
 const SinglePost = ({ post }: any) => {
   return (
@@ -26,7 +28,7 @@ const SinglePost = ({ post }: any) => {
           </h1>
         </Container>
         <Container size={'tight'}>
-          <ContentStyled>
+          <main className={'flex flex-col gap-6'}>
             <MDXRemote
               {...post.transformedMdx}
               components={{
@@ -36,17 +38,45 @@ const SinglePost = ({ post }: any) => {
                     {...props}
                   />
                 ),
-                ol: (list) => {
+                ol: (props) => {
+                  return <ol className={'list-decimal pl-4'} {...props} />
+                },
+                ul: (props) => {
+                  return <ul className={'list-disc pl-4'} {...props} />
+                },
+                h2: (props) => (
+                  <h2 className={'text-3xl font-medium'} {...props} />
+                ),
+                h3: (props) => (
+                  <h3 className={'text-2xl font-medium'} {...props} />
+                ),
+                h4: (props) => (
+                  <h3 className={'text-xl font-medium'} {...props} />
+                ),
+                img: (props) => (
+                  <Image
+                    {...props}
+                    sizes="100vw"
+                    style={{
+                      width: '100%',
+                      height: 'auto',
+                    }}
+                    width={760}
+                    height={300}
+                  />
+                ),
+                blockquote: (props) => {
                   return (
-                    <ol className={'list-decimal pl-4'}>{list.children}</ol>
+                    <blockquote
+                      {...props}
+                      className={'p-4 bg-n/40 text-n-0 dark:bg-n/90 '}
+                    />
                   )
                 },
-                ul: (list) => {
-                  return <ul className={'list-disc pl-4'}>{list.children}</ul>
-                },
+                a: TextLink,
               }}
             />
-          </ContentStyled>
+          </main>
         </Container>
       </PageTemplate>
     </>
