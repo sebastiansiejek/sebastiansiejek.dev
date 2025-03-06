@@ -1,36 +1,63 @@
+import path from 'path'
+import { MDXRemote } from 'next-mdx-remote/rsc'
+import 'dracula-prism/dist/css/dracula-prism.min.css'
+import Image from 'next/image'
+import { TextLink } from 'shared/ui/TextLink/TextLink'
+import Container from 'components/views/Container'
 import {
   getResourceBySlug,
   getResourcesPaths,
-} from '../../lib/resources/resourcesService'
-import path from 'path'
-import PageTemplate from '../../components/views/templates/PageTemplate'
-import Container from '../../components/views/Container'
-import { GetStaticProps } from 'next'
-import { MDXRemote } from 'next-mdx-remote'
-import { NextSeo } from 'next-seo'
-import 'dracula-prism/dist/css/dracula-prism.min.css'
-import Image from 'next/image'
+} from 'lib/resources/resourcesService'
+import { Suspense } from 'react'
+import { Metadata } from 'next'
 
-import { TextLink } from 'shared/ui/TextLink/TextLink'
+type PageProps = {
+  params: Promise<{ slug: string }>
+}
 
-const SinglePost = ({ post }: any) => {
+export async function generateStaticParams() {
+  const posts = await getResourcesPaths(
+    path.join(process.cwd(), 'src/content/posts'),
+  )
+
+  return posts
+}
+
+export async function generateMetadata(props: PageProps): Promise<Metadata> {
+  const { slug } = await props.params
+  const post = await getResourceBySlug(
+    slug,
+    path.join(process.cwd(), 'src/content/posts'),
+  )
+
+  return {
+    title: `${post.frontmatter.title} - sebastiansiejek.dev`,
+  }
+}
+
+export default async function SinglePost(props: PageProps) {
+  const { slug } = await props.params
+  const post = await getResourceBySlug(
+    slug,
+    path.join(process.cwd(), 'src/content/posts'),
+  )
+
   return (
     <>
-      <NextSeo title={`${post.frontmatter.title} - sebastiansiejek.dev`} />
-      <PageTemplate>
-        <Container>
-          <h1
-            className={
-              'font-mono text-3xl mb-12 dark:text-primary font-bold md:text-center'
-            }
-          >
-            {post.frontmatter.title}
-          </h1>
-        </Container>
-        <Container size={'tight'}>
-          <main className={'flex flex-col gap-6'}>
+      <Container>
+        <h1
+          className={
+            'font-mono text-3xl mb-12 dark:text-primary font-bold md:text-center'
+          }
+        >
+          {post.frontmatter.title}
+        </h1>
+      </Container>
+      <Container size={'tight'}>
+        <main className={'flex flex-col gap-6'}>
+          <Suspense fallback={<>Loading...</>}>
             <MDXRemote
-              {...post.transformedMdx}
+              source={post.content}
               components={{
                 code: (props) => (
                   <code
@@ -76,32 +103,9 @@ const SinglePost = ({ post }: any) => {
                 a: TextLink,
               }}
             />
-          </main>
-        </Container>
-      </PageTemplate>
+          </Suspense>
+        </main>
+      </Container>
     </>
   )
-}
-
-export default SinglePost
-
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const slug = params!.slug as string
-  const post = await getResourceBySlug(
-    slug,
-    path.join(process.cwd(), 'src/content/posts'),
-  )
-
-  return {
-    props: { post: { ...post, slug } },
-  }
-}
-
-export async function getStaticPaths() {
-  return {
-    paths: await getResourcesPaths(
-      path.join(process.cwd(), 'src/content/posts'),
-    ),
-    fallback: false,
-  }
 }

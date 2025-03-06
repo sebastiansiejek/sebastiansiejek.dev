@@ -1,3 +1,5 @@
+'use client'
+
 import SiteBranding from '../../views/SiteBranding'
 import Container from '../../views/Container'
 import NavbarMenu from './NavbarMenu'

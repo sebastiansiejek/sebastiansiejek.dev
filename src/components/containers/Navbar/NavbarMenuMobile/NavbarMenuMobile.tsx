@@ -6,9 +6,9 @@ import Link from 'next/link'
 import Button from '../../../views/Button'
 import clsx from 'clsx'
 import Socials from '../../Socials'
-import { Router } from 'next/router'
 import ModalOverlay from '../../../views/ModalOverlay/ModalOverlay'
 import dynamic from 'next/dynamic'
+import { Router } from 'next/router'
 
 const ThemeModeSwitcher = dynamic(() => import('../../ThemeModeSwitcher'), {
   ssr: false,

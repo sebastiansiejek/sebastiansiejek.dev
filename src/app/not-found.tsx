@@ -1,11 +1,18 @@
-import { NextSeo } from 'next-seo'
 import Navbar from '../components/containers/Navbar'
 import Socials from '../components/containers/Socials'
+import { Metadata } from 'next'
 
-export default function Custom404() {
+export const metadata: Metadata = {
+  title: 'Not found - 404',
+  robots: {
+    follow: false,
+    index: false,
+  },
+}
+
+export default function NotFound() {
   return (
     <>
-      <NextSeo title="404" nofollow noindex />
       <div>
         <div className={'fixed w-full z-10'}>
           <Navbar />

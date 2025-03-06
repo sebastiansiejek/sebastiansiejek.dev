@@ -1,12 +1,8 @@
-import Socials from '../../../containers/Socials'
-import Navbar from '../../../containers/Navbar'
-import { ReactNode } from 'react'
+import { PropsWithChildren } from 'react'
+import Navbar from 'components/containers/Navbar'
+import Socials from 'components/containers/Socials'
 
-interface IPageTemplate {
-  children: ReactNode
-}
-
-const PageTemplate = ({ children }: IPageTemplate) => {
+export default function BlogLayout({ children }: PropsWithChildren) {
   return (
     <>
       <Navbar />
@@ -20,5 +16,3 @@ const PageTemplate = ({ children }: IPageTemplate) => {
     </>
   )
 }
-
-export default PageTemplate
