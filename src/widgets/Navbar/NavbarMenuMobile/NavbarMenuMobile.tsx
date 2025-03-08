@@ -1,18 +1,13 @@
 import { Divide as Hamburger } from 'hamburger-react'
 import { useState } from 'react'
-import Container from '../../../views/Container'
 import { INavbarMenu } from '../NavbarMenu/NavbarMenu'
 import Link from 'next/link'
-import Button from '../../../views/Button'
 import clsx from 'clsx'
-import Socials from '../../Socials'
-import ModalOverlay from '../../../views/ModalOverlay/ModalOverlay'
-import dynamic from 'next/dynamic'
 import { Router } from 'next/router'
-
-const ThemeModeSwitcher = dynamic(() => import('../../ThemeModeSwitcher'), {
-  ssr: false,
-})
+import Button from 'shared/ui/Button'
+import ModalOverlay from 'shared/ui/ModalOverlay'
+import Socials from 'widgets/Socials'
+import Container from 'shared/ui/Container'
 
 interface INavbarMenuMobile {
   menu: INavbarMenu['data']
@@ -69,7 +64,6 @@ const NavbarMenuMobile = ({ menu }: INavbarMenuMobile) => {
       >
         <Container className={'flex flex-col'}>
           <div className="flex w-full items-center justify-between ">
-            {/*<ThemeModeSwitcher />*/}
             <div className="ml-auto">
               <Hamburger toggle={() => setOpen(!isOpen)} toggled={isOpen} />
             </div>

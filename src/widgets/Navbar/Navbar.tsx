@@ -1,11 +1,11 @@
 'use client'
 
-import SiteBranding from '../../views/SiteBranding'
-import Container from '../../views/Container'
 import NavbarMenu from './NavbarMenu'
 import NavbarMenuMobile from './NavbarMenuMobile'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
+import SiteBranding from 'shared/ui/SiteBranding'
+import Container from 'shared/ui/Container'
 
 const ThemeModeSwitcher = dynamic(() => import('../ThemeModeSwitcher'), {
   ssr: false,

@@ -1,5 +1,5 @@
-import Navbar from 'components/containers/Navbar'
-import Socials from 'components/containers/Socials'
+import Socials from 'widgets/Socials'
+import Navbar from 'widgets/Navbar'
 
 export default function HomePage() {
   return (

@@ -1,6 +1,6 @@
 import { PropsWithChildren } from 'react'
-import Navbar from 'components/containers/Navbar'
-import Socials from 'components/containers/Socials'
+import Socials from 'widgets/Socials'
+import Navbar from 'widgets/Navbar'
 
 export default function BlogLayout({ children }: PropsWithChildren) {
   return (

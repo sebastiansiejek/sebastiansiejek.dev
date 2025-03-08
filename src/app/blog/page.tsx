@@ -1,7 +1,7 @@
 import { getAllResources, sortResources } from 'lib/resources/resourcesService'
 import path from 'path'
-import BlogPosts from 'components/views/BlogPosts'
 import { Metadata } from 'next'
+import BlogPosts from 'shared/ui/BlogPosts'
 
 export const metadata: Metadata = {
   title: 'Blog - SebastianSiejek.dev',

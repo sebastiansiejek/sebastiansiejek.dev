@@ -3,13 +3,13 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 import 'dracula-prism/dist/css/dracula-prism.min.css'
 import Image from 'next/image'
 import { TextLink } from 'shared/ui/TextLink/TextLink'
-import Container from 'components/views/Container'
 import {
   getResourceBySlug,
   getResourcesPaths,
 } from 'lib/resources/resourcesService'
 import { Suspense } from 'react'
 import { Metadata } from 'next'
+import Container from 'shared/ui/Container'
 
 type PageProps = {
   params: Promise<{ slug: string }>
