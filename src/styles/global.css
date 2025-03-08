@@ -5,18 +5,18 @@
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 @theme {
-    --font-*: initial;
-    --font-sans: 'Inter', sans-serif;
-    --font-mono: 'Inconsolata', monospace;
+  --font-*: initial;
+  --font-sans: var(--font-inter), sans-serif;
+  --font-mono: var(--font-inconsolata), monospace;
 
-    --color-*: initial;
-    --color-primary: #3ceab8;
+  --color-*: initial;
+  --color-primary: #3ceab8;
 
-    --color-n-0: #fff;
-    --color-n-1: #edf2f6;
-    --color-n: #17181d;
+  --color-n-0: #fff;
+  --color-n-1: #edf2f6;
+  --color-n: #17181d;
 
-    --color-dark-body: #0c121a;
+  --color-dark-body: #0c121a;
 }
 
 /*
@@ -28,11 +28,11 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
-    *,
-    ::after,
-    ::before,
-    ::backdrop,
-    ::file-selector-button {
-        border-color: var(--color-gray-200, currentColor);
-    }
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
 }

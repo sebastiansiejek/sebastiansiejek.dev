@@ -1,8 +1,6 @@
 import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
-import { serialize } from 'next-mdx-remote/serialize'
-import mdxPrism from 'mdx-prism'
 
 const MDX_PATTERN = /\.mdx?$/
 
@@ -14,18 +12,8 @@ export const getResourceBySlug = async (slug: string, resourcePath: string) => {
   const resourceFilePath = path.join(resourcePath, `${slug}.mdx`)
   const source = fs.readFileSync(resourceFilePath)
   const { content, data } = matter(source)
-  const frontmatter = {
-    ...data,
-  }
 
-  const transformedMdx = await serialize(content, {
-    mdxOptions: {
-      rehypePlugins: [mdxPrism],
-    },
-    scope: data,
-  })
-
-  return { transformedMdx, frontmatter }
+  return { content, frontmatter: data }
 }
 
 export const getResourcesPaths = async (resourcePath: string) => {
@@ -33,7 +21,7 @@ export const getResourcesPaths = async (resourcePath: string) => {
 
   return resourcesSlugs
     .map((path) => path.replace(MDX_PATTERN, ''))
-    .map((slug) => ({ params: { slug } }))
+    .map((slug) => ({ slug }))
 }
 
 export const getResourceFrontmatter = ({
