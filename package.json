@@ -16,7 +16,6 @@
     "dracula-prism": "^2.1.16",
     "gray-matter": "^4.0.3",
     "hamburger-react": "^2.5.2",
-    "mdx-prism": "^0.3.4",
     "next": "15.2.1",
     "next-mdx-remote": "^5.0.0",
     "next-seo": "^6.6.0",
