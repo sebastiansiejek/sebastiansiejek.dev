@@ -1,5 +1,3 @@
-'use client'
-
 import Link from 'next/link'
 import NavbarMenu from 'widgets/Navbar/NavbarMenu/NavbarMenu'
 import NavbarMenuMobile from 'widgets/Navbar/NavbarMenuMobile/NavbarMenuMobile'

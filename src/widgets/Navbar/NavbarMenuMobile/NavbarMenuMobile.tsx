@@ -1,3 +1,5 @@
+'use client'
+
 import { Divide as Hamburger } from 'hamburger-react'
 import { useState } from 'react'
 import { INavbarMenu } from '../NavbarMenu/NavbarMenu'
