@@ -1,15 +1,11 @@
 'use client'
 
-import NavbarMenu from './NavbarMenu'
-import NavbarMenuMobile from './NavbarMenuMobile'
 import Link from 'next/link'
-import dynamic from 'next/dynamic'
-import SiteBranding from 'shared/ui/SiteBranding'
-import Container from 'shared/ui/Container'
-
-const ThemeModeSwitcher = dynamic(() => import('../ThemeModeSwitcher'), {
-  ssr: false,
-})
+import NavbarMenu from 'widgets/Navbar/NavbarMenu/NavbarMenu'
+import NavbarMenuMobile from 'widgets/Navbar/NavbarMenuMobile/NavbarMenuMobile'
+import ThemeModeSwitcher from 'widgets/ThemeModeSwitcher/ThemeModeSwitcher'
+import SiteBranding from 'shared/ui/SiteBranding/SiteBranding'
+import Container from 'shared/ui/Container/Container'
 
 const menu = [
   {

@@ -4,10 +4,10 @@ import { INavbarMenu } from '../NavbarMenu/NavbarMenu'
 import Link from 'next/link'
 import clsx from 'clsx'
 import { Router } from 'next/router'
-import Button from 'shared/ui/Button'
-import ModalOverlay from 'shared/ui/ModalOverlay'
-import Socials from 'widgets/Socials'
-import Container from 'shared/ui/Container'
+import Button from 'shared/ui/Button/Button'
+import Socials from 'widgets/Socials/Socials'
+import Container from 'shared/ui/Container/Container'
+import ModalOverlay from 'shared/ui/ModalOverlay/ModalOverlay'
 
 interface INavbarMenuMobile {
   menu: INavbarMenu['data']

@@ -9,7 +9,7 @@ import {
 } from 'lib/resources/resourcesService'
 import { Suspense } from 'react'
 import { Metadata } from 'next'
-import Container from 'shared/ui/Container'
+import Container from 'shared/ui/Container/Container'
 
 type PageProps = {
   params: Promise<{ slug: string }>
