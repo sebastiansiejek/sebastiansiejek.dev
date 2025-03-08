@@ -6,7 +6,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky install",
+    "prepare": "husky",
     "format": "prettier src/**/*.* --write",
     "test": "jest",
     "check-types": "tsc --noEmit"
