@@ -8,7 +8,8 @@
     "lint": "next lint",
     "prepare": "husky install",
     "format": "prettier src/**/*.* --write",
-    "test": "jest"
+    "test": "jest",
+    "check-types": "tsc --noEmit"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -53,7 +54,8 @@
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
-      "eslint --fix",
+      "npm run check-types",
+      "run run lint",
       "git add"
     ],
     "*.{ts,tsx,js,jsx,css,md}": "npm run format"
