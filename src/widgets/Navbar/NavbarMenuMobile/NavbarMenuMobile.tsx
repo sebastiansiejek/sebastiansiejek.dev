@@ -8,6 +8,7 @@ import Button from 'shared/ui/Button/Button'
 import Socials from 'widgets/Socials/Socials'
 import Container from 'shared/ui/Container/Container'
 import ModalOverlay from 'shared/ui/ModalOverlay/ModalOverlay'
+import ThemeModeSwitcher from 'widgets/ThemeModeSwitcher/ThemeModeSwitcher'
 
 interface INavbarMenuMobile {
   menu: INavbarMenu['data']
@@ -63,7 +64,8 @@ const NavbarMenuMobile = ({ menu }: INavbarMenuMobile) => {
         )}
       >
         <Container className={'flex flex-col'}>
-          <div className="flex w-full items-center justify-between ">
+          <div className="flex w-full items-center justify-between">
+            <ThemeModeSwitcher />
             <div className="ml-auto">
               <Hamburger toggle={() => setOpen(!isOpen)} toggled={isOpen} />
             </div>
