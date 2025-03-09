@@ -1,5 +1,5 @@
 import Image from 'next/legacy/image'
-import { getProviderLogo } from 'utils/getProviderLogo'
+import { getProviderLogo } from 'shared/utils/getProviderLogo'
 
 interface IBlogCardExternalProvider {
   providerUrl: string
