@@ -5,19 +5,20 @@ import { usePathname } from 'next/navigation'
 import { useTheme } from 'next-themes'
 
 const ThemeModeSwitcher = () => {
-  const iconClasses = 'w-4 h-4 fill-n-0'
   const { setTheme, resolvedTheme } = useTheme()
-  const isDarkMode = resolvedTheme === 'dark'
   const pathname = usePathname()
 
   if (pathname === '/') return null
 
+  const iconClasses = 'w-4 h-4 fill-n-0'
+  const isDarkTheme = resolvedTheme === 'dark'
+
   return (
     <button
-      onClick={() => setTheme(isDarkMode ? 'light' : 'dark')}
+      onClick={() => setTheme(isDarkTheme ? 'light' : 'dark')}
       className={'transition cursor-pointer hover:opacity-80'}
     >
-      {isDarkMode ? (
+      {isDarkTheme ? (
         <CiLight className={iconClasses} />
       ) : (
         <CiDark className={iconClasses} />
