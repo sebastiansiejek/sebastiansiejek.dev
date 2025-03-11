@@ -12,6 +12,7 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
+    "@sentry/nextjs": "^9.5.0",
     "clsx": "^2.1.1",
     "dracula-prism": "^2.1.16",
     "gray-matter": "^4.0.3",
