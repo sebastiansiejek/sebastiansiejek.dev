@@ -2,6 +2,7 @@ import { PropsWithChildren } from 'react'
 import { AppProvider } from 'providers/AppProvider/AppProvider'
 import { Metadata } from 'next'
 import { Inconsolata, Inter } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
 import 'styles/global.css'
 
 export const metadata: Metadata = {
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
       suppressHydrationWarning
       className={`${inter.variable} font-sans`}
     >
+      <Analytics />
       <body>
         <AppProvider>{children}</AppProvider>
       </body>
