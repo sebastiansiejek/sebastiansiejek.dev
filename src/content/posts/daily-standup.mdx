@@ -1,0 +1,64 @@
+---
+title: "Automatyzacja codziennych stand-upów z daily-standup"
+publishedAt: '2025-05-17'
+thumbnail: /images/posts/daily-standup/daily-standup.png
+tags: jira, timecamp, standup
+---
+
+# 🧰 Automatyzacja codziennych stand-upów z `daily-standup`
+
+Codzienne stand-upy to fundament pracy zespołów w metodologie AGILE – ale ręczne przygotowanie listy zadań to strata czasu. Zamiast tracić rano 15 minut na analizę [TimeCampa](https://timecamp.com) oraz [JIRA](https://www.atlassian.com/software/jira), postanowiłem zautomatyzować ten proces.
+
+Poznaj `daily-standup` – narzędzie CLI + przeglądarkowe, które automatycznie generuje podsumowanie zadań z ostatniego dnia roboczego.
+
+## 🚀 Dlaczego powstało `daily-standup`?
+
+Celem było stworzenie prostego, ale efektywnego narzędzia, które:
+
+- 📥 Pobiera wpisy czasu z TimeCamp
+- 🔗 Łączy je z zadaniami JIRA (na podstawie ID w nazwie zadania)
+- 🧾 Generuje czytelny raport gotowy do odczytania na stand-upie
+- 📅 Obsługuje specjalne przypadki takie jak poniedziałki czy weekendy
+- 🖥️ Oferuje tryb przeglądarkowy z możliwością sortowania danych w tabeli
+
+### 🔍 Przypadki użycia:
+
+- ⏱ **Optymalizacja czasu przed stand-upem** – zamiast tracić 10–15 minut na analizowanie tasków z poprzedniego dnia, masz gotowy raport w 3 sekundy.
+- 🤖 **Automatyzacja stand-upów** – zamiast improwizowanych statusów, masz przed sobą konkretny, wygenerowany raport oparty na rzeczywistych danych.
+- 🧠 **Wsparcie pamięci zespołu** – przy wielu projektach trudno przypomnieć sobie szczegóły z poprzedniego dnia; `daily-standup` robi to za Ciebie.
+
+## ⚙️ Szybki start
+
+### 1. Instalacja
+
+```bash
+npm install -g @sebastiansiejek/daily-standup
+```
+### 2. Uruchomienie
+```bash
+daily-standup
+```
+
+<b>Tryb przeglądarkowy</b>
+```bash
+daily-standup browser
+```
+Otworzy się lokalny serwer z podsumowaniem w przeglądarce – tabela z możliwością sortowania.
+
+> Przy pierwszym uruchomieniu zostaniesz poproszony o podanie tokenów API do JIRA i TimeCamp. Dane są lokalnie zapisywane w .env.
+
+## 🛠️ Technologie
+
+Projekt został zbudowany w oparciu o:
+- Node.js
+- TypeScript
+- Vite
+- Vitest (testy jednostkowe)
+
+## 📈 Korzyści
+- ✅ Oszczędność czasu – automatyzacja przygotowania raportu
+- ✅ Większa dokładność – analiza na podstawie rzeczywistych wpisów czasu z TimeCampa
+- ✅ Tryb przeglądarkowy – przejrzysty widok do wyświetlenia na spotkaniu
+- ✅ Bezpieczeństwo – tokeny API są przechowywane lokalnie na Twoim komputerze
+
+[Repozytorium](https://github.com/sebastiansiejek/daily-standup)

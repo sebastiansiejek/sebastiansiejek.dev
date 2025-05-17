@@ -16,11 +16,7 @@ type PageProps = {
 }
 
 export async function generateStaticParams() {
-  const posts = await getResourcesPaths(
-    path.join(process.cwd(), 'src/content/posts'),
-  )
-
-  return posts
+  return await getResourcesPaths(path.join(process.cwd(), 'src/content/posts'))
 }
 
 export async function generateMetadata(props: PageProps): Promise<Metadata> {
@@ -80,18 +76,23 @@ export default async function SinglePost(props: PageProps) {
                 h4: (props) => (
                   <h3 className={'text-xl font-medium'} {...props} />
                 ),
-                img: (props) => (
-                  <Image
-                    {...props}
-                    sizes="100vw"
-                    style={{
-                      width: '100%',
-                      height: 'auto',
-                    }}
-                    width={760}
-                    height={300}
-                  />
-                ),
+                img: (props) => {
+                  const alt = props.alt || ''
+
+                  return (
+                    <Image
+                      {...props}
+                      alt={alt}
+                      sizes="100vw"
+                      style={{
+                        width: '100%',
+                        height: 'auto',
+                      }}
+                      width={760}
+                      height={300}
+                    />
+                  )
+                },
                 blockquote: (props) => {
                   return (
                     <blockquote
