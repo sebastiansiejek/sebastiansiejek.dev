@@ -100,7 +100,19 @@ export default async function SinglePost(props: PageProps) {
                     />
                   )
                 },
-                a: TextLink,
+                a: ({ href, ...properties }) => {
+                  const target = href.startsWith('http') ? '_blank' : ''
+                  const rel = target === '_blank' ? 'noopener noreferrer' : ''
+
+                  return (
+                    <TextLink
+                      href={href}
+                      target={target}
+                      rel={rel}
+                      {...properties}
+                    />
+                  )
+                },
               }}
             />
           </Suspense>
