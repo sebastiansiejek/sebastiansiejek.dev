@@ -27,7 +27,6 @@
     "nextjs-progressbar": "^0.0.16",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "react-scan": "^0.3.4",
     "react-spinners": "^0.17.0",
     "sharp": "^0.34.1",
     "tailwind-merge": "^3.3.0"
