@@ -1,5 +1,5 @@
-import Socials from 'widgets/Socials/Socials'
-import Navbar from 'widgets/Navbar/Navbar'
+import Socials from '@/widgets/Socials/Socials'
+import Navbar from '@/widgets/Navbar/Navbar'
 
 export default function HomePage() {
   return (

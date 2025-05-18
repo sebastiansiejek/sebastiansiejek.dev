@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
-import Navbar from 'widgets/Navbar/Navbar'
-import Socials from 'widgets/Socials/Socials'
+import Navbar from '@/widgets/Navbar/Navbar'
+import Socials from '@/widgets/Socials/Socials'
 
 export const metadata: Metadata = {
   title: 'Not found - 404',

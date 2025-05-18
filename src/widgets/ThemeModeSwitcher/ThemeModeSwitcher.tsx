@@ -3,7 +3,7 @@
 import { CiDark, CiLight } from 'react-icons/ci'
 import { usePathname } from 'next/navigation'
 import { useTheme } from 'next-themes'
-import { useIsMounted } from 'shared/hooks/useIsMounted/useIsMounted'
+import { useIsMounted } from '@/shared/hooks/useIsMounted/useIsMounted'
 
 const ThemeModeSwitcher = () => {
   const { setTheme, resolvedTheme } = useTheme()

@@ -6,11 +6,11 @@ import { INavbarMenu } from '../NavbarMenu/NavbarMenu'
 import Link from 'next/link'
 import clsx from 'clsx'
 import { Router } from 'next/router'
-import Button from 'shared/ui/Button/Button'
-import Socials from 'widgets/Socials/Socials'
-import Container from 'shared/ui/Container/Container'
-import ModalOverlay from 'shared/ui/ModalOverlay/ModalOverlay'
-import ThemeModeSwitcher from 'widgets/ThemeModeSwitcher/ThemeModeSwitcher'
+import Button from '@/shared/ui/Button/Button'
+import Socials from '@/widgets/Socials/Socials'
+import Container from '@/shared/ui/Container/Container'
+import ModalOverlay from '@/shared/ui/ModalOverlay/ModalOverlay'
+import ThemeModeSwitcher from '@/widgets/ThemeModeSwitcher/ThemeModeSwitcher'
 
 interface INavbarMenuMobile {
   menu: INavbarMenu['data']

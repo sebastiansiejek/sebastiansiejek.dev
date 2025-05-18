@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next'
 import * as process from 'node:process'
-import { getAllResources } from 'lib/resources/resourcesService'
+import { getAllResources } from '@/lib/resources/resourcesService'
 import path from 'path'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

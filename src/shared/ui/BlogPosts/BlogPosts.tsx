@@ -1,5 +1,5 @@
-import Container from 'shared/ui/Container/Container'
-import BlogCard from 'shared/ui/Cards/BlogCard/BlogCard'
+import BlogCard from '@/shared/ui/Cards/BlogCard/BlogCard'
+import Container from '@/shared/ui/Container/Container'
 
 interface IBlogPosts {
   posts: IPosts

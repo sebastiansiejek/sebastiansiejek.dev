@@ -1,9 +1,9 @@
 import Link from 'next/link'
-import NavbarMenu from 'widgets/Navbar/NavbarMenu/NavbarMenu'
-import NavbarMenuMobile from 'widgets/Navbar/NavbarMenuMobile/NavbarMenuMobile'
-import ThemeModeSwitcher from 'widgets/ThemeModeSwitcher/ThemeModeSwitcher'
-import SiteBranding from 'shared/ui/SiteBranding/SiteBranding'
-import Container from 'shared/ui/Container/Container'
+import NavbarMenu from '@/widgets/Navbar/NavbarMenu/NavbarMenu'
+import NavbarMenuMobile from '@/widgets/Navbar/NavbarMenuMobile/NavbarMenuMobile'
+import ThemeModeSwitcher from '@/widgets/ThemeModeSwitcher/ThemeModeSwitcher'
+import SiteBranding from '@/shared/ui/SiteBranding/SiteBranding'
+import Container from '@/shared/ui/Container/Container'
 
 const menu = [
   {

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Button from 'shared/ui/Button/Button'
+import Button from '@/shared/ui/Button/Button'
 
 export interface INavbarMenu {
   data: { title: string; path: string }[]

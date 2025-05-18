@@ -2,14 +2,14 @@ import path from 'path'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import 'dracula-prism/dist/css/dracula-prism.min.css'
 import Image from 'next/image'
-import { TextLink } from 'shared/ui/TextLink/TextLink'
+import { Suspense } from 'react'
+import { Metadata } from 'next'
 import {
   getResourceBySlug,
   getResourcesPaths,
-} from 'lib/resources/resourcesService'
-import { Suspense } from 'react'
-import { Metadata } from 'next'
-import Container from 'shared/ui/Container/Container'
+} from '@/lib/resources/resourcesService'
+import Container from '@/shared/ui/Container/Container'
+import { TextLink } from '@/shared/ui/TextLink/TextLink'
 
 type PageProps = {
   params: Promise<{ slug: string }>
