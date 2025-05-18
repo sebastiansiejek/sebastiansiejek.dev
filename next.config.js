@@ -13,8 +13,8 @@ module.exports = withSentryConfig(module.exports, {
   // For all available options, see:
   // https://www.npmjs.com/package/@sentry/webpack-plugin#options
 
-  org: 'sebastian-siejek-dev',
-  project: 'sebastiansiejek-dev',
+  org: 'sebastian-siejek-dev-2a',
+  project: 'sebastiansiejekdev',
 
   // Only print logs for uploading source maps in CI
   silent: !process.env.CI,
@@ -24,11 +24,6 @@ module.exports = withSentryConfig(module.exports, {
 
   // Upload a larger set of source maps for prettier stack traces (increases build time)
   widenClientFileUpload: true,
-
-  // Automatically annotate React components to show their full name in breadcrumbs and session replay
-  reactComponentAnnotation: {
-    enabled: true,
-  },
 
   // Route browser requests to Sentry through a Next.js rewrite to circumvent ad-blockers.
   // This can increase your server load as well as your hosting bill.
