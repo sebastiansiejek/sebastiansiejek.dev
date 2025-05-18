@@ -10,11 +10,7 @@ const ThemeModeSwitcher = () => {
   const pathname = usePathname()
   const mounted = useIsMounted()
 
-  if (pathname === '/') return null
-
-  if (!mounted) return null
-
-  const iconClasses = 'w-4 h-4 fill-n-0'
+  const iconClasses = 'w-4 h-4'
   const isDarkTheme = resolvedTheme === 'dark'
 
   return (

@@ -30,7 +30,13 @@ const Socials: React.FunctionComponent = () => {
             rel="noopener noreferrer"
             className="transition-opacity block w-[40px] h-[40px] hover:opacity-70"
           >
-            <Image src={icon} width={40} height={40} alt={name} />
+            <Image
+              src={icon}
+              width={40}
+              height={40}
+              alt={name}
+              className={'brightness-100 invert-100'}
+            />
           </a>
         )
       })}

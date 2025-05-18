@@ -7,7 +7,7 @@ export default function BlogLayout({ children }: PropsWithChildren) {
     <>
       <Navbar />
       <main className="py-12">{children}</main>
-      <footer className={'bg-n py-12 text-n-0'}>
+      <footer className={' py-12'}>
         <div className="flex items-center justify-center flex-col">
           <Socials />
           <p className={'mt-5'}>sebastiansiejek.dev</p>

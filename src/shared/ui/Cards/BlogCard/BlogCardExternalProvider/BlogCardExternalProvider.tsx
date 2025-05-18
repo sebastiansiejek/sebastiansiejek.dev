@@ -13,7 +13,7 @@ const BlogCardExternalProvider = ({
   if (!src) return null
 
   return (
-    <div className="bg-n-0 p-1 flex absolute top-0 right-0">
+    <div className="p-1 flex absolute top-0 right-0">
       <Image
         src={src}
         width={80}

@@ -7,7 +7,7 @@ export default function HomePage() {
       <div className={'fixed w-full z-10'}>
         <Navbar />
       </div>
-      <div className="bg-n w-screen h-screen flex flex-col justify-center items-center text-center">
+      <div className=" w-screen h-screen flex flex-col justify-center items-center text-center">
         <h1 className={'text-3xl md:text-5xl font-mono text-primary uppercase'}>
           Sebastian Siejek
         </h1>

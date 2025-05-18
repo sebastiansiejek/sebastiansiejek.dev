@@ -15,7 +15,7 @@ const ButtonOutline = ({
   return (
     <button
       className={clsx(
-        'transition-colors flex justify-center items-center cursor-pointer relative border-2 group px-4 py-2 overflow-hidden hover:border-n-0',
+        'transition-colors flex justify-center items-center cursor-pointer relative border-2 group px-4 py-2 overflow-hidden',
         {
           'border-n-0': isActive,
           'w-full': isFullWidth,

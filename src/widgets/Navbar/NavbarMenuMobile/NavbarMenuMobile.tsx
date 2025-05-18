@@ -58,7 +58,7 @@ const NavbarMenuMobile = ({ menu }: INavbarMenuMobile) => {
       <Hamburger toggle={setOpen} toggled={isOpen} />
       <div
         className={clsx(
-          'transition-transform z-40 overflow-y-auto fixed top-0 right-0 bg-n w-3/4 h-full pt-2 pb-8 flex',
+          'transition-transform z-40 overflow-y-auto fixed top-0 right-0  w-3/4 h-full pt-2 pb-8 flex',
           {
             'translate-x-0': isOpen,
             'translate-x-full': !isOpen,

@@ -56,10 +56,7 @@ export default async function SinglePost(props: PageProps) {
               source={post.content}
               components={{
                 code: (props) => (
-                  <code
-                    className={'text-primary bg-n font-mono p-1'}
-                    {...props}
-                  />
+                  <code className={'text-primary font-mono p-1'} {...props} />
                 ),
                 ol: (props) => {
                   return <ol className={'list-decimal pl-4'} {...props} />
@@ -94,12 +91,7 @@ export default async function SinglePost(props: PageProps) {
                   )
                 },
                 blockquote: (props) => {
-                  return (
-                    <blockquote
-                      {...props}
-                      className={'p-4 bg-n/40 text-n-0 dark:bg-n/90 '}
-                    />
-                  )
+                  return <blockquote {...props} className={'p-4'} />
                 },
                 a: ({ href, ...properties }) => {
                   const target = href.startsWith('http') ? '_blank' : ''
