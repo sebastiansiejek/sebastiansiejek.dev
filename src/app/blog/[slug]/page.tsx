@@ -1,6 +1,6 @@
 import path from 'path'
 import { MDXRemote } from 'next-mdx-remote/rsc'
-import 'dracula-prism/dist/css/dracula-prism.min.css'
+import '@/styles/pre.css'
 import Image from 'next/image'
 import { Suspense } from 'react'
 import { Metadata } from 'next'
@@ -43,7 +43,7 @@ export default async function SinglePost(props: PageProps) {
       <Container>
         <h1
           className={
-            'font-mono text-3xl mb-12 dark:text-primary font-bold md:text-center'
+            'font-mono text-3xl mb-12 text-primary font-bold md:text-center'
           }
         >
           {post.frontmatter.title}
