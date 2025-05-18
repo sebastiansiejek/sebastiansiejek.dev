@@ -4,6 +4,7 @@ import { Inconsolata, Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { AppProvider } from '@/providers/AppProvider/AppProvider'
 import '@/styles/global.css'
+import { Newsletter } from '@/widgets/Newsletter/Newsletter'
 
 export const metadata: Metadata = {
   title: 'Sebastian Siejek',
@@ -35,7 +36,10 @@ export default function RootLayout({ children }: PropsWithChildren) {
     >
       <Analytics />
       <body>
-        <AppProvider>{children}</AppProvider>
+        <AppProvider>
+          {children}
+          <Newsletter />
+        </AppProvider>
       </body>
     </html>
   )

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Button from '@/shared/ui/Button/Button'
+import { Button } from '@/shared/ui/button'
 
 export interface INavbarMenu {
   data: { title: string; path: string }[]
@@ -14,7 +14,7 @@ const NavbarMenu = ({ data }: INavbarMenu) => {
           key={path}
         >
           <Link href={path} passHref>
-            <Button title={title} variant={'link'} />
+            <Button variant={'link'}>{title}</Button>
           </Link>
         </li>
       ))}
