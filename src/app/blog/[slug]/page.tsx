@@ -4,12 +4,12 @@ import '@/styles/pre.css'
 import Image from 'next/image'
 import { Suspense } from 'react'
 import { Metadata } from 'next'
+import Container from '@/shared/ui/Container/Container'
+import { TextLink } from '@/shared/ui/TextLink/TextLink'
 import {
   getResourceBySlug,
   getResourcesPaths,
-} from '@/lib/resources/resourcesService'
-import Container from '@/shared/ui/Container/Container'
-import { TextLink } from '@/shared/ui/TextLink/TextLink'
+} from '@/shared/lib/resources/resourcesService'
 
 type PageProps = {
   params: Promise<{ slug: string }>

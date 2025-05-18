@@ -4,7 +4,7 @@ import BlogPosts from '@/shared/ui/BlogPosts/BlogPosts'
 import {
   getAllResources,
   sortResources,
-} from '@/lib/resources/resourcesService'
+} from '@/shared/lib/resources/resourcesService'
 
 export const metadata: Metadata = {
   title: 'Blog - SebastianSiejek.dev',
