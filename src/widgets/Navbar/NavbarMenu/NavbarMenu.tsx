@@ -19,7 +19,7 @@ const NavbarMenu = ({ data }: INavbarMenu) => {
             className={'relative group text-primary font-mono font-medium'}
             key={path}
           >
-            <Link href={path} passHref legacyBehavior>
+            <Link href={path} passHref>
               <NavigationMenuLink className={'text-lg'}>
                 {title}
               </NavigationMenuLink>

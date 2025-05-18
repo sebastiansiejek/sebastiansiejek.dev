@@ -32,13 +32,15 @@ export default function RootLayout({ children }: PropsWithChildren) {
     <html
       lang="pl"
       suppressHydrationWarning
-      className={`${inter.variable} font-sans`}
+      className={`${inter.variable} ${inconsolata.variable} font-sans`}
     >
       <Analytics />
       <body>
         <AppProvider>
           {children}
-          <Newsletter />
+          <div className={'bg-foreground text-primary-foreground'}>
+            <Newsletter />
+          </div>
         </AppProvider>
       </body>
     </html>

@@ -4,7 +4,7 @@ import Navbar from '@/widgets/Navbar/Navbar'
 export default function HomePage() {
   return (
     <div>
-      <div className={'fixed w-full z-10'}>
+      <div className={'absolute w-full z-10'}>
         <Navbar />
       </div>
       <div className=" w-screen h-screen flex flex-col justify-center items-center text-center">
