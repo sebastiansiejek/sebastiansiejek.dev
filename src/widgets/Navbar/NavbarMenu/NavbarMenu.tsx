@@ -1,8 +1,8 @@
 import Link from 'next/link'
-import { Button } from '@/shared/ui/button'
 import {
   NavigationMenu,
   NavigationMenuItem,
+  NavigationMenuLink,
   NavigationMenuList,
 } from '@/shared/ui/navigation-menu'
 
@@ -19,8 +19,10 @@ const NavbarMenu = ({ data }: INavbarMenu) => {
             className={'relative group text-primary font-mono font-medium'}
             key={path}
           >
-            <Link href={path} passHref>
-              <Button variant={'link'}>{title}</Button>
+            <Link href={path} passHref legacyBehavior>
+              <NavigationMenuLink className={'text-lg'}>
+                {title}
+              </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
         ))}

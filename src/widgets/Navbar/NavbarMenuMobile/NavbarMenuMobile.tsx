@@ -1,16 +1,21 @@
 'use client'
 
-import { Divide as Hamburger } from 'hamburger-react'
+import { Loader2, Menu } from 'lucide-react'
+import * as React from 'react'
 import { useState } from 'react'
 import { INavbarMenu } from '../NavbarMenu/NavbarMenu'
 import Link from 'next/link'
-import clsx from 'clsx'
 import { Router } from 'next/router'
 import Socials from '@/widgets/Socials/Socials'
 import Container from '@/shared/ui/Container/Container'
-import ModalOverlay from '@/shared/ui/ModalOverlay/ModalOverlay'
 import ThemeModeSwitcher from '@/widgets/ThemeModeSwitcher/ThemeModeSwitcher'
-import { Button } from '@/shared/ui/button'
+import { Sheet, SheetContent, SheetTrigger } from '@/shared/ui/sheet'
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+} from '@/shared/ui/navigation-menu'
 
 interface INavbarMenuMobile {
   menu: INavbarMenu['data']
@@ -29,51 +34,36 @@ function NavbarMenuMobileItemLink(props: {
   })
 
   return (
-    <li
-      className={
-        'relative group text-primary font-mono flex font-medium w-full'
-      }
-    >
+    <NavigationMenuItem>
       <Link href={props.href} passHref className={'w-full flex justify-end'}>
-        <Button
-          variant={'link'}
-          isLoading={isLoading}
+        <NavigationMenuLink
+          className={'text-lg flex items-center justify-end flex-row'}
           onClick={() => {
             setLoading(true)
           }}
         >
+          {isLoading && <Loader2 className="animate-spin" />}
           {props.title}
-        </Button>
+        </NavigationMenuLink>
       </Link>
-    </li>
+    </NavigationMenuItem>
   )
 }
 
-const NavbarMenuMobile = ({ menu }: INavbarMenuMobile) => {
+export const NavbarMenuMobile = ({ menu }: INavbarMenuMobile) => {
   const [isOpen, setOpen] = useState(false)
 
   return (
-    <div className={'lg:hidden'}>
-      <ModalOverlay isOpen={isOpen} toggle={() => setOpen(!isOpen)} />
-      <Hamburger toggle={setOpen} toggled={isOpen} />
-      <div
-        className={clsx(
-          'transition-transform z-40 overflow-y-auto fixed top-0 right-0  w-3/4 h-full pt-2 pb-8 flex',
-          {
-            'translate-x-0': isOpen,
-            'translate-x-full': !isOpen,
-          },
-        )}
-      >
-        <Container className={'flex flex-col'}>
-          <div className="flex w-full items-center justify-between">
-            <ThemeModeSwitcher />
-            <div className="ml-auto">
-              <Hamburger toggle={() => setOpen(!isOpen)} toggled={isOpen} />
-            </div>
-          </div>
-          <nav className={'py-10'}>
-            <ul className={'flex items-end flex-col w-full gap-6'}>
+    <Sheet open={isOpen} onOpenChange={setOpen}>
+      <SheetTrigger>
+        <Menu />
+      </SheetTrigger>
+      <SheetContent>
+        <Container className={'flex flex-col gap-6'}>
+          <NavigationMenu
+            className={'py-10 max-w-none w-full justify-end text-primary'}
+          >
+            <NavigationMenuList className={'flex-col items-end'}>
               {menu.map(({ title, path }) => (
                 <NavbarMenuMobileItemLink
                   key={path}
@@ -82,15 +72,16 @@ const NavbarMenuMobile = ({ menu }: INavbarMenuMobile) => {
                   setOpen={setOpen}
                 />
               ))}
-            </ul>
-          </nav>
-          <div className="flex justify-center mt-auto">
+            </NavigationMenuList>
+          </NavigationMenu>
+          <div className="flex justify-center">
             <Socials />
           </div>
+          <div className="flex w-full items-center justify-center">
+            <ThemeModeSwitcher />
+          </div>
         </Container>
-      </div>
-    </div>
+      </SheetContent>
+    </Sheet>
   )
 }
-
-export default NavbarMenuMobile

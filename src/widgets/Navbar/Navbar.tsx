@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import NavbarMenu from '@/widgets/Navbar/NavbarMenu/NavbarMenu'
-import NavbarMenuMobile from '@/widgets/Navbar/NavbarMenuMobile/NavbarMenuMobile'
 import ThemeModeSwitcher from '@/widgets/ThemeModeSwitcher/ThemeModeSwitcher'
 import SiteBranding from '@/shared/ui/SiteBranding/SiteBranding'
 import Container from '@/shared/ui/Container/Container'
+import { NavbarMenuMobile } from '@/widgets/Navbar/NavbarMenuMobile/NavbarMenuMobile'
 
 const menu = [
   {
@@ -30,7 +30,9 @@ const Navbar = () => {
               <ThemeModeSwitcher />
             </div>
           </div>
-          <NavbarMenuMobile menu={menu} />
+          <div className="lg:hidden flex items-center">
+            <NavbarMenuMobile menu={menu} />
+          </div>
         </div>
       </Container>
     </nav>
