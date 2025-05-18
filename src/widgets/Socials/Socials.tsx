@@ -35,7 +35,8 @@ const Socials: React.FunctionComponent = () => {
               width={40}
               height={40}
               alt={name}
-              className={'brightness-100 invert-100'}
+              unoptimized={true}
+              className={'brightness-100 invert-100 dark:invert-0'}
             />
           </a>
         )

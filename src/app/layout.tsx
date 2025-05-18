@@ -2,8 +2,8 @@ import { PropsWithChildren } from 'react'
 import { Metadata } from 'next'
 import { Inconsolata, Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
-import '@/styles/global.css'
 import { AppProvider } from '@/providers/AppProvider/AppProvider'
+import '@/styles/global.css'
 
 export const metadata: Metadata = {
   title: 'Sebastian Siejek',
