@@ -55,6 +55,14 @@ Projekt został zbudowany w oparciu o:
 - Vite
 - Vitest (testy jednostkowe)
 
+## Automatyzacja z n8n
+
+Proces przygotowania raportu dodałem również jako workflow w [n8n](https://n8n.io). Uruchamia się on zgodnie z harmonogramem, wyznacza odpowiedni zakres dat (uwzględniając poniedziałki i weekendy), pobiera wpisy z TimeCamp, łączy je z zadaniami w JIRA, a następnie tworzy tabelę HTML i wysyła gotowe podsumowanie e-mailem.
+
+![Workflow automatyzujący przygotowanie daily stand-upu w n8n](/images/posts/daily-standup/n8n-workflow.jpeg)
+
+<a href="/images/posts/daily-standup/daily-standup-workflow.json" download>Pobierz workflow n8n</a>
+
 ## 📈 Korzyści
 - ✅ Oszczędność czasu – automatyzacja przygotowania raportu
 - ✅ Większa dokładność – analiza na podstawie rzeczywistych wpisów czasu z TimeCampa

@@ -1,0 +1,591 @@
+{
+  "name": "daily standup",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 2,
+      "position": [
+        -864,
+        192
+      ],
+      "id": "b4c37ca9-0376-47b5-9763-ca065e38a6ae",
+      "name": "current date",
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "operation": "formatDate",
+        "date": "={{ $json.currentDate }}",
+        "format": "custom",
+        "customFormat": "d",
+        "outputFieldName": "dayOfWeek",
+        "options": {
+          "includeInputFields": false
+        }
+      },
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 2,
+      "position": [
+        -640,
+        192
+      ],
+      "id": "8f45deea-9379-4114-84ec-3c679d964ff5",
+      "name": "dayOfWeek"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.dayOfWeek }}",
+                    "rightValue": "0",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "ee4b03a1-b9ee-4540-bed0-a9d66ea3c2c4"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "a8bfdb5f-f786-4dd9-964a-923920063eca",
+                    "leftValue": "={{ $json.dayOfWeek }}",
+                    "rightValue": "1",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "d18fe6d2-d498-4678-bac4-ee372c697db3",
+                    "leftValue": "={{ $json.dayOfWeek.toNumber() }}",
+                    "rightValue": "={{ 0 }}",
+                    "operator": {
+                      "type": "number",
+                      "operation": "gt"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -416,
+        176
+      ],
+      "id": "f66b57b1-005c-471a-82b7-9264b9ecbd82",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "operation": "subtractFromDate",
+        "magnitude": "={{ $('current date').item.json.currentDate }}",
+        "duration": 3,
+        "outputFieldName": "startDate",
+        "options": {
+          "includeInputFields": false
+        }
+      },
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 2,
+      "position": [
+        -192,
+        0
+      ],
+      "id": "a3d212fd-6691-47f0-b13d-47682d2c6e60",
+      "name": "Sunday"
+    },
+    {
+      "parameters": {
+        "operation": "subtractFromDate",
+        "magnitude": "={{ $json.dayOfWeek }}",
+        "duration": 4,
+        "outputFieldName": "startDate",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 2,
+      "position": [
+        -192,
+        192
+      ],
+      "id": "8b26e901-d7c4-436e-9ad4-cb29e51215c9",
+      "name": "Monday"
+    },
+    {
+      "parameters": {
+        "operation": "formatDate",
+        "date": "={{ $json.startDate }}",
+        "format": "custom",
+        "customFormat": "yyyy-MM-dd",
+        "outputFieldName": "formattedStartDate",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 2,
+      "position": [
+        32,
+        192
+      ],
+      "id": "c5a7a004-2f52-44d0-b1a0-3ac895c09665",
+      "name": "Formatted start date"
+    },
+    {
+      "parameters": {
+        "operation": "subtractFromDate",
+        "magnitude": "={{ $('current date').item.json.currentDate }}",
+        "duration": 1,
+        "outputFieldName": "startDate",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 2,
+      "position": [
+        -192,
+        384
+      ],
+      "id": "ba88fb81-d8a0-4904-9d61-608fafbfdfce",
+      "name": "Weekday"
+    },
+    {
+      "parameters": {
+        "operation": "formatDate",
+        "date": "={{ $('current date').item.json.currentDate }}",
+        "format": "yyyy-MM-dd",
+        "outputFieldName": "formattedEndDate",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 2,
+      "position": [
+        256,
+        192
+      ],
+      "id": "ff606f56-ba7d-4786-8204-4e8b3d2fce46",
+      "name": "FormattedEndDate"
+    },
+    {
+      "parameters": {
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {
+              "fieldToAggregate": "task.name"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        704,
+        192
+      ],
+      "id": "4ff899be-d2d9-4e57-92a0-8b8b77706544",
+      "name": "Names of tasks"
+    },
+    {
+      "parameters": {
+        "jsCode": "const names = $input.first().json.name;\n\nconst ids = names\n  .map(n => {\n    const match = n.match(/\\[(TCD-\\d+)\\]/); // tylko ID w kwadratowych []\n    return match ? match[1] : null;\n  })\n  .filter(Boolean); // wyrzuca null\n\nreturn [{ json: { taskIds: ids } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        928,
+        192
+      ],
+      "id": "476cb1ee-a3ff-45ae-9117-451eedb6402b",
+      "name": "Task ids"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://app.timecamp.com/third_party/api/v3/time-entries",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "startDate",
+              "value": "={{ $('Formatted start date').item.json.formattedStartDate }}"
+            },
+            {
+              "name": "endDate",
+              "value": "={{ $json.formattedEndDate }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        480,
+        192
+      ],
+      "id": "ca39ddf0-65ac-4e53-b3c3-e3e26e57ff68",
+      "name": "Time entries",
+      "credentials": {
+        "httpBearerAuth": {
+          "id": "Of8YLffIEpFzbwkb",
+          "name": "API_TIMECAMP_TOKEN"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "returnAll": "=",
+        "options": {
+          "fields": "status, summary, customfield_10020",
+          "jql": "=key in ({{ $json.taskIds.join(\", \")}} )"
+        }
+      },
+      "type": "n8n-nodes-base.jira",
+      "typeVersion": 1,
+      "position": [
+        1152,
+        192
+      ],
+      "id": "65daee1f-1bbc-43b3-b410-2113cfae39b3",
+      "name": "Jira tasks",
+      "alwaysOutputData": false,
+      "credentials": {
+        "jiraSoftwareCloudApi": {
+          "id": "lb4Qn1Eo32vs3ytk",
+          "name": "Jira SW Cloud account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "html": "{{ $json.html }}"
+      },
+      "type": "n8n-nodes-base.html",
+      "typeVersion": 1.2,
+      "position": [
+        1824,
+        192
+      ],
+      "id": "987c22e8-4e39-4842-a9db-b04af265d24c",
+      "name": "HTML"
+    },
+    {
+      "parameters": {
+        "sendTo": "s.siejek@timecamp.com",
+        "subject": "Daily standup",
+        "message": "={{ $json.html }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        2048,
+        192
+      ],
+      "id": "49a24679-0016-436c-a6ac-b17d4e1d9f12",
+      "name": "Send a message",
+      "webhookId": "ac5da654-b18e-4c14-9dec-18367270f329",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "EQj3csCcGhmeQsWW",
+          "name": "timecamp gmail"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const formatDurationFromSeconds = (seconds) => {\n  const totalSeconds = Math.floor(seconds);\n  const hours = Math.floor(totalSeconds / 3600);\n  const minutes = Math.floor((totalSeconds % 3600) / 60);\n  const secs = totalSeconds % 60;\n\n  const pad = (num) => num.toString().padStart(2, '0');\n\n  return `${pad(hours)}:${pad(minutes)}:${pad(secs)}`;\n}\n\nconst getJiraIssueUrl = (domain, issueKey) => {\n  return `https://${domain}/browse/${issueKey}`;\n}\n\nconst timeEntries = $('Time entries').all().map(e => e.json)\nconst jiraTasks = $('Jira tasks').all().map(t => t.json)\n\nconst grouped = Object.values(\n  timeEntries.reduce((acc, entry) => {\n    const key = entry.task.name\n\n    if (!acc[key]) {\n      const jiraIssue = jiraTasks.find(task =>\n        entry.task.name.includes(task.key)\n      )\n\n      acc[key] = {\n        task: entry.task.name,\n        description: entry.description,\n        durationSeconds: 0,\n        date: entry.date,\n        tags: new Set(),\n        ...(jiraIssue && {\n          status: jiraIssue.fields.status.name,\n          link: getJiraIssueUrl('timecampdev.atlassian.net', jiraIssue.key),\n        }),\n      }\n    }\n\n    acc[key].durationSeconds += entry.duration\n    entry.tags.forEach(tag => acc[key].tags.add(tag.name))\n\n    return acc\n  }, {})\n)\n\nreturn grouped\n  .map(item => ({\n    ...item,\n    duration: formatDurationFromSeconds(item.durationSeconds),\n    tags: [...item.tags].join(', '),\n  }))\n  .sort((a, b) => b.durationSeconds - a.durationSeconds)\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1376,
+        192
+      ],
+      "id": "f25c7279-645a-4bab-9e4e-7f6a7f9217b4",
+      "name": "Map time entries with jira issue"
+    },
+    {
+      "parameters": {
+        "jsCode": "const cols = ['task','description','status','tags','date','duration','link'];\n\nlet html = `\n<style>\n  table { border-collapse: collapse; font-family: system-ui, Arial; font-size: 14px; }\n  th, td { border: 1px solid #ddd; padding: 6px 8px; }\n  th { background: #f8f9fa; text-align: left; }\n  a { color: #2563eb; text-decoration: none; }\n  a:hover { text-decoration: underline; }\n</style>\n<table>\n  <thead>\n    <tr>${cols.map(c=>`<th>${c}</th>`).join('')}</tr>\n  </thead>\n  <tbody>\n`;\n\nfor (const { json } of $input.all()) {\n  html += `<tr>${cols.map(c=>{\n    let v = json[c] ?? '';\n  \n    return `<td>${String(v)\n      .replaceAll('&','&amp;')\n      .replaceAll('<','&lt;')\n      .replaceAll('>','&gt;')}</td>`;\n  }).join('')}</tr>`;\n}\n\nhtml += `</tbody></table>`;\n\nreturn [{ json: { html } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1600,
+        192
+      ],
+      "id": "e0487916-7b39-42f0-85c6-fa8c07e1e28d",
+      "name": "Create table"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "10 9 * * 1-5"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -1088,
+        192
+      ],
+      "id": "ed1e45ea-f32a-4cd7-b627-114f252620b4",
+      "name": "Schedule Trigger"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "current date": {
+      "main": [
+        [
+          {
+            "node": "dayOfWeek",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "dayOfWeek": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Sunday",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Monday",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Weekday",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sunday": {
+      "main": [
+        [
+          {
+            "node": "Formatted start date",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Monday": {
+      "main": [
+        [
+          {
+            "node": "Formatted start date",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Formatted start date": {
+      "main": [
+        [
+          {
+            "node": "FormattedEndDate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Weekday": {
+      "main": [
+        [
+          {
+            "node": "Formatted start date",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "FormattedEndDate": {
+      "main": [
+        [
+          {
+            "node": "Time entries",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Names of tasks": {
+      "main": [
+        [
+          {
+            "node": "Task ids",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Task ids": {
+      "main": [
+        [
+          {
+            "node": "Jira tasks",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Time entries": {
+      "main": [
+        [
+          {
+            "node": "Names of tasks",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Jira tasks": {
+      "main": [
+        [
+          {
+            "node": "Map time entries with jira issue",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTML": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Map time entries with jira issue": {
+      "main": [
+        [
+          {
+            "node": "Create table",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create table": {
+      "main": [
+        [
+          {
+            "node": "HTML",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "current date",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "2163ff2f-f9f1-4e77-8300-6bf64cea7b6e",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "e8e0776e1e9ed1aef4b9aba7deae5b0f28d5e0ea210cbdeb83e1494803d40741"
+  },
+  "id": "YXX1q90DlKBuXwku",
+  "tags": []
+}
