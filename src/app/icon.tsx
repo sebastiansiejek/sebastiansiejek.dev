@@ -22,21 +22,19 @@ export function generateImageMetadata() {
 
 export default function Icon() {
   return new ImageResponse(
-    (
-      <div
-        style={{
-          width: '100%',
-          height: '100%',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          fontSize: 500,
-          background: '#3ceab8',
-          color: '#0c121a',
-        }}
-      >
-        S
-      </div>
-    ),
+    <div
+      style={{
+        width: '100%',
+        height: '100%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontSize: 500,
+        background: '#3ceab8',
+        color: '#0c121a',
+      }}
+    >
+      S
+    </div>,
   )
 }

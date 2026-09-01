@@ -3,6 +3,7 @@ import matter from 'gray-matter'
 import path from 'path'
 
 const MDX_PATTERN = /\.mdx?$/
+type ResourceFrontmatter = Omit<IPost, 'content' | 'slug'>
 
 export const getResourcesSlugs = (resourcePath: string) => {
   return fs.readdirSync(resourcePath).filter((path) => MDX_PATTERN.test(path))
@@ -13,7 +14,7 @@ export const getResourceBySlug = async (slug: string, resourcePath: string) => {
   const source = fs.readFileSync(resourceFilePath)
   const { content, data } = matter(source)
 
-  return { content, frontmatter: data }
+  return { content, frontmatter: data as ResourceFrontmatter }
 }
 
 export const getResourcesPaths = async (resourcePath: string) => {
@@ -35,8 +36,14 @@ export const getResourceFrontmatter = ({
   const fullPath = path.join(resourcePath, filename)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const { content, data } = matter(fileContents)
+  const frontmatter = data as ResourceFrontmatter
 
-  return { ...data, publishedAt: data.publishedAt || '', slug, content }
+  return {
+    ...frontmatter,
+    publishedAt: frontmatter.publishedAt || '',
+    slug,
+    content,
+  }
 }
 
 export const getAllResources = (resourcePath: string) => {
@@ -50,5 +57,6 @@ export const getAllResources = (resourcePath: string) => {
   })
 }
 
-export const sortResources = (resources: any[]) =>
-  resources.sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1))
+export const sortResources = <T extends { publishedAt: string }>(
+  resources: T[],
+) => resources.sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1))

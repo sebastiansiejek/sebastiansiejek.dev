@@ -1,6 +1,6 @@
 import { IButton } from '../Button'
 
-interface IButtonLink extends Omit<IButton, 'variant'> {}
+type IButtonLink = Omit<IButton, 'variant'>
 
 const ButtonLink = ({ children, title }: IButtonLink) => {
   return (

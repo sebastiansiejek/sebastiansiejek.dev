@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Image from 'next/legacy/image'
+import Image from 'next/image'
 import BlogCardExternalProvider from './BlogCardExternalProvider'
 
 const BlogCard = ({ slug, thumbnail, tags, title, excerpt, url }: IPost) => {
@@ -20,8 +20,9 @@ const BlogCard = ({ slug, thumbnail, tags, title, excerpt, url }: IPost) => {
         <div className="relative h-[180px]">
           <Image
             src={thumbnail}
-            className="w-full object-cover"
-            layout={'fill'}
+            className="object-cover"
+            fill
+            sizes="(max-width: 768px) calc(100vw - 40px), 768px"
             alt=""
           />
           {url && <BlogCardExternalProvider providerUrl={url} />}

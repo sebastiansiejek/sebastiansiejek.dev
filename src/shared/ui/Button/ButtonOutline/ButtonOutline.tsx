@@ -2,7 +2,7 @@ import clsx from 'clsx'
 import { IButton } from '../Button'
 import { ClipLoader } from 'react-spinners'
 
-interface IButtonOutline extends Omit<IButton, 'variant'> {}
+type IButtonOutline = Omit<IButton, 'variant'>
 
 const ButtonOutline = ({
   isActive,
