@@ -1,0 +1,200 @@
+{
+  "Site": {
+    "localeName": "EN",
+    "alternateLocaleName": "PL",
+    "nav": {
+      "work": "Work",
+      "services": "Services",
+      "about": "About",
+      "writing": "Writing",
+      "contact": "Contact"
+    },
+    "menu": "Menu",
+    "close": "Close",
+    "skipToContent": "Skip to content",
+    "navigationLabel": "Primary navigation",
+    "hero": {
+      "eyebrow": "Software Engineer",
+      "title": "I build applications, stores and automations from idea to launch.",
+      "description": "I turn ideas and manual processes into digital products ready for real-world use.",
+      "primary": "Tell me what you want to build",
+      "secondary": "See my work",
+      "imageAlt": "Layers of graphite materials connected by a mint line, representing an end-to-end product process"
+    },
+    "proofs": {
+      "label": "Experience in numbers",
+      "experience": {
+        "label": "years of commercial experience"
+      },
+      "users": {
+        "label": "people use the SaaS I help develop"
+      },
+      "projects": {
+        "label": "web projects delivered"
+      },
+      "delivery": {
+        "value": "End to end",
+        "label": "from architecture to deployment"
+      }
+    },
+    "work": {
+      "title": "Selected work",
+      "intro": "Independent products and commercial delivery. Each project answers a concrete problem, not a technology trend.",
+      "view": "Read the case study",
+      "live": "View the live product",
+      "repo": "Source code"
+    },
+    "services": {
+      "eyebrow": "Ways to work together",
+      "title": "Technology directed by the business goal.",
+      "intro": "I help teams move from an unclear problem to a solution they can launch, measure and continue developing.",
+      "items": {
+        "applications": {
+          "title": "Web applications and MVPs",
+          "text": "I design the architecture, interface and delivery process. The scope is lean enough to validate quickly without creating fragile foundations."
+        },
+        "automation": {
+          "title": "Process automation and AI",
+          "text": "I connect systems, organise data flows and remove repetitive work. I use AI where it creates a measurable advantage."
+        },
+        "commerce": {
+          "title": "WordPress and WooCommerce",
+          "text": "I deliver custom sites and stores with attention to reliability, performance, technical SEO and manageable content."
+        }
+      },
+      "extra": "I can also help with technical discovery, audits, performance and on-page SEO."
+    },
+    "process": {
+      "title": "How I work",
+      "intro": "A clear process, regular communication and decisions recorded before they turn into expensive changes.",
+      "steps": {
+        "discovery": {
+          "title": "Discover",
+          "description": "We define the problem, users, constraints and what success means."
+        },
+        "proposal": {
+          "title": "Scope and proposal",
+          "description": "I turn the work into a concrete scope, price and delivery plan."
+        },
+        "build": {
+          "title": "Build",
+          "description": "I deliver in stages, show progress and test the riskiest assumptions early."
+        },
+        "launch": {
+          "title": "Launch",
+          "description": "I deploy, verify production and hand over a solution ready to evolve."
+        }
+      }
+    },
+    "about": {
+      "title": "I connect product thinking, architecture and delivery.",
+      "paragraphs": {
+        "experience": "I am a Software Engineer with over {years, number} years of commercial experience. I began with bespoke websites and stores, then led a team and developed React and Next.js applications. Today I work on the architecture of a SaaS product used by more than {users, number} people.",
+        "approach": "I do my best work where problem analysis, architectural decisions and pragmatic delivery need to meet. I use AI both in software development and to automate everyday work."
+      },
+      "photoAlt": "Reserved space for Sebastian Siejek’s portrait",
+      "photoNote": "Portrait coming soon",
+      "linkedin": "Full experience on LinkedIn"
+    },
+    "writing": {
+      "title": "Latest writing",
+      "intro": "Notes from practice on automation, developer tools and decisions that simplify everyday work.",
+      "all": "View all articles",
+      "language": "Articles in Polish",
+      "featured": "Automating daily stand-ups",
+      "featuredDescription": "How I combined Jira and TimeCamp data so preparing a status no longer meant reconstructing the previous day by hand.",
+      "kind": "Technical experiment",
+      "readArticle": "Read in Polish",
+      "read": "Read in Polish"
+    },
+    "contact": {
+      "eyebrow": "New project",
+      "title": "Tell me what you want to build.",
+      "intro": "Describe the problem you want to solve. I will reply with questions or a suggested next step.",
+      "name": "Name",
+      "email": "Reply email",
+      "message": "Message",
+      "namePlaceholder": "How should I address you?",
+      "emailPlaceholder": "you@company.com",
+      "messagePlaceholder": "Briefly describe the idea, context and expected outcome.",
+      "submit": "Send via email",
+      "helper": "The button opens a prepared message in your email app. You can also write to me directly.",
+      "subject": "Project enquiry from {name}",
+      "replyEmail": "Reply email"
+    },
+    "footer": "Designed and built by Sebastian Siejek."
+  },
+  "Projects": {
+    "upominkly": {
+      "kind": "Independent product",
+      "summary": "Gift lists for events that help people buy useful presents without duplication or awkward coordination.",
+      "imageAlt": "A family sharing a present, product artwork from Upominkly",
+      "role": "Product owner, design, implementation and deployment",
+      "challenge": "The idea began while a family baby shower was being organised. Guests did not know what to buy, while the organisers wanted useful presents without duplicates.",
+      "decisions": {
+        "sharing": "Public list sharing without forcing guests to create an account.",
+        "states": "Clear present states: available, reserved and purchased.",
+        "funding": "Group contributions for more expensive presents.",
+        "privacy": "A private event and a simple flow for invited guests."
+      },
+      "result": "The outcome is a complete product spanning the data model, interface and public deployment. Organisers can prepare a list and guests can reserve a present without an account.",
+      "lesson": "The greatest value came from simplifying the guest journey. Every feature serves one decision: reserving a present should be faster than coordinating it in a group chat."
+    },
+    "planning-poker": {
+      "kind": "Team tool",
+      "summary": "Fast real-time estimation used by the team during every planning session.",
+      "imageAlt": "",
+      "role": "Design, implementation and maintenance",
+      "challenge": "The team needed a straightforward estimation tool that stayed out of the conversation and required almost no onboarding.",
+      "decisions": {
+        "realtime": "Real-time communication so votes appear without refreshing the page.",
+        "focus": "An interface limited to the actions needed during a planning session.",
+        "entry": "Fast room entry and a shared reveal moment for estimates."
+      },
+      "result": "The tool fits a recurring team workflow and is used during every planning session. It is a practical internal product, not a technology experiment.",
+      "lesson": "Fitting the team ritual mattered more than adding features. The best interface stays in the background while people discuss the work."
+    },
+    "not-bad-studio": {
+      "kind": "E-commerce delivery",
+      "summary": "A complete WooCommerce store implementation based on a supplied Figma design.",
+      "imageAlt": "Fashion photograph from the Not Bad Studio online store homepage",
+      "role": "Technical implementation and deployment",
+      "challenge": "The job was to translate the supplied visual design into a working store that supports daily sales and remains practical for the brand team.",
+      "decisions": {
+        "attribution": "Separate attribution for the visual design from responsibility for implementation.",
+        "commerce": "Use proven WooCommerce workflows for products and orders.",
+        "responsive": "Refine the responsive frontend and purchasing journey."
+      },
+      "result": "The Figma design became a complete, publicly available online store. My responsibility covered the technical implementation and launch.",
+      "lesson": "In e-commerce, technical value is often about dependability: the build should match the design, the purchase path should work, and the team should be able to operate the store.",
+      "credit": "The visual design was supplied by an external designer."
+    }
+  },
+  "ProjectMeta": {
+    "back": "Back to selected work",
+    "challenge": "The problem",
+    "decisions": "Key decisions",
+    "result": "Working solution",
+    "lesson": "What I learned",
+    "role": "Responsibility",
+    "stack": "Technology",
+    "live": "Open the product",
+    "repo": "View source",
+    "next": "Let’s discuss your project",
+    "contact": "Contact me"
+  },
+  "Metadata": {
+    "landing": {
+      "title": "Sebastian Siejek | Software Engineer, web products and automation",
+      "description": "I build web applications, MVPs, process automations and WooCommerce stores from idea to launch."
+    },
+    "caseStudyTitle": "Sebastian Siejek case study"
+  },
+  "NotFound": {
+    "metadataTitle": "Page not found - 404",
+    "eyebrow": "Error 404",
+    "title": "This page does not exist.",
+    "description": "The address may have changed or contain a typo.",
+    "back": "Return to the homepage"
+  }
+}

@@ -2,18 +2,11 @@
 
 import { ThemeProvider } from 'next-themes'
 import NextNProgress from 'nextjs-progressbar'
-import { PropsWithChildren, useEffect } from 'react'
-import { scan } from 'react-scan'
+import { PropsWithChildren } from 'react'
 
 export const AppProvider = ({ children }: PropsWithChildren) => {
-  useEffect(() => {
-    scan({
-      enabled: true,
-    })
-  }, [])
-
   return (
-    <ThemeProvider themes={['light', 'dark']}>
+    <ThemeProvider themes={['light', 'dark']} attribute="data-theme">
       <NextNProgress color={'#3ceab8'} />
       {children}
     </ThemeProvider>

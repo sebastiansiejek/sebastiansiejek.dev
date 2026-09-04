@@ -1,0 +1,200 @@
+{
+  "Site": {
+    "localeName": "PL",
+    "alternateLocaleName": "EN",
+    "nav": {
+      "work": "Projekty",
+      "services": "Usługi",
+      "about": "O mnie",
+      "writing": "Piszę",
+      "contact": "Kontakt"
+    },
+    "menu": "Menu",
+    "close": "Zamknij",
+    "skipToContent": "Przejdź do treści",
+    "navigationLabel": "Główna nawigacja",
+    "hero": {
+      "eyebrow": "Software Engineer",
+      "title": "Tworzę aplikacje, sklepy i automatyzacje od pomysłu po wdrożenie.",
+      "description": "Zamieniam pomysły i ręczne procesy w działające produkty cyfrowe, gotowe do realnego użycia.",
+      "primary": "Opowiedz mi, co chcesz zbudować",
+      "secondary": "Zobacz moje projekty",
+      "imageAlt": "Warstwy grafitowych materiałów połączone miętową linią, symbol kompletnego procesu tworzenia produktu"
+    },
+    "proofs": {
+      "label": "Doświadczenie w liczbach",
+      "experience": {
+        "label": "lat doświadczenia komercyjnego"
+      },
+      "users": {
+        "label": "osób korzysta z rozwijanego SaaS-u"
+      },
+      "projects": {
+        "label": "zrealizowanych projektów webowych"
+      },
+      "delivery": {
+        "value": "Od A do Z",
+        "label": "od architektury po wdrożenie"
+      }
+    },
+    "work": {
+      "title": "Wybrane realizacje",
+      "intro": "Produkty własne i wdrożenia komercyjne. Każdy projekt odpowiada na konkretny problem, nie na modę technologiczną.",
+      "view": "Przeczytaj case study",
+      "live": "Zobacz działający produkt",
+      "repo": "Kod źródłowy"
+    },
+    "services": {
+      "eyebrow": "Zakres współpracy",
+      "title": "Technologia podporządkowana celowi biznesowemu.",
+      "intro": "Pomagam przejść od niejasnego problemu do rozwiązania, które można uruchomić, mierzyć i rozwijać.",
+      "items": {
+        "applications": {
+          "title": "Aplikacje webowe i MVP",
+          "text": "Projektuję architekturę, interfejs i proces wdrożenia. Dobieram zakres, który pozwala szybko zweryfikować produkt bez budowania na skróty."
+        },
+        "automation": {
+          "title": "Automatyzacje procesów i AI",
+          "text": "Łączę systemy, porządkuję przepływ danych i eliminuję powtarzalną pracę. AI wykorzystuję tam, gdzie daje mierzalną przewagę."
+        },
+        "commerce": {
+          "title": "WordPress i WooCommerce",
+          "text": "Wdrażam dedykowane strony i sklepy, dbając o niezawodność, wydajność, SEO techniczne i wygodną obsługę treści."
+        }
+      },
+      "extra": "Mogę też pomóc w discovery technicznym, audycie, wydajności i SEO on-page."
+    },
+    "process": {
+      "title": "Jak pracuję",
+      "intro": "Przejrzysty proces, regularny kontakt i decyzje zapisane zanim staną się kosztownymi poprawkami.",
+      "steps": {
+        "discovery": {
+          "title": "Rozpoznanie",
+          "description": "Ustalam problem, użytkowników, ograniczenia i kryteria powodzenia."
+        },
+        "proposal": {
+          "title": "Zakres i propozycja",
+          "description": "Dzielę pracę na konkretny zakres, koszt i plan dostarczenia."
+        },
+        "build": {
+          "title": "Implementacja",
+          "description": "Buduję etapami, pokazuję postęp i wcześnie weryfikuję ryzyka."
+        },
+        "launch": {
+          "title": "Uruchomienie",
+          "description": "Wdrażam, sprawdzam produkcję i przekazuję rozwiązanie do dalszego rozwoju."
+        }
+      }
+    },
+    "about": {
+      "title": "Łączę perspektywę produktu, architektury i wdrożenia.",
+      "paragraphs": {
+        "experience": "Mam ponad {years, number} lat doświadczenia komercyjnego jako Software Engineer. Zaczynałem od dedykowanych stron i sklepów, później prowadziłem zespół oraz rozwijałem aplikacje w React i Next.js. Dziś pracuję nad architekturą produktu SaaS używanego przez ponad {users, number} osób.",
+        "approach": "Najlepiej czuję się tam, gdzie trzeba połączyć analizę problemu, decyzje architektoniczne i sprawne dostarczenie działającego rozwiązania. AI wykorzystuję zarówno w procesie tworzenia oprogramowania, jak i do automatyzacji codziennej pracy."
+      },
+      "photoAlt": "Miejsce na portret Sebastiana Siejka",
+      "photoNote": "Portret w przygotowaniu",
+      "linkedin": "Pełne doświadczenie na LinkedIn"
+    },
+    "writing": {
+      "title": "Najnowsze teksty",
+      "intro": "Notatki z praktyki: automatyzacja, narzędzia deweloperskie i decyzje, które upraszczają codzienną pracę.",
+      "all": "Wszystkie artykuły",
+      "language": "Artykuły po polsku",
+      "featured": "Automatyzacja codziennych stand-upów",
+      "featuredDescription": "Jak połączyłem dane z Jira i TimeCamp, aby przygotowanie statusu nie wymagało ręcznego odtwarzania dnia.",
+      "kind": "Eksperyment techniczny",
+      "readArticle": "Przeczytaj artykuł",
+      "read": "Czytaj"
+    },
+    "contact": {
+      "eyebrow": "Nowy projekt",
+      "title": "Opowiedz mi, co chcesz zbudować.",
+      "intro": "Napisz, jaki problem chcesz rozwiązać. Odpowiem z pytaniami lub propozycją następnego kroku.",
+      "name": "Imię",
+      "email": "E-mail zwrotny",
+      "message": "Wiadomość",
+      "namePlaceholder": "Jak mam się do Ciebie zwracać?",
+      "emailPlaceholder": "ty@firma.pl",
+      "messagePlaceholder": "Krótko opisz pomysł, kontekst i oczekiwany rezultat.",
+      "submit": "Wyślij przez e-mail",
+      "helper": "Przycisk otworzy gotową wiadomość w Twoim programie pocztowym. Możesz też napisać bezpośrednio.",
+      "subject": "Nowy projekt od {name}",
+      "replyEmail": "Kontakt zwrotny"
+    },
+    "footer": "Projektowanie i implementacja: Sebastian Siejek."
+  },
+  "Projects": {
+    "upominkly": {
+      "kind": "Produkt własny",
+      "summary": "Listy prezentów na wydarzenia, które pomagają kupować potrzebne rzeczy bez duplikatów i niezręcznych ustaleń.",
+      "imageAlt": "Rodzina wspólnie przekazująca prezent, grafika produktu Upominkly",
+      "role": "Właściciel produktu, projekt, implementacja i wdrożenie",
+      "challenge": "Pomysł powstał przy organizacji rodzinnego baby shower. Goście nie wiedzieli, co kupić, a organizatorom zależało na przydatnych prezentach bez powtórek.",
+      "decisions": {
+        "sharing": "Publiczne udostępnianie listy bez zmuszania gości do zakładania konta.",
+        "states": "Czytelne stany prezentu: dostępny, zarezerwowany i kupiony.",
+        "funding": "Możliwość wspólnego finansowania droższych prezentów.",
+        "privacy": "Prywatność wydarzenia i prosty przepływ dla osoby zaproszonej."
+      },
+      "result": "Powstał kompletny produkt od modelu danych i interfejsu po publiczne wdrożenie. Rozwiązanie pozwala organizatorowi przygotować listę, a gościom zarezerwować prezent bez konta.",
+      "lesson": "Największą wartość dało uproszczenie ścieżki gościa. Funkcje produktu zostały podporządkowane jednej decyzji: rezerwacja ma być szybsza niż ustalanie prezentu na czacie."
+    },
+    "planning-poker": {
+      "kind": "Narzędzie zespołowe",
+      "summary": "Szybkie estymowanie zadań w czasie rzeczywistym, używane przez zespół podczas każdej sesji planowania.",
+      "imageAlt": "",
+      "role": "Projekt, implementacja i utrzymanie",
+      "challenge": "Zespół potrzebował prostego narzędzia do estymacji, które nie przeszkadza w rozmowie i nie wymaga długiego wdrożenia uczestników.",
+      "decisions": {
+        "realtime": "Komunikacja w czasie rzeczywistym, aby głosy pojawiały się bez odświeżania strony.",
+        "focus": "Ograniczenie interfejsu do czynności potrzebnych podczas sesji planowania.",
+        "entry": "Szybkie wejście do pokoju i wspólny moment odkrycia estymat."
+      },
+      "result": "Narzędzie działa w powtarzalnym rytmie pracy zespołu i jest używane podczas każdej sesji planowania. To praktyczny produkt wewnętrzny, a nie eksperyment technologiczny.",
+      "lesson": "Dopasowanie do istniejącego rytuału zespołu było ważniejsze niż rozbudowana liczba funkcji. Najlepszy interfejs pozostaje w tle rozmowy."
+    },
+    "not-bad-studio": {
+      "kind": "Wdrożenie e-commerce",
+      "summary": "Kompletne wdrożenie sklepu WooCommerce na podstawie projektu dostarczonego w Figma.",
+      "imageAlt": "Fotografia modowa z głównej strony sklepu Not Bad Studio",
+      "role": "Implementacja techniczna i wdrożenie",
+      "challenge": "Zadaniem było wierne przełożenie projektu graficznego na działający sklep, który obsługuje codzienną sprzedaż i pozostaje wygodny dla zespołu marki.",
+      "decisions": {
+        "attribution": "Rozdzielenie autorstwa projektu graficznego od odpowiedzialności za implementację.",
+        "commerce": "Oparcie zarządzania produktami i zamówieniami na sprawdzonym WooCommerce.",
+        "responsive": "Dopracowanie responsywnego wdrożenia od strony frontendu i procesu zakupowego."
+      },
+      "result": "Projekt z Figma został wdrożony jako kompletny, publicznie działający sklep internetowy. Moja odpowiedzialność objęła implementację techniczną i uruchomienie.",
+      "lesson": "W e-commerce wartość techniczna często polega na przewidywalności: projekt ma wyglądać zgodnie z założeniami, proces zakupowy ma działać, a zespół ma móc obsługiwać sklep.",
+      "credit": "Projekt graficzny został dostarczony przez zewnętrznego projektanta."
+    }
+  },
+  "ProjectMeta": {
+    "back": "Wróć do projektów",
+    "challenge": "Problem",
+    "decisions": "Najważniejsze decyzje",
+    "result": "Działające rozwiązanie",
+    "lesson": "Wnioski",
+    "role": "Odpowiedzialność",
+    "stack": "Technologie",
+    "live": "Otwórz produkt",
+    "repo": "Zobacz kod",
+    "next": "Porozmawiajmy o Twoim projekcie",
+    "contact": "Napisz do mnie"
+  },
+  "Metadata": {
+    "landing": {
+      "title": "Sebastian Siejek | Software Engineer, aplikacje i automatyzacje",
+      "description": "Tworzę aplikacje webowe, MVP, automatyzacje procesów oraz sklepy WooCommerce od pomysłu po wdrożenie."
+    },
+    "caseStudyTitle": "Case study Sebastiana Siejka"
+  },
+  "NotFound": {
+    "metadataTitle": "Nie znaleziono strony - 404",
+    "eyebrow": "Błąd 404",
+    "title": "Ta strona nie istnieje.",
+    "description": "Adres mógł się zmienić albo zawiera literówkę.",
+    "back": "Wróć na stronę główną"
+  }
+}

@@ -1,18 +1,14 @@
 import { PropsWithChildren } from 'react'
-import Socials from 'widgets/Socials/Socials'
-import Navbar from 'widgets/Navbar/Navbar'
+import { PortfolioHeader } from 'features/portfolio/PortfolioHeader'
+import { SiteFooter } from 'features/portfolio/SiteFooter'
+import { PortfolioShell } from 'features/portfolio/PortfolioShell'
 
 export default function BlogLayout({ children }: PropsWithChildren) {
   return (
-    <>
-      <Navbar />
-      <main className="py-12">{children}</main>
-      <footer className={'bg-n py-12 text-n-0'}>
-        <div className="flex items-center justify-center flex-col">
-          <Socials />
-          <p className={'mt-5'}>sebastiansiejek.dev</p>
-        </div>
-      </footer>
-    </>
+    <PortfolioShell lang="pl">
+      <PortfolioHeader locale="pl" alternateHref="/en" />
+      <main className="min-h-[calc(100dvh-188px)] py-12">{children}</main>
+      <SiteFooter locale="pl" />
+    </PortfolioShell>
   )
 }

@@ -6,27 +6,67 @@
 
 @theme {
   --font-*: initial;
-  --font-sans: var(--font-inter), sans-serif;
-  --font-mono: var(--font-inconsolata), monospace;
+  --font-sans: var(--font-manrope), sans-serif;
+  --font-mono: var(--font-ibm-plex-mono), monospace;
 
   --color-*: initial;
   --color-primary: #3ceab8;
-
   --color-n-0: #fff;
   --color-n-1: #edf2f6;
   --color-n: #17181d;
-
   --color-dark-body: #0c121a;
+
+  --color-portfolio-bg: #101411;
+  --color-portfolio-surface: #171c19;
+  --color-portfolio-surface-strong: #202622;
+  --color-portfolio-text: #f1f4f0;
+  --color-portfolio-muted: #a8b0aa;
+  --color-portfolio-faint: #757f78;
+  --color-portfolio-line: #303832;
+  --color-portfolio-accent: #77d9b8;
+  --color-portfolio-accent-dark: #17372c;
 }
 
-/*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
 
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
+body {
+  min-width: 320px;
+}
+
+::selection {
+  color: #121713;
+  background: var(--color-portfolio-accent);
+}
+
+.portfolio *,
+.portfolio *::before,
+.portfolio *::after {
+  box-sizing: border-box;
+}
+
+@media (max-width: 767px) {
+  html {
+    scroll-padding-top: 4.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .portfolio *,
+  .portfolio *::before,
+  .portfolio *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Keep Tailwind v3's border default for the legacy blog components. */
 @layer base {
   *,
   ::after,

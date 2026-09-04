@@ -2,6 +2,7 @@ allowBuilds:
   '@parcel/watcher': true
   '@sentry/cli': true
   '@sentry/cli@2.42.2': true
+  '@swc/core': true
   '@tailwindcss/oxide@4.1.7': true
   'esbuild@0.25.4': true
   'sharp@0.34.1': true

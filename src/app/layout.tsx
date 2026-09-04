@@ -1,29 +1,40 @@
 import { PropsWithChildren } from 'react'
 import { AppProvider } from 'providers/AppProvider/AppProvider'
 import { Metadata } from 'next'
-import { Inconsolata, Inter } from 'next/font/google'
+import { IBM_Plex_Mono, Manrope } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import 'styles/global.css'
 
 export const metadata: Metadata = {
-  title: 'Sebastian Siejek',
-  description: 'Sebastian Siejek - Software Engineer',
-  authors: [{ name: 'Sebastian Siejek', url: 'https://sebastiansiejek.dev/' }],
-  keywords:
-    'web, developer, software, engineer, javascript, react, nextjs, php, wordpress, empressia',
-  alternates: {
-    canonical: 'https://sebastiansiejek.dev/',
+  metadataBase: new URL(process.env.SITE_URL || 'https://sebastiansiejek.dev'),
+  title: {
+    default: 'Sebastian Siejek | Software Engineer',
+    template: '%s | Sebastian Siejek',
   },
+  description:
+    'Software Engineer tworzący aplikacje webowe, automatyzacje i sklepy internetowe od pomysłu po wdrożenie.',
+  authors: [{ name: 'Sebastian Siejek', url: 'https://sebastiansiejek.dev/' }],
+  creator: 'Sebastian Siejek',
+  keywords: [
+    'Software Engineer',
+    'aplikacje webowe',
+    'MVP',
+    'automatyzacja procesów',
+    'AI',
+    'WooCommerce',
+    'Next.js',
+  ],
 }
 
-const inter = Inter({
+const manrope = Manrope({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-manrope',
 })
 
-const inconsolata = Inconsolata({
+const ibmPlexMono = IBM_Plex_Mono({
   subsets: ['latin'],
-  variable: '--font-inconsolata',
+  weight: ['400', '500'],
+  variable: '--font-ibm-plex-mono',
 })
 
 export default function RootLayout({ children }: PropsWithChildren) {
@@ -31,11 +42,11 @@ export default function RootLayout({ children }: PropsWithChildren) {
     <html
       lang="pl"
       suppressHydrationWarning
-      className={`${inter.variable} ${inconsolata.variable} font-sans`}
+      className={`${manrope.variable} ${ibmPlexMono.variable} font-sans`}
     >
-      <Analytics />
       <body>
         <AppProvider>{children}</AppProvider>
+        <Analytics />
       </body>
     </html>
   )

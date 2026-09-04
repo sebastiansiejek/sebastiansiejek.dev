@@ -5,6 +5,11 @@ import BlogPosts from 'shared/ui/BlogPosts/BlogPosts'
 
 export const metadata: Metadata = {
   title: 'Blog - SebastianSiejek.dev',
+  description:
+    'Artykuły Sebastiana Siejka o tworzeniu oprogramowania, automatyzacji i narzędziach deweloperskich.',
+  alternates: {
+    canonical: '/blog',
+  },
 }
 
 export default function Blog() {

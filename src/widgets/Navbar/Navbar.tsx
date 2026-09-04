@@ -12,7 +12,7 @@ const menu = [
   },
   {
     title: 'Contact',
-    path: '/',
+    path: '/#contact',
   },
 ]
 

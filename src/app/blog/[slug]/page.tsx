@@ -28,6 +28,9 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
 
   return {
     title: `${post.frontmatter.title} - sebastiansiejek.dev`,
+    alternates: {
+      canonical: `/blog/${slug}`,
+    },
   }
 }
 
