@@ -15,12 +15,6 @@ export function SiteShell({ className, ...props }: ComponentProps<'div'>) {
 
 export function SiteContainer({ className, ...props }: ComponentProps<'div'>) {
   return (
-    <div
-      className={clsx(
-        'mx-auto w-full max-w-[1280px] px-5 max-md:px-4',
-        className,
-      )}
-      {...props}
-    />
+    <div className={clsx('container w-full mx-auto', className)} {...props} />
   )
 }
