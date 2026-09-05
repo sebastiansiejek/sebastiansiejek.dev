@@ -40,13 +40,9 @@ export async function HomeHero({ locale }: { locale: Locale }) {
         </div>
       </div>
       <figure className="relative m-0 min-h-[min(63vh,650px)] self-end overflow-hidden max-md:min-h-[230px]">
-        <div
-          className="absolute bottom-0 left-1/2 aspect-square w-[min(100%,950px)] -translate-x-1/2 rounded-full bg-portfolio-accent max-md:w-[230px]"
-          aria-hidden="true"
-        />
         <Image
           className="z-1 object-contain object-bottom"
-          src="/images/portfolio/hero4.webp"
+          src="/images/portfolio/hero.webp"
           alt={t('imageAlt')}
           fill
           priority
