@@ -1,11 +1,11 @@
 import { getLocale } from 'next-intl/server'
-import { SiteNotFound } from 'features/portfolio/SiteNotFound'
-import { notFoundMetadata } from 'lib/portfolio/metadata'
+import { notFoundMetadata } from '_app/seo/index.server'
+import { NotFoundPage } from '_pages/not-found'
 
 export async function generateMetadata() {
   return notFoundMetadata(await getLocale())
 }
 
 export default async function NotFound() {
-  return <SiteNotFound locale={await getLocale()} />
+  return <NotFoundPage locale={await getLocale()} />
 }

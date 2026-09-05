@@ -1,10 +1,10 @@
-import { SiteNotFound } from 'features/portfolio/SiteNotFound'
-import { notFoundMetadata } from 'lib/portfolio/metadata'
+import { notFoundMetadata } from '_app/seo/index.server'
+import { NotFoundPage } from '_pages/not-found'
 
 export function generateMetadata() {
   return notFoundMetadata('pl')
 }
 
 export default function NotFound() {
-  return <SiteNotFound locale="pl" />
+  return <NotFoundPage locale="pl" />
 }

@@ -15,7 +15,7 @@ const ButtonOutline = ({
   return (
     <button
       className={clsx(
-        'transition-colors flex justify-center items-center cursor-pointer relative border-2 group px-4 py-2 overflow-hidden hover:border-n-0',
+        'group relative flex cursor-pointer items-center justify-center overflow-hidden border-2 border-current px-4 py-2 transition-colors hover:border-n-0',
         {
           'border-n-0': isActive,
           'w-full': isFullWidth,
@@ -39,7 +39,7 @@ const ButtonOutline = ({
         {children || title}
       </div>
       {isLoading && (
-        <ClipLoader color={'#3ceab8'} className={'ml-4'} size={24} />
+        <ClipLoader color="var(--color-primary)" className="ml-4" size={24} />
       )}
     </button>
   )

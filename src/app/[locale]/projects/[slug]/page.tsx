@@ -2,10 +2,10 @@ import { Metadata } from 'next'
 import { hasLocale } from 'next-intl'
 import { setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
-import { ProjectPage } from 'features/portfolio/ProjectPage'
-import { routing } from 'i18n/routing'
-import { caseStudyMetadata } from 'lib/portfolio/metadata'
-import { isProjectKey, projectKeys } from 'lib/portfolio/projects'
+import { caseStudyMetadata } from '_app/seo/index.server'
+import { CaseStudyPage } from '_pages/case-study'
+import { isProjectKey, projectKeys } from 'entities/project'
+import { routing } from 'shared/i18n/routing'
 
 type PageProps = {
   params: Promise<{ locale: string; slug: string }>
@@ -36,5 +36,5 @@ export default async function LocalizedProjectPage({ params }: PageProps) {
 
   setRequestLocale(locale)
 
-  return <ProjectPage locale={locale} projectKey={slug} />
+  return <CaseStudyPage locale={locale} projectKey={slug} />
 }

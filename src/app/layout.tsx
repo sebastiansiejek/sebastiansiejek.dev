@@ -1,9 +1,9 @@
 import { PropsWithChildren } from 'react'
-import { AppProvider } from 'providers/AppProvider/AppProvider'
+import { AppProvider } from '_app/providers'
 import { Metadata } from 'next'
 import { IBM_Plex_Mono, Manrope } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
-import 'styles/global.css'
+import '_app/styles/global.css'
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.SITE_URL || 'https://sebastiansiejek.dev'),

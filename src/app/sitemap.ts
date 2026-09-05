@@ -1,10 +1,9 @@
 import { MetadataRoute } from 'next'
 import * as process from 'node:process'
-import { getAllResources } from 'lib/resources/resourcesService'
+import { getProjectPath, projectKeys } from 'entities/project'
+import { getAllResources } from 'shared/lib/resources'
 import path from 'path'
-import { routing } from 'i18n/routing'
-import { getProjectPath } from 'lib/portfolio/paths'
-import { projectKeys } from 'lib/portfolio/projects'
+import { routing } from 'shared/i18n/routing'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const siteUrl = process.env.SITE_URL || 'https://sebastiansiejek.dev'

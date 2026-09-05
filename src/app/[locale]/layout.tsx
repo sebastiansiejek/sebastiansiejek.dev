@@ -2,7 +2,7 @@ import { PropsWithChildren } from 'react'
 import { hasLocale, NextIntlClientProvider } from 'next-intl'
 import { getMessages, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
-import { routing } from 'i18n/routing'
+import { routing } from 'shared/i18n/routing'
 
 type LocaleLayoutProps = PropsWithChildren<{
   params: Promise<{ locale: string }>

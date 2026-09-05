@@ -2,9 +2,9 @@ import { Metadata } from 'next'
 import { hasLocale } from 'next-intl'
 import { setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
-import { PortfolioPage } from 'features/portfolio/PortfolioPage'
-import { routing } from 'i18n/routing'
-import { landingMetadata } from 'lib/portfolio/metadata'
+import { landingMetadata } from '_app/seo/index.server'
+import { HomePage } from '_pages/home'
+import { routing } from 'shared/i18n/routing'
 
 type PageProps = {
   params: Promise<{ locale: string }>
@@ -30,5 +30,5 @@ export default async function LocalizedHomePage({ params }: PageProps) {
 
   setRequestLocale(locale)
 
-  return <PortfolioPage locale={locale} />
+  return <HomePage locale={locale} />
 }
