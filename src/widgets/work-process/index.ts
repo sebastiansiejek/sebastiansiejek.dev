@@ -1,1 +1,1 @@
-export { WorkProcess } from './ui/WorkProcess'
+export { WorkProcess } from './ui/work-process'

@@ -6,7 +6,7 @@ import { landingMetadata } from '_app/seo/index.server'
 import { HomePage } from '_pages/home'
 import { routing } from 'shared/i18n/routing'
 
-type PageProps = {
+type PageProperties = {
   params: Promise<{ locale: string }>
 }
 
@@ -16,12 +16,12 @@ export function generateStaticParams() {
 
 export async function generateMetadata({
   params,
-}: PageProps): Promise<Metadata> {
+}: PageProperties): Promise<Metadata> {
   const { locale } = await params
   return hasLocale(routing.locales, locale) ? landingMetadata(locale) : {}
 }
 
-export default async function LocalizedHomePage({ params }: PageProps) {
+export default async function LocalizedHomePage({ params }: PageProperties) {
   const { locale } = await params
 
   if (!hasLocale(routing.locales, locale)) {

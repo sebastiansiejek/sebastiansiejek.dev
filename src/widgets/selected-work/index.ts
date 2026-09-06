@@ -1,1 +1,1 @@
-export { SelectedWork } from './ui/SelectedWork'
+export { SelectedWork } from './ui/selected-work'

@@ -1,1 +1,1 @@
-export { CaseStudyPage } from './ui/CaseStudyPage'
+export { CaseStudyPage } from './ui/case-study-page'

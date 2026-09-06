@@ -47,7 +47,8 @@ export const caseStudyMetadata = async (
   projectKey: ProjectKey,
 ): Promise<Metadata> => {
   const t = await getTranslations({ locale, namespace: 'Metadata' })
-  const project = (await getLocalizedProjects(locale))[projectKey]
+  const localizedProjects = await getLocalizedProjects(locale)
+  const project = localizedProjects[projectKey]
   const path = getProjectPath(locale, projectKey)
   const title = `${project.name} | ${t('caseStudyTitle')}`
 

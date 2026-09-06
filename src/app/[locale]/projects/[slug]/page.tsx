@@ -7,7 +7,7 @@ import { CaseStudyPage } from '_pages/case-study'
 import { isProjectKey, projectKeys } from 'entities/project'
 import { routing } from 'shared/i18n/routing'
 
-type PageProps = {
+type PageProperties = {
   params: Promise<{ locale: string; slug: string }>
 }
 
@@ -19,7 +19,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({
   params,
-}: PageProps): Promise<Metadata> {
+}: PageProperties): Promise<Metadata> {
   const { locale, slug } = await params
 
   return hasLocale(routing.locales, locale) && isProjectKey(slug)
@@ -27,7 +27,7 @@ export async function generateMetadata({
     : {}
 }
 
-export default async function LocalizedProjectPage({ params }: PageProps) {
+export default async function LocalizedProjectPage({ params }: PageProperties) {
   const { locale, slug } = await params
 
   if (!hasLocale(routing.locales, locale) || !isProjectKey(slug)) {

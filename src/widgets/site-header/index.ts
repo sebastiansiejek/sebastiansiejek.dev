@@ -1,1 +1,1 @@
-export { SiteHeader } from './ui/SiteHeader'
+export { SiteHeader } from './ui/site-header'

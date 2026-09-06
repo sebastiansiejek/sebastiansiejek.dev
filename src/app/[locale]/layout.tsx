@@ -4,7 +4,7 @@ import { getMessages, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { routing } from 'shared/i18n/routing'
 
-type LocaleLayoutProps = PropsWithChildren<{
+type LocaleLayoutProperties = PropsWithChildren<{
   params: Promise<{ locale: string }>
 }>
 
@@ -15,7 +15,7 @@ export function generateStaticParams() {
 export default async function LocaleLayout({
   children,
   params,
-}: LocaleLayoutProps) {
+}: LocaleLayoutProperties) {
   const { locale } = await params
 
   if (!hasLocale(routing.locales, locale)) {

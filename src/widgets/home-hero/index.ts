@@ -1,1 +1,1 @@
-export { HomeHero } from './ui/HomeHero'
+export { HomeHero } from './ui/home-hero'

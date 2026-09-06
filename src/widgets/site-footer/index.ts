@@ -1,1 +1,1 @@
-export { SiteFooter } from './ui/SiteFooter'
+export { SiteFooter } from './ui/site-footer'

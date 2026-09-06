@@ -8,51 +8,67 @@
   --font-mono: var(--font-ibm-plex-mono), monospace;
 
   --color-*: initial;
-  --color-primary: #3ceab8;
-  --color-n-0: #fff;
-  --color-n-1: #edf2f6;
-  --color-n: #17181d;
-  --color-page-background-dark: #0c121a;
-  --color-page-background: light-dark(
-    var(--color-n-1),
-    var(--color-page-background-dark)
-  );
-  --color-page-text: light-dark(var(--color-n), var(--color-n-0));
-  --color-selection-text: #121713;
-  --color-portfolio-bg: #101411;
-  --color-portfolio-surface: #171c19;
-  --color-portfolio-surface-strong: #202622;
-  --color-portfolio-text: #f1f4f0;
-  --color-portfolio-muted: #a8b0aa;
-  --color-portfolio-faint: #757f78;
-  --color-portfolio-line: #303832;
-  --color-portfolio-accent: #77d9b8;
-  --color-portfolio-accent-dark: #17372c;
-  --color-portfolio-accent-contrast: #101713;
-  --color-portfolio-accent-hover: #90e4c7;
-  --color-portfolio-field-border: #455047;
-  --color-portfolio-placeholder: #89928b;
+  --color-background: #101411;
+  --color-surface: #171c19;
+  --color-surface-raised: #202622;
+  --color-foreground: #f1f4f0;
+  --color-muted: #a8b0aa;
+  --color-subtle: #757f78;
+  --color-border: #303832;
+  --color-accent: #77d9b8;
+  --color-accent-muted: #17372c;
+  --color-accent-foreground: #101713;
+  --color-accent-hover: #90e4c7;
+  --color-input: #455047;
+  --color-placeholder: #89928b;
+
+  --ease-fluid: cubic-bezier(0.16, 1, 0.3, 1);
+  --shadow-menu: 0 1.125rem 2.8125rem rgb(5 8 6 / 40%);
 }
 
 html {
-  color-scheme: light;
+  color-scheme: dark;
   scroll-behavior: smooth;
   scroll-padding-top: 6rem;
 }
 
-html[data-theme='dark'] {
-  color-scheme: dark;
-}
-
 body {
   min-width: 320px;
-  color: var(--color-page-text);
-  background-color: var(--color-page-background);
+  color: var(--color-foreground);
+  background-color: var(--color-background);
 }
 
 ::selection {
-  color: var(--color-selection-text);
-  background: var(--color-portfolio-accent);
+  color: var(--color-accent-foreground);
+  background: var(--color-accent);
+}
+
+.accent-stripe {
+  background:
+    linear-gradient(
+      135deg,
+      transparent 0 44%,
+      rgb(119 217 184 / 9%) 44% 56%,
+      transparent 56%
+    ),
+    var(--color-surface-raised);
+}
+
+.accent-wash {
+  background:
+    linear-gradient(145deg, rgb(119 217 184 / 11%), transparent 52%),
+    var(--color-background);
+}
+
+.menu-summary::-webkit-details-marker {
+  display: none;
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .site-header {
+    background: var(--color-background);
+    backdrop-filter: none;
+  }
 }
 
 @media (width < theme(--breakpoint-md)) {

@@ -1,1 +1,1 @@
-export { ProofStrip } from './ui/ProofStrip'
+export { ProofStrip } from './ui/proof-strip'

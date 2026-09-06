@@ -1,1 +1,1 @@
-export { LatestWriting } from './ui/LatestWriting'
+export { LatestWriting } from './ui/latest-writing'

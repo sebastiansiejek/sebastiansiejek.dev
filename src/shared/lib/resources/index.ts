@@ -3,4 +3,4 @@ export {
   getResourceBySlug,
   getResourcesPaths,
   sortResources,
-} from './resourcesService'
+} from './resources-service'

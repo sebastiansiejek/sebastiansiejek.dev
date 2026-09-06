@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 import * as process from 'node:process'
 import { getProjectPath, projectKeys } from 'entities/project'
 import { getAllResources } from 'shared/lib/resources'
-import path from 'path'
+import path from 'node:path'
 import { routing } from 'shared/i18n/routing'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

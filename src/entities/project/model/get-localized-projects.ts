@@ -21,7 +21,7 @@ export async function getLocalizedProjects(locale: Locale) {
       ],
       result: t('upominkly.result'),
       lesson: t('upominkly.lesson'),
-      credit: null,
+      credit: undefined,
     },
     'planning-poker': {
       ...projects['planning-poker'],
@@ -37,7 +37,7 @@ export async function getLocalizedProjects(locale: Locale) {
       ],
       result: t('planning-poker.result'),
       lesson: t('planning-poker.lesson'),
-      credit: null,
+      credit: undefined,
     },
     'not-bad-studio': {
       ...projects['not-bad-studio'],

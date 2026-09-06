@@ -1,1 +1,1 @@
-export { ContactForm } from './ui/ContactForm'
+export { ContactForm } from './ui/contact-form'

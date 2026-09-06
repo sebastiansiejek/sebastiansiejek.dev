@@ -1,14 +1,14 @@
-import path from 'path'
+import path from 'node:path'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import 'dracula-prism/dist/css/dracula-prism.min.css'
 import Image from 'next/image'
-import { TextLink } from 'shared/ui/TextLink/TextLink'
+import { TextLink } from 'shared/ui/text-link'
 import { getResourceBySlug, getResourcesPaths } from 'shared/lib/resources'
 import { Suspense } from 'react'
 import { Metadata } from 'next'
-import { SiteContainer } from 'shared/ui/portfolio-layout'
+import { SiteContainer } from 'shared/ui/site-layout'
 
-type PageProps = {
+type PageProperties = {
   params: Promise<{ slug: string }>
 }
 
@@ -16,8 +16,8 @@ export async function generateStaticParams() {
   return await getResourcesPaths(path.join(process.cwd(), 'src/content/posts'))
 }
 
-export async function generateMetadata(props: PageProps): Promise<Metadata> {
-  const { slug } = await props.params
+export async function generateMetadata(properties: PageProperties): Promise<Metadata> {
+  const { slug } = await properties.params
   const post = await getResourceBySlug(
     slug,
     path.join(process.cwd(), 'src/content/posts'),
@@ -31,8 +31,8 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
   }
 }
 
-export default async function SinglePost(props: PageProps) {
-  const { slug } = await props.params
+export default async function SinglePost(properties: PageProperties) {
+  const { slug } = await properties.params
   const post = await getResourceBySlug(
     slug,
     path.join(process.cwd(), 'src/content/posts'),
@@ -43,45 +43,45 @@ export default async function SinglePost(props: PageProps) {
       <SiteContainer size="medium">
         <h1
           className={
-            'font-mono text-3xl mb-12 dark:text-primary font-bold md:text-center'
+            'mb-12 font-mono text-3xl font-bold text-accent md:text-center'
           }
         >
           {post.frontmatter.title}
         </h1>
       </SiteContainer>
       <SiteContainer size="tight">
-        <main className={'flex flex-col gap-6'}>
+        <article className="flex flex-col gap-6">
           <Suspense fallback={<>Loading...</>}>
             <MDXRemote
               source={post.content}
               components={{
-                code: (props) => (
+                code: (properties) => (
                   <code
-                    className={'text-primary bg-n font-mono p-1'}
-                    {...props}
+                    className="bg-surface-raised p-1 font-mono text-accent"
+                    {...properties}
                   />
                 ),
-                ol: (props) => {
-                  return <ol className={'list-decimal pl-4'} {...props} />
+                ol: (properties) => {
+                  return <ol className={'list-decimal pl-4'} {...properties} />
                 },
-                ul: (props) => {
-                  return <ul className={'list-disc pl-4'} {...props} />
+                ul: (properties) => {
+                  return <ul className={'list-disc pl-4'} {...properties} />
                 },
-                h2: (props) => (
-                  <h2 className={'text-3xl font-medium'} {...props} />
+                h2: (properties) => (
+                  <h2 className={'text-3xl font-medium'} {...properties} />
                 ),
-                h3: (props) => (
-                  <h3 className={'text-2xl font-medium'} {...props} />
+                h3: (properties) => (
+                  <h3 className={'text-2xl font-medium'} {...properties} />
                 ),
-                h4: (props) => (
-                  <h3 className={'text-xl font-medium'} {...props} />
+                h4: (properties) => (
+                  <h3 className={'text-xl font-medium'} {...properties} />
                 ),
-                img: (props) => {
-                  const alt = props.alt || ''
+                img: (properties) => {
+                  const alt = properties.alt || ''
 
                   return (
                     <Image
-                      {...props}
+                      {...properties}
                       alt={alt}
                       sizes="100vw"
                       style={{
@@ -93,23 +93,24 @@ export default async function SinglePost(props: PageProps) {
                     />
                   )
                 },
-                blockquote: (props) => {
+                blockquote: (properties) => {
                   return (
                     <blockquote
-                      {...props}
-                      className={'p-4 bg-n/40 text-n-0 dark:bg-n/90 '}
+                      {...properties}
+                      className="bg-surface p-4 text-foreground"
                     />
                   )
                 },
                 a: ({ href, ...properties }) => {
                   const target = href.startsWith('http') ? '_blank' : ''
-                  const rel = target === '_blank' ? 'noopener noreferrer' : ''
+                  const relationship =
+                    target === '_blank' ? 'noopener noreferrer' : ''
 
                   return (
                     <TextLink
                       href={href}
                       target={target}
-                      rel={rel}
+                      rel={relationship}
                       {...properties}
                     />
                   )
@@ -117,7 +118,7 @@ export default async function SinglePost(props: PageProps) {
               }}
             />
           </Suspense>
-        </main>
+        </article>
       </SiteContainer>
     </>
   )

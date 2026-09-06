@@ -1,1 +1,1 @@
-export { Services } from './ui/Services'
+export { Services } from './ui/services'
