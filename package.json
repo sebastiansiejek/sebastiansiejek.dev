@@ -18,7 +18,6 @@
     "clsx": "^2.1.1",
     "dracula-prism": "^2.1.16",
     "gray-matter": "^4.0.3",
-    "hamburger-react": "^2.5.2",
     "next": "16.3.4",
     "next-intl": "^4.14.2",
     "next-mdx-remote": "^6.0.0",
@@ -27,9 +26,7 @@
     "nextjs-progressbar": "^0.0.16",
     "react": "19.2.8",
     "react-dom": "19.2.8",
-    "react-icons": "^5.7.0",
     "react-scan": "^0.5.7",
-    "react-spinners": "^0.17.0",
     "sharp": "^0.35.4",
     "tailwind-merge": "^3.6.0"
   },

@@ -1,6 +1,10 @@
 import { ComponentProps } from 'react'
 import clsx from 'clsx'
 
+type SiteContainerProps = ComponentProps<'div'> & {
+  size?: 'wide' | 'medium' | 'tight'
+}
+
 export function SiteShell({ className, ...props }: ComponentProps<'div'>) {
   return (
     <div
@@ -13,11 +17,20 @@ export function SiteShell({ className, ...props }: ComponentProps<'div'>) {
   )
 }
 
-export function SiteContainer({ className, ...props }: ComponentProps<'div'>) {
+export function SiteContainer({
+  className,
+  size = 'wide',
+  ...props
+}: SiteContainerProps) {
   return (
     <div
       className={clsx(
-        'mx-auto w-full max-w-[1280px] px-5 max-md:px-4',
+        'mx-auto w-full px-5 max-md:px-4',
+        {
+          'max-w-[1280px]': size === 'wide',
+          'max-w-[1168px]': size === 'medium',
+          'max-w-(--breakpoint-md)': size === 'tight',
+        },
         className,
       )}
       {...props}
