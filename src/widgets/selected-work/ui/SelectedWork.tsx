@@ -16,10 +16,7 @@ export async function SelectedWork({ locale }: { locale: Locale }) {
   const localizedProjects = await getLocalizedProjects(locale)
 
   return (
-    <section
-      className="py-[clamp(5rem,5vw,9rem)] max-md:px-4 max-md:py-20"
-      id="work"
-    >
+    <section className="py-[clamp(5rem,5vw,9rem)] max-md:py-20" id="work">
       <SiteContainer>
         <SectionHeading title={t('work.title')} intro={t('work.intro')} />
         <div className="grid grid-cols-[1.25fr_0.75fr] gap-x-[clamp(1.5rem,3vw,3rem)] gap-y-[clamp(2.5rem,5vw,5rem)] max-md:grid-cols-1">
