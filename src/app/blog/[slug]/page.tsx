@@ -3,13 +3,10 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 import 'dracula-prism/dist/css/dracula-prism.min.css'
 import Image from 'next/image'
 import { TextLink } from 'shared/ui/TextLink/TextLink'
-import {
-  getResourceBySlug,
-  getResourcesPaths,
-} from 'lib/resources/resourcesService'
+import { getResourceBySlug, getResourcesPaths } from 'shared/lib/resources'
 import { Suspense } from 'react'
 import { Metadata } from 'next'
-import Container from 'shared/ui/Container/Container'
+import { SiteContainer } from 'shared/ui/portfolio-layout'
 
 type PageProps = {
   params: Promise<{ slug: string }>
@@ -28,6 +25,9 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
 
   return {
     title: `${post.frontmatter.title} - sebastiansiejek.dev`,
+    alternates: {
+      canonical: `/blog/${slug}`,
+    },
   }
 }
 
@@ -40,7 +40,7 @@ export default async function SinglePost(props: PageProps) {
 
   return (
     <>
-      <Container>
+      <SiteContainer size="medium">
         <h1
           className={
             'font-mono text-3xl mb-12 dark:text-primary font-bold md:text-center'
@@ -48,8 +48,8 @@ export default async function SinglePost(props: PageProps) {
         >
           {post.frontmatter.title}
         </h1>
-      </Container>
-      <Container size={'tight'}>
+      </SiteContainer>
+      <SiteContainer size="tight">
         <main className={'flex flex-col gap-6'}>
           <Suspense fallback={<>Loading...</>}>
             <MDXRemote
@@ -118,7 +118,7 @@ export default async function SinglePost(props: PageProps) {
             />
           </Suspense>
         </main>
-      </Container>
+      </SiteContainer>
     </>
   )
 }

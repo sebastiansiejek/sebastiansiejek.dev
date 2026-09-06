@@ -1,5 +1,5 @@
-import Container from 'shared/ui/Container/Container'
 import BlogCard from 'shared/ui/Cards/BlogCard/BlogCard'
+import { SiteContainer } from 'shared/ui/portfolio-layout'
 
 interface IBlogPosts {
   posts: IPosts
@@ -8,11 +8,11 @@ interface IBlogPosts {
 const BlogPosts = ({ posts }: IBlogPosts) => {
   return (
     <section aria-label={'Posts'}>
-      <Container className={'grid gap-8'} size={'tight'}>
+      <SiteContainer className={'grid gap-8'} size={'tight'}>
         {posts.map((post) => {
           return <BlogCard key={post.slug} {...post} />
         })}
-      </Container>
+      </SiteContainer>
     </section>
   )
 }
