@@ -1,5 +1,6 @@
 import type { Locale } from 'next-intl'
 import { getTranslations } from 'next-intl/server'
+import { SiteContainer } from 'shared/ui/portfolio-layout'
 import { SectionHeading } from 'shared/ui/portfolio-section-heading'
 
 export async function Services({ locale }: { locale: Locale }) {
@@ -24,7 +25,7 @@ export async function Services({ locale }: { locale: Locale }) {
       className="bg-portfolio-surface py-[clamp(5rem,10vw,9rem)] max-md:py-20"
       id="services"
     >
-      <div className="mx-auto w-full max-w-[1280px] px-5 max-md:px-4">
+      <SiteContainer>
         <SectionHeading
           className="max-w-[820px]"
           eyebrow={t('eyebrow')}
@@ -59,7 +60,7 @@ export async function Services({ locale }: { locale: Locale }) {
           ))}
         </div>
         <p className="mt-6 max-w-[64ch] text-portfolio-muted">{t('extra')}</p>
-      </div>
+      </SiteContainer>
     </section>
   )
 }

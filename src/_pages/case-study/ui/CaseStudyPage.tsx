@@ -37,41 +37,43 @@ export async function CaseStudyPage({
 
       <main id="main">
         <article>
-          <header className="mx-auto w-full max-w-[1280px] px-5 pt-[clamp(4rem,9vw,8rem)] pb-[clamp(3rem,6vw,5rem)] max-md:px-4 max-md:pt-12">
-            <Link
-              className="mb-[clamp(3rem,7vw,6rem)] inline-flex items-center gap-2 text-[0.86rem] font-bold text-portfolio-muted underline decoration-portfolio-accent decoration-1 underline-offset-[0.35rem] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-portfolio-accent focus-visible:ring-offset-2 focus-visible:ring-offset-portfolio-bg max-md:mb-12"
-              href={`/${locale}#work`}
-            >
-              <span aria-hidden="true">←</span> {t('back')}
-            </Link>
-            <SectionLabel className="mb-4">{project.kind}</SectionLabel>
-            <h1 className="m-0 text-[clamp(3.5rem,10vw,8.5rem)] leading-[0.9] font-[650] tracking-[-0.075em] max-md:text-[clamp(3.4rem,19vw,5.4rem)]">
-              {project.name}
-            </h1>
-            <p className="mt-8 max-w-[68ch] text-[clamp(1.1rem,2vw,1.45rem)] text-portfolio-muted">
-              {project.summary}
-            </p>
-            <div className="mt-8 flex flex-wrap items-center gap-3 max-md:flex-col max-md:items-stretch">
-              <ActionLink
-                className="max-md:w-full"
-                href={project.liveUrl}
-                target="_blank"
-                rel="noreferrer"
+          <header>
+            <SiteContainer className="pt-[clamp(4rem,9vw,8rem)] pb-[clamp(3rem,6vw,5rem)] max-md:pt-12">
+              <Link
+                className="mb-[clamp(3rem,7vw,6rem)] inline-flex items-center gap-2 text-[0.86rem] font-bold text-portfolio-muted underline decoration-portfolio-accent decoration-1 underline-offset-[0.35rem] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-portfolio-accent focus-visible:ring-offset-2 focus-visible:ring-offset-portfolio-bg max-md:mb-12"
+                href={`/${locale}#work`}
               >
-                {t('live')} <span aria-hidden="true">↗</span>
-              </ActionLink>
-              {project.repoUrl ? (
+                <span aria-hidden="true">←</span> {t('back')}
+              </Link>
+              <SectionLabel className="mb-4">{project.kind}</SectionLabel>
+              <h1 className="m-0 text-[clamp(3.5rem,10vw,8.5rem)] leading-[0.9] font-[650] tracking-[-0.075em] max-md:text-[clamp(3.4rem,19vw,5.4rem)]">
+                {project.name}
+              </h1>
+              <p className="mt-8 max-w-[68ch] text-[clamp(1.1rem,2vw,1.45rem)] text-portfolio-muted">
+                {project.summary}
+              </p>
+              <div className="mt-8 flex flex-wrap items-center gap-3 max-md:flex-col max-md:items-stretch">
                 <ActionLink
                   className="max-md:w-full"
-                  href={project.repoUrl}
+                  href={project.liveUrl}
                   target="_blank"
                   rel="noreferrer"
-                  variant="secondary"
                 >
-                  {t('repo')} <span aria-hidden="true">↗</span>
+                  {t('live')} <span aria-hidden="true">↗</span>
                 </ActionLink>
-              ) : null}
-            </div>
+                {project.repoUrl ? (
+                  <ActionLink
+                    className="max-md:w-full"
+                    href={project.repoUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    variant="secondary"
+                  >
+                    {t('repo')} <span aria-hidden="true">↗</span>
+                  </ActionLink>
+                ) : null}
+              </div>
+            </SiteContainer>
           </header>
 
           {project.image ? (
@@ -99,7 +101,7 @@ export async function CaseStudyPage({
             </div>
           )}
 
-          <div className="mx-auto mt-8 grid w-full max-w-[1280px] grid-cols-2 border-b border-portfolio-line px-5 max-md:grid-cols-1 max-md:px-4">
+          <SiteContainer className="mt-8 grid grid-cols-2 border-b border-portfolio-line max-md:grid-cols-1">
             <section className="py-8">
               <h2 className="mt-0 mb-[0.6rem] font-mono text-[0.72rem] font-medium uppercase tracking-[0.12em] text-portfolio-faint">
                 {t('role')}
@@ -112,7 +114,7 @@ export async function CaseStudyPage({
               </h2>
               <p className="m-0 max-w-[54ch]">{project.stack.join(', ')}</p>
             </section>
-          </div>
+          </SiteContainer>
 
           <div className="mx-auto w-full max-w-[1020px] px-5 py-[clamp(5rem,10vw,9rem)] max-md:px-4">
             <section className="grid grid-cols-[0.45fr_1fr] gap-12 pb-[clamp(4rem,8vw,7rem)] max-md:grid-cols-1 max-md:gap-6">

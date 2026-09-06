@@ -2,6 +2,7 @@ import Image from 'next/image'
 import type { Locale } from 'next-intl'
 import { getTranslations } from 'next-intl/server'
 import { siteConfig } from 'shared/config/site'
+import { SiteContainer } from 'shared/ui/portfolio-layout'
 import { ArrowLink } from 'shared/ui/portfolio-text-link'
 
 export async function About({ locale }: { locale: Locale }) {
@@ -19,7 +20,7 @@ export async function About({ locale }: { locale: Locale }) {
       className="bg-portfolio-surface-strong py-[clamp(5rem,10vw,9rem)] max-md:py-20"
       id="about"
     >
-      <div className="mx-auto grid w-full max-w-[1280px] grid-cols-[minmax(300px,0.75fr)_minmax(0,1.25fr)] items-center gap-[clamp(3rem,8vw,8rem)] px-5 max-md:grid-cols-1 max-md:px-4">
+      <SiteContainer className="grid grid-cols-[minmax(300px,0.75fr)_minmax(0,1.25fr)] items-center gap-[clamp(3rem,8vw,8rem)] max-md:grid-cols-1">
         <div
           className="relative flex min-h-[610px] -scale-x-100 flex-col justify-between rounded-xl bg-[linear-gradient(145deg,rgb(119_217_184_/_0.11),transparent_52%),var(--color-portfolio-bg)] text-portfolio-muted max-md:min-h-[430px]"
           role="img"
@@ -54,7 +55,7 @@ export async function About({ locale }: { locale: Locale }) {
             {t('linkedin')}
           </ArrowLink>
         </div>
-      </div>
+      </SiteContainer>
     </section>
   )
 }
