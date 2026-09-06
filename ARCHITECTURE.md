@@ -21,3 +21,24 @@ bundle.
 
 The localized landing page is the `home` page slice. Portfolio projects are a
 domain entity presented by the home page and by the `case-study` page slice.
+
+## UI system
+
+The shared design-system primitives are managed by shadcn/ui with Base UI as
+the primitive library. `components.json` is the source of truth for the
+registry style, icon library, aliases, and the Tailwind CSS entry point.
+
+- Generated and locally owned shadcn primitives live directly in
+  `src/shared/ui`.
+- Product-specific compositions such as `MediaFrame`, `SectionHeading`, and
+  `ArrowLink` build on those primitives and remain grouped in their existing
+  shared UI slices.
+- Design tokens are defined as semantic shadcn variables in
+  `src/_app/styles/global.css` and exposed to Tailwind CSS v4 through
+  `@theme inline`.
+- Components use semantic utilities such as `bg-background`, `bg-card`,
+  `text-muted-foreground`, `border-border`, and `ring-ring`. Feature code must
+  not introduce raw palette utilities for UI states.
+- Add or inspect primitives with the project's package runner, for example
+  `pnpm dlx shadcn@latest add button`, and keep the configured Base UI APIs
+  (`render` rather than Radix's `asChild`).

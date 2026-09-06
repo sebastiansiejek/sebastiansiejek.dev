@@ -1,1 +1,1 @@
-export { CardTitle, SectionTitle, SubsectionTitle } from './typography'
+export { ContentTitle, SectionTitle, SubsectionTitle } from './typography'

@@ -1,8 +1,10 @@
 import type { Locale } from 'next-intl'
 import { getTranslations } from 'next-intl/server'
+import { cn } from 'shared/lib/utilities'
+import { Badge } from 'shared/ui/badge'
+import { Card, CardContent, CardHeader, CardTitle } from 'shared/ui/card'
 import { SiteContainer } from 'shared/ui/site-layout'
 import { SectionHeading } from 'shared/ui/section-heading'
-import { CardTitle } from 'shared/ui/typography'
 
 export async function Services({ locale }: { locale: Locale }) {
   const t = await getTranslations({ locale, namespace: 'Site.services' })
@@ -23,7 +25,7 @@ export async function Services({ locale }: { locale: Locale }) {
 
   return (
     <section
-      className="bg-surface py-20 md:py-28 lg:py-36"
+      className="bg-secondary py-20 md:py-28 lg:py-36"
       id="services"
     >
       <SiteContainer>
@@ -35,32 +37,27 @@ export async function Services({ locale }: { locale: Locale }) {
         />
         <div className="grid grid-cols-2 grid-rows-2 gap-4 max-md:grid-cols-1 max-md:grid-rows-none">
           {services.map((service, index) => (
-            <article
-              className={`rounded-xl border border-border bg-background p-8 lg:p-14 ${
-                index === 0
-                  ? 'accent-wash row-span-2 flex min-h-112 flex-col justify-end max-md:row-auto max-md:min-h-0'
-                  : (index === 1
-                    ? 'bg-surface-raised'
-                    : '')
-              }`}
+            <Card
+              className={cn(
+                index === 0 &&
+                  'row-span-2 min-h-112 max-md:row-auto max-md:min-h-0',
+              )}
               key={service.title}
+              variant={index === 0 ? 'accent' : 'default'}
             >
-              <span
-                className="mb-auto font-mono text-xs text-subtle max-md:mb-12 max-md:block"
-                aria-hidden="true"
-              >
-                0{index + 1}
-              </span>
-              <CardTitle className="max-w-lg">
-                {service.title}
-              </CardTitle>
-              <p className="mt-4 max-w-prose text-muted">
-                {service.text}
-              </p>
-            </article>
+              <CardHeader className={cn(index === 0 && 'mt-auto')}>
+                <Badge variant="outline">0{index + 1}</Badge>
+                <CardTitle>{service.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="max-w-prose text-muted-foreground">
+                  {service.text}
+                </p>
+              </CardContent>
+            </Card>
           ))}
         </div>
-        <p className="mt-6 max-w-prose text-muted">{t('extra')}</p>
+        <p className="mt-6 max-w-prose text-muted-foreground">{t('extra')}</p>
       </SiteContainer>
     </section>
   )

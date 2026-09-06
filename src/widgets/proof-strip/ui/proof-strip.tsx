@@ -30,7 +30,7 @@ export async function ProofStrip({ locale }: { locale: Locale }) {
             <strong className="font-mono text-xl font-medium tracking-tighter text-foreground md:text-2xl lg:text-3xl">
               {value}
             </strong>
-            <span className="max-w-48 text-sm leading-snug text-muted">
+            <span className="max-w-48 text-sm leading-snug text-muted-foreground">
               {label}
             </span>
           </div>

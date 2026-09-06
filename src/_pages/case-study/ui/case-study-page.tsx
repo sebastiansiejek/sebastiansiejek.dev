@@ -1,19 +1,24 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import type { Locale } from 'next-intl'
 import { getTranslations } from 'next-intl/server'
 import { getProjectPath, type ProjectKey } from 'entities/project'
 import { getLocalizedProjects } from 'entities/project/index.server'
-import { ActionLink } from 'shared/ui/action'
+import { cn } from 'shared/lib/utilities'
+import { Alert, AlertDescription } from 'shared/ui/alert'
+import { Badge } from 'shared/ui/badge'
+import { buttonVariants } from 'shared/ui/button'
+import { Card, CardContent, CardHeader } from 'shared/ui/card'
 import { SiteContainer, SiteShell } from 'shared/ui/site-layout'
 import { SectionLabel } from 'shared/ui/section-heading'
 import { SiteFooter } from 'widgets/site-footer'
 import { SiteHeader } from 'widgets/site-header'
 import { ArrowLink } from 'shared/ui/arrow-link'
-import { RiArrowLeftLongLine } from 'react-icons/ri'
 import { SkipLink } from 'shared/ui/skip-link'
 import { MediaFrame } from 'shared/ui/media-frame'
 import { SectionTitle, SubsectionTitle } from 'shared/ui/typography'
 import { TextLink } from 'shared/ui/text-link'
+import { ArrowLeftIcon, InfoIcon } from 'lucide-react'
 
 export async function CaseStudyPage({
   locale,
@@ -41,16 +46,16 @@ export async function CaseStudyPage({
           <header>
             <SiteContainer className="pt-16 pb-12 md:pt-24 md:pb-16 lg:pt-32 lg:pb-20">
               <TextLink
-                className="mb-12 inline-flex items-center gap-2 text-sm font-bold text-muted decoration-accent decoration-1 underline-offset-4 md:mb-16 lg:mb-24"
+                className="mb-12 inline-flex items-center gap-2 text-sm font-bold text-muted-foreground decoration-primary decoration-1 underline-offset-4 md:mb-16 lg:mb-24"
                 href={`/${locale}#work`}
               >
-                <RiArrowLeftLongLine /> {t('back')}
+                <ArrowLeftIcon aria-hidden="true" /> {t('back')}
               </TextLink>
               <SectionLabel className="mb-4">{project.kind}</SectionLabel>
               <h1 className="m-0 text-6xl leading-none font-semibold tracking-tighter md:text-8xl lg:text-9xl">
                 {project.name}
               </h1>
-              <p className="mt-8 max-w-prose text-lg text-muted md:text-xl">
+              <p className="mt-8 max-w-prose text-lg text-muted-foreground md:text-xl">
                 {project.summary}
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-3 max-md:flex-col max-md:items-stretch">
@@ -60,7 +65,7 @@ export async function CaseStudyPage({
                   target="_blank"
                   rel="noreferrer"
                   direction={'external'}
-                  variant={'primary'}
+                  variant="default"
                 >
                   {t('live')}
                 </ArrowLink>
@@ -109,13 +114,13 @@ export async function CaseStudyPage({
 
           <SiteContainer className="mt-8 grid grid-cols-2 border-b border-border max-md:grid-cols-1">
             <section className="py-8">
-              <h2 className="mt-0 mb-2 font-mono text-xs font-medium uppercase tracking-widest text-subtle">
+              <h2 className="mt-0 mb-2 font-mono text-xs font-medium uppercase tracking-widest text-muted-foreground">
                 {t('role')}
               </h2>
               <p className="m-0 max-w-prose">{project.role}</p>
             </section>
             <section className="border-l border-border py-8 pl-8 max-md:border-t max-md:border-l-0 max-md:pl-0">
-              <h2 className="mt-0 mb-2 font-mono text-xs font-medium uppercase tracking-widest text-subtle">
+              <h2 className="mt-0 mb-2 font-mono text-xs font-medium uppercase tracking-widest text-muted-foreground">
                 {t('stack')}
               </h2>
               <p className="m-0 max-w-prose">{project.stack.join(', ')}</p>
@@ -127,7 +132,7 @@ export async function CaseStudyPage({
               <SubsectionTitle>
                 {t('challenge')}
               </SubsectionTitle>
-              <p className="col-span-2 m-0 text-lg text-muted md:text-xl max-md:col-auto">
+              <p className="col-span-2 m-0 text-lg text-muted-foreground md:text-xl max-md:col-auto">
                 {project.challenge}
               </p>
             </section>
@@ -138,14 +143,15 @@ export async function CaseStudyPage({
               </SubsectionTitle>
               <ol className="mt-10 grid list-none grid-cols-2 gap-4 p-0 max-md:grid-cols-1">
                 {project.decisions.map((decision, index) => (
-                  <li
-                    className="min-h-52 rounded-xl border border-border bg-surface p-6"
-                    key={decision}
-                  >
-                    <span className="font-mono text-xs text-accent">
-                      0{index + 1}
-                    </span>
-                    <p className="mt-14 text-muted">{decision}</p>
+                  <li key={decision}>
+                    <Card className="min-h-52">
+                      <CardHeader>
+                        <Badge variant="outline">0{index + 1}</Badge>
+                      </CardHeader>
+                      <CardContent className="mt-auto">
+                        <p className="text-muted-foreground">{decision}</p>
+                      </CardContent>
+                    </Card>
                   </li>
                 ))}
               </ol>
@@ -156,29 +162,33 @@ export async function CaseStudyPage({
                 <SubsectionTitle>
                   {t('result')}
                 </SubsectionTitle>
-                <p className="mt-5 text-muted">{project.result}</p>
+                <p className="mt-5 text-muted-foreground">{project.result}</p>
               </div>
               <div>
                 <SubsectionTitle>
                   {t('lesson')}
                 </SubsectionTitle>
-                <p className="mt-5 text-muted">{project.lesson}</p>
+                <p className="mt-5 text-muted-foreground">{project.lesson}</p>
               </div>
             </section>
 
             {project.credit ? (
-              <p className="mt-16 border-l-4 border-accent bg-surface p-6 text-muted">
-                {project.credit}
-              </p>
+              <Alert className="mt-16">
+                <InfoIcon aria-hidden="true" />
+                <AlertDescription>{project.credit}</AlertDescription>
+              </Alert>
             ) : undefined}
           </div>
 
-          <aside className="bg-surface py-20 md:py-28 lg:py-32">
+          <aside className="bg-card py-20 md:py-28 lg:py-32">
             <SiteContainer>
               <SectionTitle className="max-w-lg">{t('next')}</SectionTitle>
-              <ActionLink className="mt-8" href={`/${locale}#contact`}>
+              <Link
+                className={cn(buttonVariants({ size: 'lg' }), 'mt-8')}
+                href={`/${locale}#contact`}
+              >
                 {t('contact')}
-              </ActionLink>
+              </Link>
             </SiteContainer>
           </aside>
         </article>

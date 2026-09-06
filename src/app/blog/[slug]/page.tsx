@@ -43,7 +43,7 @@ export default async function SinglePost(properties: PageProperties) {
       <SiteContainer size="medium">
         <h1
           className={
-            'mb-12 font-mono text-3xl font-bold text-accent md:text-center'
+            'mb-12 font-mono text-3xl font-bold text-primary md:text-center'
           }
         >
           {post.frontmatter.title}
@@ -57,7 +57,7 @@ export default async function SinglePost(properties: PageProperties) {
               components={{
                 code: (properties) => (
                   <code
-                    className="bg-surface-raised p-1 font-mono text-accent"
+                    className="bg-secondary p-1 font-mono text-primary"
                     {...properties}
                   />
                 ),
@@ -97,7 +97,7 @@ export default async function SinglePost(properties: PageProperties) {
                   return (
                     <blockquote
                       {...properties}
-                      className="bg-surface p-4 text-foreground"
+                      className="bg-card p-4 text-foreground"
                     />
                   )
                 },

@@ -10,8 +10,8 @@ import {
 } from 'shared/ui/section-heading'
 import { ArrowLink } from 'shared/ui/arrow-link'
 import { SiteContainer } from 'shared/ui/site-layout'
-import clsx from 'clsx'
-import { CardTitle } from 'shared/ui/typography'
+import { cn } from 'shared/lib/utilities'
+import { ContentTitle } from 'shared/ui/typography'
 import { MediaFrame } from 'shared/ui/media-frame'
 
 export async function SelectedWork({ locale }: { locale: Locale }) {
@@ -28,7 +28,7 @@ export async function SelectedWork({ locale }: { locale: Locale }) {
 
             return (
               <article
-                className={clsx(
+                className={cn(
                   index === 0 && 'col-span-full max-md:col-auto',
                   index === 1 && 'col-span-3 max-md:col-auto',
                   index === 2 && 'col-span-2 max-md:col-auto',
@@ -39,7 +39,7 @@ export async function SelectedWork({ locale }: { locale: Locale }) {
                   <MediaFrame
                     as={LocalizedLink}
                     interactive
-                    className={clsx(
+                    className={cn(
                       'group block h-auto aspect-4/3',
                       index === 0 ? 'md:aspect-2/1' : 'md:aspect-8/5',
                     )}
@@ -84,8 +84,8 @@ export async function SelectedWork({ locale }: { locale: Locale }) {
                   <SectionLabel className="mb-3">
                     {project.kind}
                   </SectionLabel>
-                  <CardTitle>{project.name}</CardTitle>
-                  <p className="mt-3 max-w-prose text-muted">
+                  <ContentTitle>{project.name}</ContentTitle>
+                  <p className="mt-3 max-w-prose text-muted-foreground">
                     {project.summary}
                   </p>
                   <ArrowLink
@@ -110,7 +110,7 @@ export async function SelectedWork({ locale }: { locale: Locale }) {
               Daily Standup
             </h3>
           </div>
-          <p className="m-0 text-muted">
+          <p className="m-0 text-muted-foreground">
             {t('writing.featuredDescription')}
           </p>
           <ArrowLink

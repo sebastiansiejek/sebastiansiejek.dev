@@ -3,8 +3,10 @@
 import { FormEvent } from 'react'
 import { useTranslations } from 'next-intl'
 import { siteConfig } from 'shared/config/site'
-import { ActionButton } from 'shared/ui/action'
-import { TextareaField, TextField } from 'shared/ui/form-field'
+import { Button } from 'shared/ui/button'
+import { Field, FieldGroup, FieldLabel } from 'shared/ui/field'
+import { Input } from 'shared/ui/input'
+import { Textarea } from 'shared/ui/textarea'
 import { TextLink } from 'shared/ui/text-link'
 
 export function ContactForm() {
@@ -23,34 +25,45 @@ export function ContactForm() {
   }
 
   return (
-    <form className="grid gap-5" onSubmit={handleSubmit}>
-      <TextField
-        label={t('name')}
-        name="name"
-        type="text"
-        autoComplete="name"
-        placeholder={t('namePlaceholder')}
-        required
-      />
-      <TextField
-        label={t('email')}
-        name="email"
-        type="email"
-        autoComplete="email"
-        placeholder={t('emailPlaceholder')}
-        required
-      />
-      <TextareaField
-        label={t('message')}
-        name="message"
-        rows={6}
-        placeholder={t('messagePlaceholder')}
-        required
-      />
-      <ActionButton className="justify-self-start max-md:w-full" type="submit">
+    <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
+      <FieldGroup>
+        <Field>
+          <FieldLabel htmlFor="contact-name">{t('name')}</FieldLabel>
+          <Input
+            id="contact-name"
+            name="name"
+            type="text"
+            autoComplete="name"
+            placeholder={t('namePlaceholder')}
+            required
+          />
+        </Field>
+        <Field>
+          <FieldLabel htmlFor="contact-email">{t('email')}</FieldLabel>
+          <Input
+            id="contact-email"
+            name="email"
+            type="email"
+            autoComplete="email"
+            placeholder={t('emailPlaceholder')}
+            required
+          />
+        </Field>
+        <Field>
+          <FieldLabel htmlFor="contact-message">{t('message')}</FieldLabel>
+          <Textarea
+            id="contact-message"
+            name="message"
+            rows={6}
+            placeholder={t('messagePlaceholder')}
+            required
+          />
+        </Field>
+      </FieldGroup>
+      <Button className="self-start max-md:w-full" size="lg" type="submit">
         {t('submit')}
-      </ActionButton>
-      <p className="m-0 max-w-prose text-xs text-muted">
+      </Button>
+      <p className="m-0 max-w-prose text-xs text-muted-foreground">
         {t('helper')}{' '}
         <TextLink
           className="text-foreground"

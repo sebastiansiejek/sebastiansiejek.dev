@@ -1,29 +1,30 @@
 import { ComponentProps } from 'react'
-import { RiArrowRightUpLongLine, RiArrowRightLongLine } from 'react-icons/ri'
-import { ActionLink } from 'shared/ui/action'
+import Link from 'next/link'
+import { ArrowRightIcon, ArrowUpRightIcon } from 'lucide-react'
+import { buttonVariants } from 'shared/ui/button'
+import { cn } from 'shared/lib/utilities'
 
-type ArrowLinkProperties = ComponentProps<typeof ActionLink> & {
+type ArrowLinkProperties = ComponentProps<typeof Link> & {
   direction?: 'right' | 'external'
+  variant?: 'default' | 'outline'
 }
 
 export function ArrowLink({
   children,
+  className,
   direction = 'right',
+  variant = 'outline',
   ...properties
 }: ArrowLinkProperties) {
+  const Icon = direction === 'external' ? ArrowUpRightIcon : ArrowRightIcon
+
   return (
-    <ActionLink variant="secondary" {...properties}>
+    <Link
+      className={cn(buttonVariants({ size: 'lg', variant }), className)}
+      {...properties}
+    >
       {children}
-      <span
-        className="transition-transform group-hover:translate-x-1"
-        aria-hidden="true"
-      >
-        {direction === 'external' ? (
-          <RiArrowRightUpLongLine />
-        ) : (
-          <RiArrowRightLongLine />
-        )}
-      </span>
-    </ActionLink>
+      <Icon aria-hidden="true" data-icon="inline-end" />
+    </Link>
   )
 }

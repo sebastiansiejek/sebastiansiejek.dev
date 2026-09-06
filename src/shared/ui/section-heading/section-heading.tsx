@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import clsx from 'clsx'
+import { cn } from 'shared/lib/utilities'
 import { SectionTitle } from 'shared/ui/typography'
 
 type SectionLabelProperties = {
@@ -10,8 +10,8 @@ type SectionLabelProperties = {
 export function SectionLabel({ children, className }: SectionLabelProperties) {
   return (
     <p
-      className={clsx(
-        'mb-5 font-mono text-xs font-medium uppercase tracking-widest text-accent',
+      className={cn(
+        'mb-5 font-mono text-xs font-medium uppercase tracking-widest text-primary',
         className,
       )}
     >
@@ -35,7 +35,7 @@ export function SectionHeading({
 }: SectionHeadingProperties) {
   return (
     <div
-      className={clsx(
+      className={cn(
         'mb-10 max-w-3xl md:mb-16 lg:mb-20',
         className,
       )}
@@ -43,7 +43,9 @@ export function SectionHeading({
       {eyebrow ? <SectionLabel>{eyebrow}</SectionLabel> : undefined}
       <SectionTitle>{title}</SectionTitle>
       {intro ? (
-        <p className="mt-5 max-w-prose text-lg text-muted">{intro}</p>
+        <p className="mt-5 max-w-prose text-lg text-muted-foreground">
+          {intro}
+        </p>
       ) : undefined}
     </div>
   )

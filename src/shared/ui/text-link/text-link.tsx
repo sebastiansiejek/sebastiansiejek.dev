@@ -1,6 +1,6 @@
 import { AnchorHTMLAttributes } from 'react'
-import { twMerge } from 'tailwind-merge'
 import Link from 'next/link'
+import { cn } from 'shared/lib/utilities'
 
 export const TextLink = (
   properties: AnchorHTMLAttributes<HTMLAnchorElement> &
@@ -10,8 +10,8 @@ export const TextLink = (
 
   return (
     <Link
-      className={twMerge(
-        'text-accent underline transition-colors hover:text-accent-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background',
+      className={cn(
+        'text-primary underline transition-colors hover:text-primary/80 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50',
         className,
       )}
       {...properties}

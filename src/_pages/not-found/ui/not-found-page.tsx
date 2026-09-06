@@ -1,6 +1,8 @@
 import type { Locale } from 'next-intl'
 import { getTranslations } from 'next-intl/server'
-import { ActionLink } from 'shared/ui/action'
+import Link from 'next/link'
+import { cn } from 'shared/lib/utilities'
+import { buttonVariants } from 'shared/ui/button'
 import { SiteContainer, SiteShell } from 'shared/ui/site-layout'
 import { SectionLabel } from 'shared/ui/section-heading'
 import { SiteFooter } from 'widgets/site-footer'
@@ -19,10 +21,13 @@ export async function NotFoundPage({ locale }: { locale: Locale }) {
           <h1 className="m-0 max-w-xl text-5xl leading-none font-semibold tracking-tighter md:text-7xl lg:text-8xl">
             {t('title')}
           </h1>
-          <p className="mt-6 text-muted">{t('description')}</p>
-          <ActionLink className="mt-8" href={`/${locale}`}>
+          <p className="mt-6 text-muted-foreground">{t('description')}</p>
+          <Link
+            className={cn(buttonVariants({ size: 'lg' }), 'mt-8')}
+            href={`/${locale}`}
+          >
             {t('back')}
-          </ActionLink>
+          </Link>
         </SiteContainer>
       </main>
       <SiteFooter locale={locale} />

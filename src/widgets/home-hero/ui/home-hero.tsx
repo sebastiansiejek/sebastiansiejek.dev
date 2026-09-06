@@ -1,7 +1,9 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import type { Locale } from 'next-intl'
 import { getTranslations } from 'next-intl/server'
-import { ActionLink } from 'shared/ui/action'
+import { cn } from 'shared/lib/utilities'
+import { buttonVariants } from 'shared/ui/button'
 import { SiteContainer } from 'shared/ui/site-layout'
 import { SectionLabel } from 'shared/ui/section-heading'
 
@@ -19,23 +21,28 @@ export async function HomeHero({ locale }: { locale: Locale }) {
           >
             {t('title')}
           </h1>
-          <p className="mt-5 max-w-prose text-base leading-relaxed text-muted md:mt-6 md:text-lg">
+          <p className="mt-5 max-w-prose text-base leading-relaxed text-muted-foreground md:mt-6 md:text-lg">
             {t('description')}
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3 max-md:mt-6 max-md:flex-col max-md:items-stretch">
-            <ActionLink
-              className="max-md:w-full max-md:whitespace-normal"
+            <Link
+              className={cn(
+                buttonVariants({ size: 'lg' }),
+                'max-md:w-full max-md:whitespace-normal',
+              )}
               href={`/${locale}#contact`}
             >
               {t('primary')}
-            </ActionLink>
-            <ActionLink
-              className="max-md:w-full max-md:whitespace-normal"
+            </Link>
+            <Link
+              className={cn(
+                buttonVariants({ size: 'lg', variant: 'outline' }),
+                'max-md:w-full max-md:whitespace-normal',
+              )}
               href={`/${locale}#work`}
-              variant="secondary"
             >
               {t('secondary')}
-            </ActionLink>
+            </Link>
           </div>
         </div>
         <figure className="relative m-0 h-full min-h-40 self-end overflow-hidden max-md:min-h-80">

@@ -1,5 +1,5 @@
 import { ComponentProps } from 'react'
-import clsx from 'clsx'
+import { cn } from 'shared/lib/utilities'
 
 type SiteContainerProperties = ComponentProps<'div'> & {
   size?: 'wide' | 'medium' | 'tight'
@@ -8,7 +8,7 @@ type SiteContainerProperties = ComponentProps<'div'> & {
 export function SiteShell({ className, ...properties }: ComponentProps<'div'>) {
   return (
     <div
-      className={clsx(
+      className={cn(
         'flex min-h-dvh flex-col bg-background font-sans text-base leading-relaxed text-foreground',
         className,
       )}
@@ -24,8 +24,8 @@ export function SiteContainer({
 }: SiteContainerProperties) {
   return (
     <div
-      className={clsx(
-        'mx-auto w-full px-5 max-md:px-4',
+      className={cn(
+        'mx-auto w-full max-md:px-4',
         {
           'max-w-7xl': size === 'wide',
           'max-w-6xl': size === 'medium',

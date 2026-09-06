@@ -2,14 +2,15 @@ import Image from 'next/image'
 import Link from 'next/link'
 import type { Locale } from 'next-intl'
 import { getTranslations } from 'next-intl/server'
-import { ActionLink } from 'shared/ui/action'
+import { cn } from 'shared/lib/utilities'
+import { buttonVariants } from 'shared/ui/button'
 import { SiteContainer } from 'shared/ui/site-layout'
 import {
   SectionHeading,
   SectionLabel,
 } from 'shared/ui/section-heading'
 import { ArrowLink } from 'shared/ui/arrow-link'
-import { CardTitle } from 'shared/ui/typography'
+import { ContentTitle } from 'shared/ui/typography'
 import { MediaFrame } from 'shared/ui/media-frame'
 
 export async function LatestWriting({ locale }: { locale: Locale }) {
@@ -37,16 +38,22 @@ export async function LatestWriting({ locale }: { locale: Locale }) {
           </MediaFrame>
           <div className="col-span-2 max-md:col-auto">
             <SectionLabel className="mb-3">{t('language')}</SectionLabel>
-            <CardTitle>{t('featured')}</CardTitle>
-            <p className="mt-3 max-w-prose text-muted">
+            <ContentTitle>{t('featured')}</ContentTitle>
+            <p className="mt-3 max-w-prose text-muted-foreground">
               {t('featuredDescription')}
             </p>
             <ArrowLink href="/blog/daily-standup">{t('read')}</ArrowLink>
           </div>
         </div>
-        <ActionLink className="mt-12" href="/blog" variant="secondary">
+        <Link
+          className={cn(
+            buttonVariants({ size: 'lg', variant: 'outline' }),
+            'mt-12',
+          )}
+          href="/blog"
+        >
           {t('all')}
-        </ActionLink>
+        </Link>
       </SiteContainer>
     </section>
   )
