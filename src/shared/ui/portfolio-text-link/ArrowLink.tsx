@@ -23,7 +23,7 @@ export function ArrowLink({
     >
       {children}
       <span
-        className="text-portfolio-accent transition-transform duration-[180ms] group-hover:translate-x-[0.2rem]"
+        className="text-portfolio-accent transition-transform group-hover:translate-x-[0.2rem]"
         aria-hidden="true"
       >
         {direction === 'external' ? '↗' : '→'}

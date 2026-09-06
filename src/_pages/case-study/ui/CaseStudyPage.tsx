@@ -2,11 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import type { Locale } from 'next-intl'
 import { getTranslations } from 'next-intl/server'
-import {
-  getProjectPath,
-  PlanningPokerPreview,
-  type ProjectKey,
-} from 'entities/project'
+import { getProjectPath, type ProjectKey } from 'entities/project'
 import { getLocalizedProjects } from 'entities/project/index.server'
 import { ActionLink } from 'shared/ui/portfolio-button'
 import { SiteContainer, SiteShell } from 'shared/ui/portfolio-layout'
@@ -94,11 +90,12 @@ export async function CaseStudyPage({
               className="relative mx-auto aspect-2/1 w-full max-w-7xl gap-4 flex justify-center place-items-center overflow-hidden rounded-xl bg-[linear-gradient(135deg,transparent_0_44%,rgb(119_217_184/0.09)_44%_56%,transparent_56%),var(--color-portfolio-surface-strong)] px-5 text-portfolio-accent after:pointer-events-none after:absolute after:inset-0 after:ring-1 after:ring-inset after:ring-portfolio-text/8 max-md:w-[calc(100%-2rem)] max-md:aspect-[4/3] max-md:px-0"
               aria-label="Planning Poker"
             >
-              {['1', '2', '3', '5', '7', '13'].map((estimate) => (
-                <PlanningPokerPreview key={estimate}>
-                  {estimate}
-                </PlanningPokerPreview>
-              ))}
+              <Image
+                className="object-contain p-4"
+                src={'/images/portfolio/planning-poker.webp'}
+                fill
+                alt={'Planning Poker'}
+              />
             </div>
           )}
 
