@@ -11,7 +11,7 @@ export async function HomeHero({ locale }: { locale: Locale }) {
   return (
     <section aria-labelledby="hero-title">
       <SiteContainer className="grid grid-cols-[minmax(0,1.65fr)_minmax(280px,0.85fr)] items-end gap-[clamp(2rem,4vw,5rem)] max-lg:grid-cols-[minmax(0,1.4fr)_minmax(250px,0.6fr)] max-lg:gap-8 max-md:grid-cols-1">
-        <div className="relative z-1 pt-[3vh] lg:pt-0 md:py-[clamp(2rem,8vh,3rem)]">
+        <div className="relative z-1 pt-[3vh] md:py-[clamp(2rem,8vh,3rem)]">
           <SectionLabel>{t('eyebrow')}</SectionLabel>
           <h1
             className="m-0 max-w-[18ch] text-[clamp(2.6rem,4.4vw,4.25rem)] leading-[1.02] font-[650] tracking-[-0.055em] text-portfolio-text text-balance max-lg:text-[clamp(2.5rem,5vw,3.25rem)] max-md:max-w-[16ch] max-md:text-[clamp(2.25rem,10.5vw,3.25rem)]"

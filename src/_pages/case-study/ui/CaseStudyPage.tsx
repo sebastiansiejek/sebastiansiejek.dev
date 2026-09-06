@@ -9,6 +9,8 @@ import { SiteContainer, SiteShell } from 'shared/ui/portfolio-layout'
 import { SectionLabel } from 'shared/ui/portfolio-section-heading'
 import { SiteFooter } from 'widgets/site-footer'
 import { SiteHeader } from 'widgets/site-header'
+import { ArrowLink } from 'shared/ui/portfolio-text-link'
+import { RiArrowLeftLongLine } from 'react-icons/ri'
 
 export async function CaseStudyPage({
   locale,
@@ -43,7 +45,7 @@ export async function CaseStudyPage({
                 className="mb-[clamp(3rem,7vw,6rem)] inline-flex items-center gap-2 text-[0.86rem] font-bold text-portfolio-muted underline decoration-portfolio-accent decoration-1 underline-offset-[0.35rem] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-portfolio-accent focus-visible:ring-offset-2 focus-visible:ring-offset-portfolio-bg max-md:mb-12"
                 href={`/${locale}#work`}
               >
-                <span aria-hidden="true">←</span> {t('back')}
+                <RiArrowLeftLongLine /> {t('back')}
               </Link>
               <SectionLabel className="mb-4">{project.kind}</SectionLabel>
               <h1 className="m-0 text-[clamp(3.5rem,10vw,8.5rem)] leading-[0.9] font-[650] tracking-[-0.075em] max-md:text-[clamp(3.4rem,19vw,5.4rem)]">
@@ -53,24 +55,25 @@ export async function CaseStudyPage({
                 {project.summary}
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-3 max-md:flex-col max-md:items-stretch">
-                <ActionLink
+                <ArrowLink
                   className="max-md:w-full"
                   href={project.liveUrl}
                   target="_blank"
                   rel="noreferrer"
+                  direction={'external'}
+                  variant={'primary'}
                 >
-                  {t('live')} <span aria-hidden="true">↗</span>
-                </ActionLink>
+                  {t('live')}
+                </ArrowLink>
                 {project.repoUrl ? (
-                  <ActionLink
+                  <ArrowLink
                     className="max-md:w-full"
                     href={project.repoUrl}
                     target="_blank"
                     rel="noreferrer"
-                    variant="secondary"
                   >
-                    {t('repo')} <span aria-hidden="true">↗</span>
-                  </ActionLink>
+                    {t('repo')}
+                  </ArrowLink>
                 ) : null}
               </div>
             </SiteContainer>

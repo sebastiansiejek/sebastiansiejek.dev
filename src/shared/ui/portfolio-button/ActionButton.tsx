@@ -12,7 +12,7 @@ const variants: Record<ActionVariant, string> = {
 }
 
 const buttonClassName =
-  'inline-flex min-h-12 cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-lg border px-[1.1rem] py-3 text-center text-[0.9rem] leading-[1.2] font-[750] no-underline transition-[background-color,border-color] duration-[180ms] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-portfolio-accent focus-visible:ring-offset-2 focus-visible:ring-offset-portfolio-bg'
+  'group inline-flex min-h-12 cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-lg border px-[1.1rem] py-3 text-center text-[0.9rem] leading-[1.2] font-[750] no-underline transition-[background-color,border-color] duration-[180ms] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-portfolio-accent focus-visible:ring-offset-2 focus-visible:ring-offset-portfolio-bg'
 
 type ActionButtonProps = ComponentProps<'button'> & {
   variant?: ActionVariant

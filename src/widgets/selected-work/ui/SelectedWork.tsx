@@ -79,6 +79,7 @@ export async function SelectedWork({ locale }: { locale: Locale }) {
                     href={{
                       pathname: `/projects/${key}`,
                     }}
+                    className={'mt-6'}
                   >
                     {t('work.view')}{' '}
                   </ArrowLink>
