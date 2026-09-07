@@ -89,8 +89,10 @@ export async function SiteHeader({ locale, alternateHref }: SiteHeaderProperties
           alternateHref={alternateHref}
           alternateHrefLang={locale === 'pl' ? 'en' : 'pl'}
           alternateLocaleName={t('alternateLocaleName')}
+          closeLabel={t('close')}
           label={t('menu')}
           links={links}
+          navigationLabel={t('navigationLabel')}
         />
       </SiteContainer>
     </header>

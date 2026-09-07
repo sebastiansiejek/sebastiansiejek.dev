@@ -207,6 +207,15 @@ Evolve the existing dark, minimalist identity instead of replacing it wholesale:
 
 No fake testimonials, fabricated clients, invented metrics, or placeholder endorsements may appear in production. Sebastian chose to omit testimonials entirely for this version.
 
+### Mobile navigation
+
+- Below the `md` breakpoint, use a shadcn/ui `Sheet` backed by Base UI rather than a dropdown.
+- Keep the header visible while a left-side panel occupies 80% of the viewport width below it.
+- Use an icon-only 48 px hamburger trigger that transitions into a close icon, with localized accessible labels.
+- Dim the uncovered page, lock background scrolling, close on backdrop click, Escape, or navigation, and restore focus to the trigger.
+- Keep the link treatment calm and compact: 16 px full-width rows without card containers or additional horizontal link padding, with the locale switch separated at the bottom.
+- Respect reduced-motion preferences and preserve keyboard navigation.
+
 ## Existing repository context
 
 - The current homepage is a minimal name/title/socials view in `src/app/page.tsx`.
