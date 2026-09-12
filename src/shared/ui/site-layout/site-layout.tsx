@@ -25,7 +25,7 @@ export function SiteContainer({
   return (
     <div
       className={cn(
-        'mx-auto w-full max-md:px-4',
+        'mx-auto w-full px-4 md:px-5',
         {
           'max-w-7xl': size === 'wide',
           'max-w-6xl': size === 'medium',
