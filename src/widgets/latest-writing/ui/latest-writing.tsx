@@ -42,13 +42,13 @@ export async function LatestWriting({ locale }: { locale: Locale }) {
             <p className="mt-3 max-w-prose text-muted-foreground">
               {t('featuredDescription')}
             </p>
-            <ArrowLink href="/blog/daily-standup">{t('read')}</ArrowLink>
+            <ArrowLink href="/blog/daily-standup" className={'mt-4'} variant={'default'}>{t('read')}</ArrowLink>
           </div>
         </div>
         <Link
           className={cn(
             buttonVariants({ size: 'lg', variant: 'outline' }),
-            'mt-12',
+            'mt-12 w-full sm:w-auto',
           )}
           href="/blog"
         >
