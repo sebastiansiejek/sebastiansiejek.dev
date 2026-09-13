@@ -12,7 +12,7 @@ Expand `sebastiansiejek.dev` from a minimal personal page into a professional po
 - attracts selected side projects, primarily from Poland;
 - presents him professionally to recruiters without publishing or duplicating his CV;
 - proves that he can deliver complete digital products, not only frontend code;
-- keeps modern web applications and AI-assisted automation as the future-facing direction while retaining WordPress and WooCommerce as commercially valuable expertise.
+- keeps modern web applications and AI-assisted automation as the clear future-facing direction while retaining WordPress and WooCommerce as proven, supplementary expertise.
 
 Primary audience: Polish founders and companies that need a web product, business-process automation, website, or online store. Recruiters are a secondary audience.
 
@@ -26,7 +26,7 @@ Approved Polish hero:
 
 Supporting copy:
 
-> Tworzę aplikacje, sklepy i automatyzacje — od pierwszej koncepcji, przez development, aż po wdrożenie.
+> Tworzę aplikacje webowe, MVP i automatyzacje - od pierwszej koncepcji, przez development, aż po wdrożenie.
 
 Primary CTA: **Opowiedz mi, co chcesz zbudować.**
 
@@ -38,7 +38,7 @@ Approved English hero:
 
 Supporting copy:
 
-> I build applications, online stores, and automations - from initial concept through development to launch.
+> I build web applications, MVPs, and automations - from initial concept through development to launch.
 
 Voice: direct, calm, specific, professional, and human. Prefer outcomes and decisions over stacks and buzzwords. Present AI as part of a disciplined delivery process and as an automation capability, not as a promise of cheap work.
 
@@ -50,7 +50,7 @@ Build a long-form landing page in this order:
 2. Hero with positioning, short proof-led description, primary CTA, and secondary CTA.
 3. Compact proof strip: 9+ years of commercial experience, SaaS used by 50,000+ people, 100+ delivered web projects, delivery from architecture to deployment.
 4. Selected work: Upominkly and Not Bad Studio. Planning Poker is temporarily hidden while a larger update is prepared. Daily Standup appears as a smaller technical article/experiment.
-5. Services: web applications and MVPs; process automation and AI solutions; WordPress and WooCommerce.
+5. Services: web applications and MVPs; process automation and AI solutions. Mention websites, e-commerce, WordPress, and WooCommerce as supplementary capabilities below the two primary services.
 6. Working model: discovery, scoped proposal, implementation, launch.
 7. About section with Sebastian's real photo and a concise professional narrative.
 8. Latest writing, preserving the existing blog as a separate section.
@@ -175,13 +175,12 @@ Do not present projects delivered through Empressia or Studio Kreacja as Sebasti
 
 ## Services and collaboration model
 
-Present three services, in this order:
+Present two primary services, in this order:
 
 1. Web applications and MVPs.
 2. Process automation and AI-enabled solutions.
-3. WordPress and WooCommerce implementation and optimization.
 
-Sebastian can also provide technical discovery, audits, performance optimization, and on-page/technical SEO. Do not position him as a branding, advertising, link-building, or guaranteed-ranking agency. Advanced visual identity work is delivered with a designer.
+Mention websites and e-commerce, including WordPress and WooCommerce implementation, as supplementary capabilities rather than a third equal service. Sebastian can also provide technical discovery, audits, performance optimization, and on-page/technical SEO. Do not position him as a branding, advertising, link-building, or guaranteed-ranking agency. Advanced visual identity work is delivered with a designer.
 
 Preferred commercial model:
 

@@ -22,7 +22,7 @@
     "hero": {
       "eyebrow": "Software Engineer",
       "title": "I turn business ideas and challenges into working products.",
-      "description": "I build applications, online stores, and automations - from initial concept through development to launch.",
+      "description": "I build web applications, MVPs, and automations - from initial concept through development to launch.",
       "primary": "Tell me what you want to build",
       "secondary": "See my work",
       "imageAlt": "Portrait of Sebastian Siejek, Software Engineer"
@@ -62,13 +62,9 @@
         "automation": {
           "title": "Process automation and AI",
           "text": "I connect systems, organise data flows and remove repetitive work. I use AI where it creates a measurable advantage."
-        },
-        "commerce": {
-          "title": "WordPress and WooCommerce",
-          "text": "I deliver custom sites and stores with attention to reliability, performance, technical SEO and manageable content."
         }
       },
-      "extra": "I can also help with technical discovery, audits, performance and on-page SEO."
+      "extra": "I also deliver websites and online stores, including WordPress and WooCommerce projects. I can help with technical discovery, audits, performance and on-page SEO."
     },
     "process": {
       "title": "How I work",
@@ -215,7 +211,7 @@
   "Metadata": {
     "landing": {
       "title": "Sebastian Siejek | Software Engineer, web products and automation",
-      "description": "I build web applications, MVPs, process automations and WooCommerce stores from idea to launch."
+      "description": "I build web applications, MVPs, and process automations from idea to launch. I help companies create and grow digital products."
     },
     "caseStudyTitle": "Sebastian Siejek case study",
     "privacy": {

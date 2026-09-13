@@ -22,7 +22,7 @@
     "hero": {
       "eyebrow": "Software Engineer",
       "title": "Zamieniam pomysły i problemy biznesowe w działające produkty.",
-      "description": "Tworzę aplikacje, sklepy i automatyzacje - od pierwszej koncepcji, przez development, aż po wdrożenie.",
+      "description": "Tworzę aplikacje webowe, MVP i automatyzacje - od pierwszej koncepcji, przez development, aż po wdrożenie.",
       "primary": "Opowiedz mi, co chcesz zbudować",
       "secondary": "Zobacz moje projekty",
       "imageAlt": "Portret Sebastiana Siejek, Software Engineera"
@@ -62,13 +62,9 @@
         "automation": {
           "title": "Automatyzacje procesów i AI",
           "text": "Łączę systemy, porządkuję przepływ danych i eliminuję powtarzalną pracę. AI wykorzystuję tam, gdzie daje mierzalną przewagę."
-        },
-        "commerce": {
-          "title": "WordPress i WooCommerce",
-          "text": "Wdrażam dedykowane strony i sklepy, dbając o niezawodność, wydajność, SEO techniczne i wygodną obsługę treści."
         }
       },
-      "extra": "Mogę też pomóc w discovery technicznym, audycie, wydajności i SEO on-page."
+      "extra": "Realizuję również strony i sklepy internetowe, w tym wdrożenia WordPress i WooCommerce. Pomagam także w discovery technicznym, audytach, wydajności i SEO on-page."
     },
     "process": {
       "title": "Jak pracuję",
@@ -215,7 +211,7 @@
   "Metadata": {
     "landing": {
       "title": "Sebastian Siejek | Software Engineer, aplikacje i automatyzacje",
-      "description": "Tworzę aplikacje webowe, MVP, automatyzacje procesów oraz sklepy WooCommerce od pomysłu po wdrożenie."
+      "description": "Tworzę aplikacje webowe, MVP i automatyzacje procesów od pomysłu po wdrożenie. Pomagam firmom budować i rozwijać cyfrowe produkty."
     },
     "caseStudyTitle": "Case study Sebastiana Siejka",
     "privacy": {
