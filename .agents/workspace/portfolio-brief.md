@@ -38,7 +38,7 @@ Approved English hero:
 
 Supporting copy:
 
-> I build applications, online stores, and automations—from initial concept through development to launch.
+> I build applications, online stores, and automations - from initial concept through development to launch.
 
 Voice: direct, calm, specific, professional, and human. Prefer outcomes and decisions over stacks and buzzwords. Present AI as part of a disciplined delivery process and as an automation capability, not as a promise of cheap work.
 
@@ -158,8 +158,10 @@ Publication status: temporarily hidden from the selected-work section, static ro
 
 - URL: `https://notbadstudio.pl`.
 - Sebastian implemented the complete store and deployment.
+- The previous store was already live, so replacing it required a smooth production migration that did not destabilize daily operations.
+- Sebastian configured GitHub-based CI/CD with automated deployments for subsequent changes.
 - A graphic designer supplied the Figma design; credit design separately and claim only technical implementation.
-- The implementation was technically straightforward. Frame its value as reliable translation from design into a functioning e-commerce business, not as an architecture breakthrough.
+- The visual implementation was technically straightforward. Frame its value as reliable translation from design into a functioning e-commerce business, a smooth production migration, and repeatable automated delivery—not as an architecture breakthrough.
 - Do not claim conversion, revenue, performance, or SEO outcomes without verified data.
 
 ### Daily Standup — supporting article/experiment

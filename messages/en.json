@@ -16,7 +16,7 @@
     "hero": {
       "eyebrow": "Software Engineer",
       "title": "I turn business ideas and challenges into working products.",
-      "description": "I build applications, online stores, and automations—from initial concept through development to launch.",
+      "description": "I build applications, online stores, and automations - from initial concept through development to launch.",
       "primary": "Tell me what you want to build",
       "secondary": "See my work",
       "imageAlt": "Portrait of Sebastian Siejek, Software Engineer"
@@ -177,17 +177,19 @@
     },
     "not-bad-studio": {
       "kind": "E-commerce delivery",
-      "summary": "A complete WooCommerce store implementation based on a supplied Figma design.",
+      "summary": "A smooth migration of a live WooCommerce store and implementation of its new version from a supplied Figma design.",
       "imageAlt": "Fashion photograph from the Not Bad Studio online store homepage",
-      "role": "Technical implementation and deployment",
-      "challenge": "The job was to translate the supplied visual design into a working store that supports daily sales and remains practical for the brand team.",
+      "role": "Technical implementation, migration and CI/CD",
+      "challenge": "The store was already live and supporting daily sales. The job was to translate the supplied visual design into a new version and migrate smoothly without disrupting store operations.",
       "decisions": {
         "attribution": "Separate attribution for the visual design from responsibility for implementation.",
         "commerce": "Use proven WooCommerce workflows for products and orders.",
-        "responsive": "Refine the responsive frontend and purchasing journey."
+        "responsive": "Refine the responsive frontend and purchasing journey.",
+        "migration": "Plan a smooth transition from the existing production store to the new version.",
+        "delivery": "Set up GitHub-based CI/CD with automated deployments for subsequent changes."
       },
-      "result": "The Figma design became a complete, publicly available online store. My responsibility covered the technical implementation and launch.",
-      "lesson": "In e-commerce, technical value is often about dependability: the build should match the design, the purchase path should work, and the team should be able to operate the store.",
+      "result": "The Figma design replaced the previous version through a smooth migration of the production store. The CI/CD pipeline now automates subsequent deployments from GitHub.",
+      "lesson": "In e-commerce, technical value often means predictability: a migration must not disrupt sales, the purchase journey must work and future deployments should be repeatable.",
       "credit": "The visual design was supplied by an external designer."
     }
   },

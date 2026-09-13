@@ -177,17 +177,19 @@
     },
     "not-bad-studio": {
       "kind": "Wdrożenie e-commerce",
-      "summary": "Kompletne wdrożenie sklepu WooCommerce na podstawie projektu dostarczonego w Figma.",
+      "summary": "Płynna migracja działającego sklepu WooCommerce i wdrożenie nowej wersji na podstawie projektu dostarczonego w Figma.",
       "imageAlt": "Fotografia modowa z głównej strony sklepu Not Bad Studio",
-      "role": "Implementacja techniczna i wdrożenie",
-      "challenge": "Zadaniem było wierne przełożenie projektu graficznego na działający sklep, który obsługuje codzienną sprzedaż i pozostaje wygodny dla zespołu marki.",
+      "role": "Implementacja techniczna, migracja i CI/CD",
+      "challenge": "Sklep już działał produkcyjnie i obsługiwał codzienną sprzedaż. Zadaniem było wierne przełożenie projektu graficznego na nową wersję oraz przeprowadzenie płynnej migracji bez destabilizowania pracy sklepu.",
       "decisions": {
         "attribution": "Rozdzielenie autorstwa projektu graficznego od odpowiedzialności za implementację.",
         "commerce": "Oparcie zarządzania produktami i zamówieniami na sprawdzonym WooCommerce.",
-        "responsive": "Dopracowanie responsywnego wdrożenia od strony frontendu i procesu zakupowego."
+        "responsive": "Dopracowanie responsywnego wdrożenia od strony frontendu i procesu zakupowego.",
+        "migration": "Zaplanowanie płynnego przejścia z działającego produkcyjnie sklepu do nowej wersji.",
+        "delivery": "Konfiguracja CI/CD w GitHubie z automatycznymi wdrożeniami kolejnych zmian."
       },
-      "result": "Projekt z Figma został wdrożony jako kompletny, publicznie działający sklep internetowy. Moja odpowiedzialność objęła implementację techniczną i uruchomienie.",
-      "lesson": "W e-commerce wartość techniczna często polega na przewidywalności: projekt ma wyglądać zgodnie z założeniami, proces zakupowy ma działać, a zespół ma móc obsługiwać sklep.",
+      "result": "Projekt z Figma zastąpił wcześniejszą wersję w ramach płynnej migracji produkcyjnego sklepu. Skonfigurowany proces CI/CD automatyzuje kolejne wdrożenia z GitHuba.",
+      "lesson": "W e-commerce wartość techniczna często polega na przewidywalności: migracja nie może zakłócić sprzedaży, proces zakupowy ma działać, a kolejne wdrożenia powinny być powtarzalne.",
       "credit": "Projekt graficzny został dostarczony przez zewnętrznego projektanta."
     }
   },

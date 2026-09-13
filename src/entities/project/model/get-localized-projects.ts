@@ -50,6 +50,8 @@ export async function getLocalizedProjects(locale: Locale) {
         t('not-bad-studio.decisions.attribution'),
         t('not-bad-studio.decisions.commerce'),
         t('not-bad-studio.decisions.responsive'),
+        t('not-bad-studio.decisions.migration'),
+        t('not-bad-studio.decisions.delivery'),
       ],
       result: t('not-bad-studio.result'),
       lesson: t('not-bad-studio.lesson'),
