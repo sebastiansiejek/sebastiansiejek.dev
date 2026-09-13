@@ -117,12 +117,33 @@
       "namePlaceholder": "Jak mam się do Ciebie zwracać?",
       "emailPlaceholder": "ty@firma.pl",
       "messagePlaceholder": "Krótko opisz pomysł, kontekst i oczekiwany rezultat.",
-      "submit": "Wyślij przez e-mail",
-      "helper": "Przycisk otworzy gotową wiadomość w Twoim programie pocztowym. Możesz też napisać bezpośrednio.",
-      "subject": "Nowy projekt od {name}",
-      "replyEmail": "Kontakt zwrotny"
+      "submit": "Wyślij wiadomość",
+      "sending": "Wysyłanie…",
+      "helper": "Wysyłając wiadomość, akceptujesz opisany sposób przetwarzania danych.",
+      "privacy": "Polityka prywatności.",
+      "direct": "Możesz też napisać bezpośrednio:",
+      "success": {
+        "title": "Dziękuję, wiadomość została przyjęta.",
+        "description": "Odpowiem tak szybko, jak to możliwe.",
+        "another": "Wyślij kolejną wiadomość"
+      },
+      "error": {
+        "title": "Nie udało się wysłać wiadomości.",
+        "description": "Spróbuj ponownie lub napisz bezpośrednio:",
+        "verification": "Nie udało się potwierdzić, że jesteś człowiekiem. Spróbuj ponownie lub napisz bezpośrednio:"
+      },
+      "validation": {
+        "required": "To pole jest wymagane.",
+        "emailInvalid": "Podaj poprawny adres e-mail.",
+        "nameTooShort": "Imię musi mieć co najmniej {min} znaki.",
+        "nameTooLong": "Imię może mieć maksymalnie {max} znaków.",
+        "emailTooLong": "E-mail może mieć maksymalnie {max} znaki.",
+        "messageTooShort": "Wiadomość musi mieć co najmniej {min} znaków.",
+        "messageTooLong": "Wiadomość może mieć maksymalnie {max} znaków."
+      }
     },
-    "footer": "Projektowanie i implementacja: Sebastian Siejek."
+    "footer": "Projektowanie i implementacja: Sebastian Siejek.",
+    "footerPrivacy": "Prywatność"
   },
   "Projects": {
     "upominkly": {
@@ -188,7 +209,49 @@
       "title": "Sebastian Siejek | Software Engineer, aplikacje i automatyzacje",
       "description": "Tworzę aplikacje webowe, MVP, automatyzacje procesów oraz sklepy WooCommerce od pomysłu po wdrożenie."
     },
-    "caseStudyTitle": "Case study Sebastiana Siejka"
+    "caseStudyTitle": "Case study Sebastiana Siejka",
+    "privacy": {
+      "title": "Polityka prywatności | Sebastian Siejek",
+      "description": "Informacje o przetwarzaniu danych na stronie sebastiansiejek.dev i w formularzu kontaktowym."
+    }
+  },
+  "Privacy": {
+    "eyebrow": "Prywatność",
+    "title": "Polityka prywatności",
+    "intro": "Poniżej wyjaśniam, jakie dane przetwarzam, po co to robię oraz jakie prawa przysługują Ci w związku z korzystaniem ze strony i formularza kontaktowego.",
+    "updated": "Ostatnia aktualizacja: 13 września 2026 r.",
+    "back": "Wróć na stronę główną",
+    "sections": {
+      "controller": {
+        "title": "Administrator danych",
+        "text": "Administratorem danych jest Sebastian Siejek, prowadzący działalność gospodarczą pod firmą Sebastian Siejek dev.",
+        "contact": "W sprawach dotyczących prywatności napisz na"
+      },
+      "data": {
+        "title": "Jakie dane przetwarzam",
+        "text": "Formularz przetwarza podane przez Ciebie imię, adres e-mail i treść wiadomości. Mechanizmy bezpieczeństwa mogą dodatkowo przetwarzać adres IP oraz podstawowe informacje techniczne o żądaniu. Podanie danych jest dobrowolne, ale niezbędne, abym mógł odpowiedzieć."
+      },
+      "purpose": {
+        "title": "Cel i podstawa przetwarzania",
+        "text": "Dane z formularza wykorzystuję wyłącznie do obsługi zapytania, udzielenia odpowiedzi i podjęcia działań na Twoje żądanie przed ewentualnym zawarciem umowy. Podstawą jest art. 6 ust. 1 lit. b RODO. Dane techniczne służą zapewnieniu bezpieczeństwa i diagnostyce strony na podstawie prawnie uzasadnionego interesu, zgodnie z art. 6 ust. 1 lit. f RODO."
+      },
+      "recipients": {
+        "title": "Dostawcy usług",
+        "text": "W obsłudze strony i wiadomości uczestniczą Vercel (hosting i statystyki techniczne), Cloudflare Turnstile (ochrona antyspamowa), Resend (wysyłka wiadomości), Sentry (diagnostyka błędów) oraz Google Gmail (odbiór korespondencji). Nie sprzedaję danych i nie wykorzystuję ich do marketingu. Niektórzy dostawcy mogą przetwarzać dane poza Europejskim Obszarem Gospodarczym, korzystając z przewidzianych prawem zabezpieczeń transferu."
+      },
+      "retention": {
+        "title": "Jak długo przechowuję dane",
+        "text": "Jeśli zapytanie nie prowadzi do współpracy, korespondencję usuwam najpóźniej 12 miesięcy po zakończeniu rozmowy. W przypadku rozpoczęcia współpracy dane mogą być przechowywane dłużej w zakresie wynikającym z umowy, rozliczeń lub obowiązków prawnych. Resend przechowuje treść i logi wysyłki przez 30 dni na podstawowych planach."
+      },
+      "rights": {
+        "title": "Twoje prawa",
+        "text": "Możesz zażądać dostępu do danych, ich sprostowania, usunięcia, ograniczenia przetwarzania lub przeniesienia, a także wnieść sprzeciw, gdy podstawą jest prawnie uzasadniony interes. Masz również prawo złożyć skargę do Prezesa Urzędu Ochrony Danych Osobowych."
+      },
+      "automation": {
+        "title": "Automatyczne decyzje i nagrania sesji",
+        "text": "Nie podejmuję wobec Ciebie decyzji w sposób zautomatyzowany i nie profiluję danych z formularza. Sekcja kontaktowa jest wyłączona z nagrań Sentry Replay, a treść wiadomości i adres e-mail nie są zapisywane w logach aplikacji."
+      }
+    }
   },
   "NotFound": {
     "metadataTitle": "Nie znaleziono strony - 404",

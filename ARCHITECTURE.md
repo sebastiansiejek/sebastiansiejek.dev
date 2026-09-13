@@ -21,6 +21,22 @@ bundle.
 
 The localized landing page is the `home` page slice. Portfolio projects are a
 domain entity presented by the home page and by the `case-study` page slice.
+The localized privacy policy is the `privacy` page slice.
+
+## Contact form boundary
+
+The contact form is implemented in `src/features/contact-form`. Shared client
+and server validation lives in its `model`, interactive UI and Turnstile
+rendering live in `ui`, and server-only delivery integrations live in `server`.
+Only `index.server.ts` exposes the request handler to the App Router adapter at
+`src/app/api/contact/route.ts`.
+
+The server verifies request shape, same-origin headers, honeypot and completion
+time, then validates the single-use Cloudflare Turnstile token before calling
+Resend. The client executes Turnstile on submit and shows it only when visitor
+interaction is required. Resend receives a stable idempotency key. Sentry receives only error
+codes and request IDs, never form fields, and the contact section is marked
+with `data-sentry-block` to exclude it from session replay.
 
 ## UI system
 

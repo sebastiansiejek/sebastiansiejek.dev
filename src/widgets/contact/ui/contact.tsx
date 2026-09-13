@@ -10,6 +10,7 @@ export async function Contact({ locale }: { locale: Locale }) {
   return (
     <section
       className="bg-card py-20 md:py-28 lg:py-36"
+      data-sentry-block
       id="contact"
     >
       <SiteContainer className="grid grid-cols-2 gap-10 md:gap-16 lg:gap-32 max-md:grid-cols-1">
@@ -19,7 +20,10 @@ export async function Contact({ locale }: { locale: Locale }) {
           title={t('title')}
           intro={t('intro')}
         />
-        <ContactForm />
+        <ContactForm
+          locale={locale}
+          turnstileSiteKey={process.env.TURNSTILE_SITE_KEY}
+        />
       </SiteContainer>
     </section>
   )

@@ -1,7 +1,8 @@
-import Link from 'next/link'
+import NextLink from 'next/link'
 import type { Locale } from 'next-intl'
 import { getTranslations } from 'next-intl/server'
 import { siteConfig } from 'shared/config/site'
+import { Link } from 'shared/i18n/navigation'
 import { SiteContainer } from 'shared/ui/site-layout'
 
 export async function SiteFooter({ locale }: { locale: Locale }) {
@@ -34,8 +35,15 @@ export async function SiteFooter({ locale }: { locale: Locale }) {
           >
             GitHub
           </a>
-          <Link className="text-xs text-muted-foreground" href="/blog">
+          <NextLink className="text-xs text-muted-foreground" href="/blog">
             Blog
+          </NextLink>
+          <Link
+            className="text-xs text-muted-foreground"
+            href="/privacy"
+            locale={locale}
+          >
+            {t('footerPrivacy')}
           </Link>
         </div>
       </SiteContainer>

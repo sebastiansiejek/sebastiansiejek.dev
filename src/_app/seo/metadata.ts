@@ -42,6 +42,34 @@ export const landingMetadata = async (locale: Locale): Promise<Metadata> => {
   }
 }
 
+export const privacyMetadata = async (locale: Locale): Promise<Metadata> => {
+  const t = await getTranslations({ locale, namespace: 'Metadata.privacy' })
+  const path = locale === 'pl' ? '/pl/polityka-prywatnosci' : '/en/privacy'
+  const title = t('title')
+  const description = t('description')
+
+  return {
+    title: { absolute: title },
+    description,
+    alternates: {
+      canonical: `${siteUrl}${path}`,
+      languages: {
+        pl: `${siteUrl}/pl/polityka-prywatnosci`,
+        en: `${siteUrl}/en/privacy`,
+        'x-default': `${siteUrl}/pl/polityka-prywatnosci`,
+      },
+    },
+    openGraph: {
+      title,
+      description,
+      url: `${siteUrl}${path}`,
+      siteName: 'Sebastian Siejek',
+      locale: locale === 'pl' ? 'pl_PL' : 'en_US',
+      type: 'website',
+    },
+  }
+}
+
 export const caseStudyMetadata = async (
   locale: Locale,
   projectKey: ProjectKey,

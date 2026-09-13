@@ -1,4 +1,4 @@
-/new# Portfolio implementation brief
+# Portfolio implementation brief
 
 Status: approved by Sebastian on 2026-09-02.
 
@@ -62,6 +62,7 @@ Target structure:
 - `/pl/projekty/upominkly` and `/en/projects/upominkly`.
 - `/pl/projekty/planning-poker` and `/en/projects/planning-poker`.
 - `/pl/projekty/not-bad-studio` and `/en/projects/not-bad-studio`.
+- `/pl/polityka-prywatnosci` and `/en/privacy`.
 - Preserve existing `/blog` and `/blog/[slug]` URLs because the current articles are Polish and may already be indexed. Link to them from both language variants with an explicit Polish-language cue in the English UI.
 
 Add localized metadata, canonical URLs, `hreflang` alternates, Open Graph data, sitemap entries, and crawlable internal links. Each case study needs a distinct title and description. Do not create separate service routes until each can contain genuinely useful content: real examples, process, deliverables, constraints, and answers to client questions.
@@ -190,7 +191,12 @@ Primary message: **Opowiedz mi, co chcesz zbudować.**
 - GitHub: `https://github.com/sebastiansiejek`.
 - Use a short form: name, reply email, and message.
 - A visible email must remain available if form delivery fails.
-- Never ship a form that appears successful without actually delivering the message. If no delivery provider or credentials exist, finish the UI with an honest fallback and document the one remaining integration step.
+- Send server-side through Resend from `Portfolio <contact@sebastiansiejek.dev>` to `siejeksebastian@gmail.com`; set the visitor's address as `Reply-To`.
+- Treat a successful Resend API response as accepted for delivery and use that precise wording in the UI; never promise inbox delivery.
+- Validate name (2–100), email (maximum 254), and message (20–5000) on the client and server. Preserve entered data on errors, use a 10-second client timeout, and do not retry automatically.
+- Protect the endpoint with a honeypot, minimum completion time, Cloudflare Turnstile server verification, an idempotency key, and a Vercel WAF limit of 5 submissions per 10 minutes per IP.
+- Never write form fields to application logs or Sentry. Block the contact section from Sentry Replay.
+- Keep the visible Gmail fallback and localized privacy-policy links. The data controller is `Sebastian Siejek dev`; unsuccessful enquiries are retained for no more than 12 months.
 - Calendar booking is unnecessary.
 
 ## Visual direction
@@ -233,7 +239,7 @@ Inspect the current files before implementation and preserve unrelated user chan
 - Project screenshots may be captured from the public products, but anonymize the Upominkly family event.
 - Verified Upominkly usage metrics can improve the case study later but are not required for launch.
 - Verified business outcomes for Not Bad Studio can improve the case study later but are not required for launch.
-- A contact-form delivery provider/credential may be required. Do not block the rest of the page on it.
+- Resend and Cloudflare Turnstile credentials are configured locally and on Vercel. The Resend domain is verified.
 
 ## Completion criteria for the implementation session
 

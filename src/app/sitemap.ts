@@ -44,9 +44,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })),
   )
 
+  const privacyPages: MetadataRoute.Sitemap = routing.locales.map((locale) => ({
+    url: `${siteUrl}${
+      locale === 'pl' ? '/pl/polityka-prywatnosci' : '/en/privacy'
+    }`,
+    lastModified: new Date(),
+    changeFrequency: 'yearly',
+    priority: 0.2,
+    alternates: {
+      languages: {
+        pl: `${siteUrl}/pl/polityka-prywatnosci`,
+        en: `${siteUrl}/en/privacy`,
+      },
+    },
+  }))
+
   return [
     ...landingPages,
     ...caseStudies,
+    ...privacyPages,
     {
       url: `${siteUrl}/blog`,
       lastModified: new Date(),

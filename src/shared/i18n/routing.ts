@@ -10,5 +10,9 @@ export const routing = defineRouting({
       pl: '/projekty/[slug]',
       en: '/projects/[slug]',
     },
+    '/privacy': {
+      pl: '/polityka-prywatnosci',
+      en: '/privacy',
+    },
   },
 })

@@ -117,12 +117,33 @@
       "namePlaceholder": "How should I address you?",
       "emailPlaceholder": "you@company.com",
       "messagePlaceholder": "Briefly describe the idea, context and expected outcome.",
-      "submit": "Send via email",
-      "helper": "The button opens a prepared message in your email app. You can also write to me directly.",
-      "subject": "Project enquiry from {name}",
-      "replyEmail": "Reply email"
+      "submit": "Send message",
+      "sending": "Sending…",
+      "helper": "By sending a message, you accept the described processing of your data.",
+      "privacy": "Privacy policy.",
+      "direct": "You can also write to me directly:",
+      "success": {
+        "title": "Thank you, your message has been accepted.",
+        "description": "I will reply as soon as possible.",
+        "another": "Send another message"
+      },
+      "error": {
+        "title": "The message could not be sent.",
+        "description": "Try again or email me directly:",
+        "verification": "I could not verify that you are human. Try again or email me directly:"
+      },
+      "validation": {
+        "required": "This field is required.",
+        "emailInvalid": "Enter a valid email address.",
+        "nameTooShort": "Name must contain at least {min} characters.",
+        "nameTooLong": "Name can contain at most {max} characters.",
+        "emailTooLong": "Email can contain at most {max} characters.",
+        "messageTooShort": "Message must contain at least {min} characters.",
+        "messageTooLong": "Message can contain at most {max} characters."
+      }
     },
-    "footer": "Designed and built by Sebastian Siejek."
+    "footer": "Designed and built by Sebastian Siejek.",
+    "footerPrivacy": "Privacy"
   },
   "Projects": {
     "upominkly": {
@@ -188,7 +209,49 @@
       "title": "Sebastian Siejek | Software Engineer, web products and automation",
       "description": "I build web applications, MVPs, process automations and WooCommerce stores from idea to launch."
     },
-    "caseStudyTitle": "Sebastian Siejek case study"
+    "caseStudyTitle": "Sebastian Siejek case study",
+    "privacy": {
+      "title": "Privacy policy | Sebastian Siejek",
+      "description": "Information about personal data processing on sebastiansiejek.dev and through the contact form."
+    }
+  },
+  "Privacy": {
+    "eyebrow": "Privacy",
+    "title": "Privacy policy",
+    "intro": "This policy explains what data I process, why I process it and which rights you have when using this website and its contact form.",
+    "updated": "Last updated: 13 September 2026",
+    "back": "Return to the homepage",
+    "sections": {
+      "controller": {
+        "title": "Data controller",
+        "text": "The data controller is Sebastian Siejek, conducting business under the name Sebastian Siejek dev.",
+        "contact": "For privacy matters, email"
+      },
+      "data": {
+        "title": "Data I process",
+        "text": "The form processes the name, email address and message you provide. Security mechanisms may also process your IP address and basic technical request information. Providing data is voluntary, but necessary for me to respond."
+      },
+      "purpose": {
+        "title": "Purpose and legal basis",
+        "text": "I use form data solely to handle your enquiry, respond and take steps at your request before potentially entering into a contract. The legal basis is Article 6(1)(b) GDPR. Technical data is used to secure and diagnose the website on the basis of legitimate interests under Article 6(1)(f) GDPR."
+      },
+      "recipients": {
+        "title": "Service providers",
+        "text": "The website and messages are supported by Vercel (hosting and technical analytics), Cloudflare Turnstile (spam protection), Resend (message delivery), Sentry (error diagnostics) and Google Gmail (receiving correspondence). I do not sell form data or use it for marketing. Some providers may process data outside the European Economic Area using legally recognised transfer safeguards."
+      },
+      "retention": {
+        "title": "Data retention",
+        "text": "If an enquiry does not lead to cooperation, I delete the correspondence no later than 12 months after the conversation ends. If cooperation begins, data may be retained longer where required for the contract, accounting or legal obligations. Resend retains email content and delivery logs for 30 days on its basic plans."
+      },
+      "rights": {
+        "title": "Your rights",
+        "text": "You may request access, correction, deletion, restriction or portability of your data and object where processing relies on legitimate interests. You may also lodge a complaint with the President of the Polish Personal Data Protection Office."
+      },
+      "automation": {
+        "title": "Automated decisions and session replay",
+        "text": "I do not make automated decisions about you or profile contact-form data. The contact section is excluded from Sentry Replay recordings, and message contents and email addresses are not written to application logs."
+      }
+    }
   },
   "NotFound": {
     "metadataTitle": "Page not found - 404",
