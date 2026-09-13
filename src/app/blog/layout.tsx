@@ -8,7 +8,7 @@ export default function BlogLayout({ children }: PropsWithChildren) {
     <SiteShell lang="pl">
       <SiteHeader locale="pl" alternateHref="/en" />
       <main className="flex-1 py-12">{children}</main>
-      <SiteFooter locale="pl" />
+      <SiteFooter locale="pl" alternateHref="/en" />
     </SiteShell>
   )
 }

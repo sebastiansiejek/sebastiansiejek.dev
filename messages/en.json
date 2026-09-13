@@ -13,6 +13,12 @@
     "close": "Close",
     "skipToContent": "Skip to content",
     "navigationLabel": "Primary navigation",
+    "theme": {
+      "label": "Theme",
+      "system": "System",
+      "light": "Light",
+      "dark": "Dark"
+    },
     "hero": {
       "eyebrow": "Software Engineer",
       "title": "I turn business ideas and challenges into working products.",

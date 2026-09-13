@@ -6,7 +6,14 @@ import { PropsWithChildren } from 'react'
 
 export const AppProvider = ({ children }: PropsWithChildren) => {
   return (
-    <ThemeProvider themes={['light', 'dark']} attribute="data-theme">
+    <ThemeProvider
+      attribute="data-theme"
+      defaultTheme="system"
+      disableTransitionOnChange
+      enableColorScheme
+      enableSystem
+      themes={['light', 'dark']}
+    >
       <NextNProgress color="var(--primary)" />
       {children}
     </ThemeProvider>

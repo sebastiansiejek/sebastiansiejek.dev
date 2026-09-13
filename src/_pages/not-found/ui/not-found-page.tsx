@@ -11,10 +11,11 @@ import { SiteHeader } from 'widgets/site-header'
 export async function NotFoundPage({ locale }: { locale: Locale }) {
   const t = await getTranslations({ locale, namespace: 'NotFound' })
   const alternateLocale = locale === 'pl' ? 'en' : 'pl'
+  const alternateHref = `/${alternateLocale}`
 
   return (
     <SiteShell lang={locale}>
-      <SiteHeader locale={locale} alternateHref={`/${alternateLocale}`} />
+      <SiteHeader locale={locale} alternateHref={alternateHref} />
       <main className="flex flex-1">
         <SiteContainer className="flex flex-col items-start justify-center py-16">
           <SectionLabel>{t('eyebrow')}</SectionLabel>
@@ -30,7 +31,7 @@ export async function NotFoundPage({ locale }: { locale: Locale }) {
           </Link>
         </SiteContainer>
       </main>
-      <SiteFooter locale={locale} />
+      <SiteFooter locale={locale} alternateHref={alternateHref} />
     </SiteShell>
   )
 }

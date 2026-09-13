@@ -75,7 +75,7 @@ export async function PrivacyPage({ locale }: { locale: Locale }) {
         </SiteContainer>
       </main>
 
-      <SiteFooter locale={locale} />
+      <SiteFooter locale={locale} alternateHref={alternateHref} />
     </SiteShell>
   )
 }

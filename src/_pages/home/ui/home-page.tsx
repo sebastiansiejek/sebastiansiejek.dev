@@ -16,11 +16,12 @@ import { WorkProcess } from 'widgets/work-process'
 export async function HomePage({ locale }: { locale: Locale }) {
   const t = await getTranslations({ locale, namespace: 'Site' })
   const alternateLocale = locale === 'pl' ? 'en' : 'pl'
+  const alternateHref = `/${alternateLocale}`
 
   return (
     <SiteShell lang={locale}>
       <SkipLink href="#main">{t('skipToContent')}</SkipLink>
-      <SiteHeader locale={locale} alternateHref={`/${alternateLocale}`} />
+      <SiteHeader locale={locale} alternateHref={alternateHref} />
 
       <main id="main">
         <HomeHero locale={locale} />
@@ -33,7 +34,7 @@ export async function HomePage({ locale }: { locale: Locale }) {
         <Contact locale={locale} />
       </main>
 
-      <SiteFooter locale={locale} />
+      <SiteFooter locale={locale} alternateHref={alternateHref} />
     </SiteShell>
   )
 }

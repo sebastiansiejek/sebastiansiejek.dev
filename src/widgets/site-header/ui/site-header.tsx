@@ -2,6 +2,10 @@ import Link from 'next/link'
 import { ComponentProps } from 'react'
 import type { Locale } from 'next-intl'
 import { getTranslations } from 'next-intl/server'
+import {
+  DesktopThemeSwitcher,
+  type ThemeSwitcherLabels,
+} from 'features/theme-switcher'
 import { cn } from 'shared/lib/utilities'
 import { buttonVariants } from 'shared/ui/button'
 import { SiteContainer } from 'shared/ui/site-layout'
@@ -46,6 +50,12 @@ export async function SiteHeader({ locale, alternateHref }: SiteHeaderProperties
     { label: t('nav.writing'), href: `${home}#writing` },
     { label: t('nav.contact'), href: `${home}#contact` },
   ]
+  const themeLabels: ThemeSwitcherLabels = {
+    label: t('theme.label'),
+    system: t('theme.system'),
+    light: t('theme.light'),
+    dark: t('theme.dark'),
+  }
 
   return (
     <header className="site-header sticky top-0 z-20 h-18 border-b border-primary/15 bg-background/90 backdrop-blur-2xl max-md:h-16">
@@ -76,13 +86,16 @@ export async function SiteHeader({ locale, alternateHref }: SiteHeaderProperties
               {label}
             </HeaderLink>
           ))}
-          <Link
-            className={buttonVariants({ size: 'sm', variant: 'outline' })}
-            href={alternateHref}
-            hrefLang={locale === 'pl' ? 'en' : 'pl'}
-          >
-            {t('alternateLocaleName')}
-          </Link>
+          <div className="flex items-center gap-1">
+            <DesktopThemeSwitcher labels={themeLabels} />
+            <Link
+              className={buttonVariants({ size: 'sm', variant: 'outline' })}
+              href={alternateHref}
+              hrefLang={locale === 'pl' ? 'en' : 'pl'}
+            >
+              {t('alternateLocaleName')}
+            </Link>
+          </div>
         </nav>
 
         <MobileNavigation
@@ -93,6 +106,7 @@ export async function SiteHeader({ locale, alternateHref }: SiteHeaderProperties
           label={t('menu')}
           links={links}
           navigationLabel={t('navigationLabel')}
+          themeLabels={themeLabels}
         />
       </SiteContainer>
     </header>

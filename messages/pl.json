@@ -13,6 +13,12 @@
     "close": "Zamknij",
     "skipToContent": "Przejdź do treści",
     "navigationLabel": "Główna nawigacja",
+    "theme": {
+      "label": "Motyw",
+      "system": "Systemowy",
+      "light": "Jasny",
+      "dark": "Ciemny"
+    },
     "hero": {
       "eyebrow": "Software Engineer",
       "title": "Zamieniam pomysły i problemy biznesowe w działające produkty.",

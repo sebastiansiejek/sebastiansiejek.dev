@@ -4,6 +4,10 @@ import { MenuIcon, XIcon } from 'lucide-react'
 import Link from 'next/link'
 import { useState } from 'react'
 import { cn } from 'cn'
+import {
+  MobileThemeSwitcher,
+  type ThemeSwitcherLabels,
+} from 'features/theme-switcher'
 import { Button } from 'shared/ui/button'
 import {
   Sheet,
@@ -23,6 +27,7 @@ type MobileNavigationProperties = {
   label: string
   links: Array<{ href: string; label: string }>
   navigationLabel: string
+  themeLabels: ThemeSwitcherLabels
 }
 
 export function MobileNavigation({
@@ -33,6 +38,7 @@ export function MobileNavigation({
   label,
   links,
   navigationLabel,
+  themeLabels,
 }: MobileNavigationProperties) {
   const [open, setOpen] = useState(false)
 
@@ -98,19 +104,17 @@ export function MobileNavigation({
 
             <div className="mt-auto flex flex-col gap-4 pt-5">
               <Separator />
+              <MobileThemeSwitcher labels={themeLabels} />
               <SheetClose
               render={
                   <Link
-                    className="flex min-h-11 items-center justify-between rounded-lg text-sm font-semibold text-foreground no-underline transition-colors duration-200 hover:text-primary focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+                    className="flex min-h-11 items-center rounded-lg text-sm font-semibold text-foreground no-underline transition-colors duration-200 hover:text-primary focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
                     href={alternateHref}
                     hrefLang={alternateHrefLang}
                   />
               }
             >
                 <span>{alternateLocaleName}</span>
-                <span className="font-mono text-xs text-muted-foreground" aria-hidden="true">
-                  {alternateHrefLang.toUpperCase()}
-                </span>
               </SheetClose>
             </div>
           </nav>

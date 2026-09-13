@@ -223,6 +223,17 @@ Evolve the existing dark, minimalist identity instead of replacing it wholesale:
 
 No fake testimonials, fabricated clients, invented metrics, or placeholder endorsements may appear in production. Sebastian chose to omit testimonials entirely for this version.
 
+### Theme switching
+
+- Apply one global theme across the landing pages, case studies, blog, privacy pages, and error pages.
+- Offer explicit system, light, and dark preferences. Default to the system preference and persist a manual choice locally.
+- Keep following operating-system changes while the system preference is selected.
+- On desktop, place an icon trigger directly before the language switcher with a compact gap between them. Its icon represents the selected preference and opens a compact menu with all three options.
+- In the mobile navigation panel, place a labelled three-option control above the language switcher. Changing the theme must not close the panel.
+- Repeat the compact theme and language controls in the footer. Keep the language link on the corresponding localized page when one exists.
+- Keep theme feedback limited to a subtle icon transition and suppress it for reduced-motion users. Avoid a page-wide color transition.
+- Preserve keyboard navigation, visible focus, localized labels, screen-reader context, and hydration-safe rendering without a wrong-theme flash.
+
 ### Mobile navigation
 
 - Below the `md` breakpoint, use a shadcn/ui `Sheet` backed by Base UI rather than a dropdown.

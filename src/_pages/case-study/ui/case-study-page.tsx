@@ -32,13 +32,14 @@ export async function CaseStudyPage({
   const localizedProjects = await getLocalizedProjects(locale)
   const project = localizedProjects[projectKey]
   const alternateLocale = locale === 'pl' ? 'en' : 'pl'
+  const alternateHref = getProjectPath(alternateLocale, projectKey)
 
   return (
     <SiteShell lang={locale}>
       <SkipLink href="#main">{siteT('skipToContent')}</SkipLink>
       <SiteHeader
         locale={locale}
-        alternateHref={getProjectPath(alternateLocale, projectKey)}
+        alternateHref={alternateHref}
       />
 
       <main id="main">
@@ -193,7 +194,7 @@ export async function CaseStudyPage({
           </aside>
         </article>
       </main>
-      <SiteFooter locale={locale} />
+      <SiteFooter locale={locale} alternateHref={alternateHref} />
     </SiteShell>
   )
 }
