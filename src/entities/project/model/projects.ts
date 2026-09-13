@@ -11,6 +11,7 @@ type Project = {
   image: string | undefined
   liveUrl: string
   repoUrl: string | undefined
+  published: boolean
   stack: readonly string[]
 }
 
@@ -20,6 +21,7 @@ export const projects = {
     image: '/images/portfolio/projects/upominkly.webp',
     liveUrl: 'https://www.upominkly.com',
     repoUrl: undefined,
+    published: true,
     stack: ['Next.js', 'Supabase', 'Tailwind', 'Vercel'],
   },
   'planning-poker': {
@@ -27,6 +29,7 @@ export const projects = {
     image: undefined,
     liveUrl: 'https://planning-poker.sebastiansiejek.dev',
     repoUrl: 'https://github.com/sebastiansiejek/planning-poker',
+    published: false,
     stack: [
       'Next.js',
       'TypeScript',
@@ -41,9 +44,18 @@ export const projects = {
     image: '/images/portfolio/projects/not-bad-studio.webp',
     liveUrl: 'https://notbadstudio.pl',
     repoUrl: undefined,
+    published: true,
     stack: ['WordPress', 'WooCommerce', 'PHP', 'JavaScript'],
   },
 } as const satisfies Record<ProjectKey, Project>
 
 export const isProjectKey = (value: string): value is ProjectKey =>
   projectKeys.includes(value as ProjectKey)
+
+export const publishedProjectKeys = projectKeys.filter(
+  (projectKey) => projects[projectKey].published,
+)
+
+export const isPublishedProjectKey = (
+  value: string,
+): value is ProjectKey => isProjectKey(value) && projects[value].published

@@ -1,5 +1,7 @@
 export {
+  isPublishedProjectKey,
   isProjectKey,
+  publishedProjectKeys,
   projectKeys,
   projects,
   type ProjectKey,

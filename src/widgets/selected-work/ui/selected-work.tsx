@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import type { Locale } from 'next-intl'
 import { getTranslations } from 'next-intl/server'
-import { projectKeys } from 'entities/project'
+import { publishedProjectKeys } from 'entities/project'
 import { getLocalizedProjects } from 'entities/project/index.server'
 import { Link as LocalizedLink } from 'shared/i18n/navigation'
 import {
@@ -23,14 +23,21 @@ export async function SelectedWork({ locale }: { locale: Locale }) {
       <SiteContainer>
         <SectionHeading title={t('work.title')} intro={t('work.intro')} />
         <div className="grid grid-cols-5 gap-x-6 gap-y-10 md:gap-x-12 md:gap-y-16 lg:gap-y-20 max-md:grid-cols-1">
-          {projectKeys.map((key, index) => {
+          {publishedProjectKeys.map((key, index) => {
             const project = localizedProjects[key]
+            const compactGrid = publishedProjectKeys.length === 2
 
             return (
               <article
                 className={cn(
-                  index === 0 && 'col-span-full max-md:col-auto',
-                  index === 1 && 'col-span-3 max-md:col-auto',
+                  index === 0 &&
+                    (compactGrid
+                      ? 'col-span-3 max-md:col-auto'
+                      : 'col-span-full max-md:col-auto'),
+                  index === 1 &&
+                    (compactGrid
+                      ? 'col-span-2 max-md:col-auto'
+                      : 'col-span-3 max-md:col-auto'),
                   index === 2 && 'col-span-2 max-md:col-auto',
                 )}
                 key={key}
@@ -41,7 +48,9 @@ export async function SelectedWork({ locale }: { locale: Locale }) {
                     interactive
                     className={cn(
                       'group block h-auto aspect-4/3',
-                      index === 0 ? 'md:aspect-2/1' : 'md:aspect-8/5',
+                      index === 0 && !compactGrid
+                        ? 'md:aspect-2/1'
+                        : 'md:aspect-8/5',
                     )}
                     href={{
                       pathname: '/projects/[slug]',

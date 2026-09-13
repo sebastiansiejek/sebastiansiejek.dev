@@ -43,7 +43,7 @@ Build a long-form landing page in this order:
 1. Navigation with Work, Services, About, Writing, Contact, and language switcher.
 2. Hero with positioning, short proof-led description, primary CTA, and secondary CTA.
 3. Compact proof strip: 9+ years of commercial experience, SaaS used by 50,000+ people, 100+ delivered web projects, delivery from architecture to deployment.
-4. Selected work: Upominkly, Planning Poker, and Not Bad Studio. Daily Standup appears as a smaller technical article/experiment.
+4. Selected work: Upominkly and Not Bad Studio. Planning Poker is temporarily hidden while a larger update is prepared. Daily Standup appears as a smaller technical article/experiment.
 5. Services: web applications and MVPs; process automation and AI solutions; WordPress and WooCommerce.
 6. Working model: discovery, scoped proposal, implementation, launch.
 7. About section with Sebastian's real photo and a concise professional narrative.
@@ -60,7 +60,7 @@ Target structure:
   fall back to `/pl` when neither resolves to a supported locale.
 - `/pl` and `/en` contain complete localized landing pages.
 - `/pl/projekty/upominkly` and `/en/projects/upominkly`.
-- `/pl/projekty/planning-poker` and `/en/projects/planning-poker`.
+- Keep `/pl/projekty/planning-poker` and `/en/projects/planning-poker` unpublished until the planned larger update is ready.
 - `/pl/projekty/not-bad-studio` and `/en/projects/not-bad-studio`.
 - `/pl/polityka-prywatnosci` and `/en/privacy`.
 - Preserve existing `/blog` and `/blog/[slug]` URLs because the current articles are Polish and may already be indexed. Link to them from both language variants with an explicit Polish-language cue in the English UI.
@@ -137,6 +137,8 @@ Use Sebastian's own professional photo. Keep the section work-focused; do not ex
 - Do not invent traction metrics. Add aggregate counts only if Sebastian later provides verified data.
 
 ### Planning Poker — full but concise case study
+
+Publication status: temporarily hidden from the selected-work section, static routes, and sitemap while a larger update is prepared. Keep its implementation and localized content so it can be published again later.
 
 - Live URL: `https://planning-poker.sebastiansiejek.dev`.
 - Repository: `https://github.com/sebastiansiejek/planning-poker`.
@@ -246,7 +248,7 @@ Inspect the current files before implementation and preserve unrelated user chan
 The first implementation is complete when:
 
 - the localized PL/EN landing pages implement the approved section order and positioning;
-- Upominkly, Planning Poker, and Not Bad Studio have substantial localized case-study pages with accurate attribution;
+- Upominkly and Not Bad Studio have substantial localized case-study pages with accurate attribution; Planning Poker remains implemented but unpublished until its update is ready;
 - existing blog URLs and content continue working;
 - navigation, language switching, internal links, metadata, canonical URLs, language alternates, sitemap, and robots data are coherent;
 - contact options are honest and usable, with no false form-success path;

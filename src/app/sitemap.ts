@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next'
 import * as process from 'node:process'
-import { getProjectPath, projectKeys } from 'entities/project'
+import { getProjectPath, publishedProjectKeys } from 'entities/project'
 import { getAllResources } from 'shared/lib/resources'
 import path from 'node:path'
 import { routing } from 'shared/i18n/routing'
@@ -29,19 +29,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   }))
 
-  const caseStudies: MetadataRoute.Sitemap = projectKeys.flatMap((projectKey) =>
-    routing.locales.map((locale) => ({
-      url: `${siteUrl}${getProjectPath(locale, projectKey)}`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.8,
-      alternates: {
-        languages: {
-          pl: `${siteUrl}${getProjectPath('pl', projectKey)}`,
-          en: `${siteUrl}${getProjectPath('en', projectKey)}`,
+  const caseStudies: MetadataRoute.Sitemap = publishedProjectKeys.flatMap(
+    (projectKey) =>
+      routing.locales.map((locale) => ({
+        url: `${siteUrl}${getProjectPath(locale, projectKey)}`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly' as const,
+        priority: 0.8,
+        alternates: {
+          languages: {
+            pl: `${siteUrl}${getProjectPath('pl', projectKey)}`,
+            en: `${siteUrl}${getProjectPath('en', projectKey)}`,
+          },
         },
-      },
-    })),
+      })),
   )
 
   const privacyPages: MetadataRoute.Sitemap = routing.locales.map((locale) => ({
