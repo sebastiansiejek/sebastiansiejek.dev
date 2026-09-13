@@ -20,19 +20,25 @@ Primary audience: Polish founders and companies that need a web product, busines
 
 Use **Software Engineer** as the public role.
 
-Recommended Polish hero:
+Approved Polish hero:
 
-> Tworzę aplikacje, sklepy i automatyzacje od pomysłu po wdrożenie.
+> Zamieniam pomysły i problemy biznesowe w działające produkty.
 
 Supporting copy:
 
-> Pomagam zamieniać pomysły i ręczne procesy w działające produkty cyfrowe. Łączę doświadczenie przy SaaS-ie używanym przez ponad 50 000 osób z dziesiątkami zrealizowanych projektów webowych.
+> Tworzę aplikacje, sklepy i automatyzacje — od pierwszej koncepcji, przez development, aż po wdrożenie.
 
 Primary CTA: **Opowiedz mi, co chcesz zbudować.**
 
 Secondary CTA: **Zobacz moje projekty.**
 
-The English version should carry the same meaning rather than translate word for word.
+Approved English hero:
+
+> I turn business ideas and challenges into working products.
+
+Supporting copy:
+
+> I build applications, online stores, and automations—from initial concept through development to launch.
 
 Voice: direct, calm, specific, professional, and human. Prefer outcomes and decisions over stacks and buzzwords. Present AI as part of a disciplined delivery process and as an automation capability, not as a promise of cheap work.
 
