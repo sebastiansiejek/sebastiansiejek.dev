@@ -6,7 +6,7 @@ import {
   type ThemeSwitcherLabels,
 } from 'features/theme-switcher'
 import { siteConfig } from 'shared/config/site'
-import { Link } from 'shared/i18n/navigation'
+import { getPathname } from 'shared/i18n/navigation'
 import { buttonVariants } from 'shared/ui/button'
 import { SiteContainer } from 'shared/ui/site-layout'
 
@@ -56,13 +56,12 @@ export async function SiteFooter({
             <NextLink className="text-xs text-muted-foreground" href="/blog">
               Blog
             </NextLink>
-            <Link
+            <NextLink
               className="text-xs text-muted-foreground"
-              href="/privacy"
-              locale={locale}
+              href={getPathname({ locale, href: '/privacy' })}
             >
               {t('footerPrivacy')}
-            </Link>
+            </NextLink>
           </div>
           <div className="flex items-center gap-1">
             <DesktopThemeSwitcher labels={themeLabels} />

@@ -57,3 +57,7 @@ pnpm build
 - `/pl/polityka-prywatnosci` and `/en/privacy`: privacy policy;
 - `/blog` and `/blog/[slug]`: Polish articles;
 - `/api/contact`: server-only contact endpoint.
+
+The blog sits outside the `[locale]` layout and its `NextIntlClientProvider`.
+Shared header and footer links use `next/link`; localized footer URLs are
+generated with `getPathname` and an explicit locale so they also work on the blog.
