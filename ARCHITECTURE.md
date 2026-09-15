@@ -69,6 +69,10 @@ registry style, icon library, aliases, and the Tailwind CSS entry point.
 - Design tokens are defined as semantic shadcn variables in
   `src/_app/styles/global.css` and exposed to Tailwind CSS v4 through
   `@theme inline`.
+- Color tokens use `light-dark(light, dark)` in one `:root` block. The root
+  supports both color schemes; `data-theme` selectors set only `color-scheme`
+  for explicit preferences. Primary and sidebar-primary share the mint
+  `#77d9b8` background and dark `#101713` foreground in both themes.
 - Components use semantic utilities such as `bg-background`, `bg-card`,
   `text-muted-foreground`, `border-border`, and `ring-ring`. Feature code must
   not introduce raw palette utilities for UI states.

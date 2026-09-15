@@ -8,6 +8,9 @@ For shared UI work, use the shadcn/ui configuration in `components.json` and
 the Base UI component APIs. Prefer existing primitives in `src/shared/ui`, use
 semantic Tailwind tokens from `src/_app/styles/global.css`, and add new shadcn
 components through `pnpm dlx shadcn@latest` instead of recreating them.
+Declare color tokens with `light-dark(light, dark)` in the global stylesheet's
+single `:root` block; theme selectors only set `color-scheme`. Keep primary
+backgrounds mint with dark foregrounds in both themes.
 
 Before running any command, briefly tell the user what the command is intended
 to check or change.
