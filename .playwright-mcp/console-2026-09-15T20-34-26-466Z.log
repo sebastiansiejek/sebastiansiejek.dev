@@ -1,0 +1,17 @@
+[     436ms] [WARNING] Sentry Logger [warn]: No DSN provided, client will not send events. @ http://localhost:3000/_next/static/chunks/0xcg_%40sentry_core_build_esm_1tbys5w._.js:7258
+[     455ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0kiw_next_dist_0cxu7wq._.js:906
+[     508ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0kiw_next_dist_0cxu7wq._.js:906
+[     530ms] [LOG] %c%s%c Sentry Logger [log]: background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   [Tracing] Starting sampled span
+  op: < unknown op >
+  name: generateMetadata /[locale]/page
+  ID: 9d41bb4a9d8a046b
+  parent ID: 87c1804d23912096
+  root ID: 8ea4b7711e5a2a83
+  root op: http.server
+  root description: /[locale] @ http://localhost:3000/_next/static/chunks/0kiw_next_dist_0cxu7wq._.js:906
+[     531ms] [LOG] %c%s%c Sentry Logger [log]: background: #e6e6e6;background: light-dark(rgba(0,0,0,0.1), rgba(255,255,255,0.25));color: #000000;color: light-dark(#000000, #ffffff);border-radius: 2px  Server   [Tracing] Finishing "< unknown op >" span "generateMetadata /[locale]/page" with ID 9d41bb4a9d8a046b @ http://localhost:3000/_next/static/chunks/0kiw_next_dist_0cxu7wq._.js:906
+[     984ms] [LOG] %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit @ http://localhost:3000/_next/static/chunks/0kiw_next_dist_0cxu7wq._.js:906
+[     984ms] [LOG] %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {route: /[locale], path: /pl} @ http://localhost:3000/_next/static/chunks/0kiw_next_dist_0cxu7wq._.js:906
+[     984ms] [LOG] %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {route: /[locale], path: /pl} @ http://localhost:3000/_next/static/chunks/0kiw_next_dist_0cxu7wq._.js:906
+[     984ms] [LOG] %c[Vercel Web Analytics]%c [view] http://localhost:3000/pl color: rgb(120, 120, 120) color: inherit {o: http://localhost:3000/pl, sv: 0.1.3, sdkn: @vercel/analytics/next, sdkv: 2.0.1, ts: 1789504467450} /_vercel/insights/view @ http://localhost:3000/_next/static/chunks/0kiw_next_dist_0cxu7wq._.js:906
+[     984ms] [LOG] %c[Vercel Web Analytics]%c [view] http://localhost:3000/pl color: rgb(120, 120, 120) color: inherit {o: http://localhost:3000/pl, sv: 0.1.3, sdkn: @vercel/analytics/next, sdkv: 2.0.1, ts: 1789504467450} /_vercel/insights/view @ http://localhost:3000/_next/static/chunks/0kiw_next_dist_0cxu7wq._.js:906
