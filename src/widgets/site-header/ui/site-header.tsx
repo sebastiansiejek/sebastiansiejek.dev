@@ -8,6 +8,7 @@ import {
 } from 'features/theme-switcher'
 import { cn } from 'shared/lib/utilities'
 import { buttonVariants } from 'shared/ui/button'
+import { BrandMark } from 'shared/ui/brand-mark'
 import { SiteContainer } from 'shared/ui/site-layout'
 import { MobileNavigation } from './mobile-navigation'
 
@@ -66,10 +67,10 @@ export async function SiteHeader({ locale, alternateHref }: SiteHeaderProperties
           aria-label="Sebastian Siejek"
         >
           <span
-            className="grid size-9 place-items-center rounded-lg bg-primary font-mono text-xs font-medium text-primary-foreground"
+            className="grid size-9 shrink-0 place-items-center rounded-lg bg-primary text-primary-foreground"
             aria-hidden="true"
           >
-            SS
+            <BrandMark className="size-7" />
           </span>
           <span className="max-md:hidden">Sebastian Siejek</span>
         </HeaderLink>

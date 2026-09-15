@@ -222,6 +222,20 @@ Evolve the existing dark, minimalist identity instead of replacing it wholesale:
 
 No fake testimonials, fabricated clients, invented metrics, or placeholder endorsements may appear in production. Sebastian chose to omit testimonials entirely for this version.
 
+### Personal logo and social identity
+
+Approved by Sebastian on 2026-09-15: concept C (third variant), a simple
+signature-style single S. Use one vector silhouette in the header, favicon,
+Apple touch icon, and branded social-share cards. Do not use an SS monogram
+or avatar as the primary logo.
+
+Keep the site's current mint primary and dark foreground. Favicon tiles
+remain dark-on-mint in both themes. Share cards use the S, Sebastian Siejek,
+Software Engineer, domain, and the localized line "Aplikacje webowe i automatyzacje"
+or "Web applications and automation" on charcoal. Keep MVP in service copy,
+not in the branded slogan. Use distinct PL/EN 1200 × 630 cards; retain project imagery
+for individual case studies.
+
 ### Theme switching
 
 - Apply one global theme across the landing pages, case studies, blog, privacy pages, and error pages.

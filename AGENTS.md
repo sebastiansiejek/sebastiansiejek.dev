@@ -16,3 +16,6 @@ Before running any command, briefly tell the user what the command is intended
 to check or change.
 
 For route or document-layout changes, read `ARCHITECTURE.md` first.
+
+For logo, favicon, or social-share image changes, read the Personal identity
+section in `README.md` for the approved vector source and asset regeneration.

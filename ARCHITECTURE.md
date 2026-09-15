@@ -34,6 +34,18 @@ document navigation; both use the same persisted theme and shared providers.
 `global-not-found.tsx` renders the shared document for unmatched routes using
 Next.js's `experimental.globalNotFound` support.
 
+## Brand assets and sharing
+
+The signature-style S silhouette and static export palette live in
+`src/shared/config/brand.ts`. `shared/ui/brand-mark` renders that silhouette using
+`currentColor`; its header tile uses the existing primary tokens in both themes.
+`scripts/generate-brand-assets.mjs` exports the committed SVG/ICO/Apple metadata
+files in `src/app` and the SVG marks and localized social PNGs in
+`public/images/brand`. Run `pnpm brand:generate` after changing the source.
+The PNG cards are static assets referenced by `_app/seo`, not file-convention
+Open Graph images, so explicit case-study images keep precedence. Both root
+layouts inherit the same icons and default Polish branded social card.
+
 ## Contact form boundary
 
 The contact form is implemented in `src/features/contact-form`. Shared client

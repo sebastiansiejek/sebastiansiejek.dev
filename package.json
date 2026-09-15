@@ -3,6 +3,7 @@
   "private": true,
   "packageManager": "pnpm@11.25.0",
   "scripts": {
+    "brand:generate": "node scripts/generate-brand-assets.mjs",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
