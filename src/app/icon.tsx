@@ -20,7 +20,11 @@ export function generateImageMetadata() {
   ]
 }
 
-export default function Icon() {
+export default async function Icon({ id }: { id: Promise<string> }) {
+  const iconId = await id
+  const images = generateImageMetadata()
+  const image = images.find((image) => image.id === iconId) ?? images[0]
+
   return new ImageResponse(
     <div
       style={{
@@ -29,12 +33,13 @@ export default function Icon() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        fontSize: 500,
+        fontSize: image.size.width * 0.7,
         background: '#3ceab8',
         color: '#0c121a',
       }}
     >
       S
     </div>,
+    image.size,
   )
 }

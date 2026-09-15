@@ -23,6 +23,17 @@ The localized landing page is the `home` page slice. Portfolio projects are a
 domain entity presented by the home page and by the `case-study` page slice.
 The localized privacy policy is the `privacy` page slice.
 
+Local MDX file access is exposed only through
+`src/shared/lib/resources/index.server.ts`. Localized project and privacy URLs
+are generated from `shared/i18n/navigation`, including metadata and sitemap URLs.
+`src/app/[locale]/layout.tsx` and `src/app/(polish)/layout.tsx` are separate root
+layouts. They pass an explicit document language to `_app/document`, keeping
+portfolio and blog pages statically rendered. The `(polish)` route group does
+not change `/blog` URLs. Crossing between blog and portfolio roots causes a full
+document navigation; both use the same persisted theme and shared providers.
+`global-not-found.tsx` renders the shared document for unmatched routes using
+Next.js's `experimental.globalNotFound` support.
+
 ## Contact form boundary
 
 The contact form is implemented in `src/features/contact-form`. Shared client
@@ -37,6 +48,12 @@ Resend. The client executes Turnstile on submit and shows it only when visitor
 interaction is required. Resend receives a stable idempotency key. Sentry receives only error
 codes and request IDs, never form fields, and the contact section is marked
 with `data-sentry-block` to exclude it from session replay.
+
+Server Sentry integrations disable incoming request-body capture and exclude
+request data from events. The shared telemetry sanitizer also removes
+`request.data` before server and edge events are sent.
+Client monitoring is initialized in `src/instrumentation-client.ts`, including
+the App Router navigation hook, for both Webpack and Turbopack builds.
 
 ## UI system
 

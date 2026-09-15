@@ -38,6 +38,9 @@ after submit with `appearance: "interaction-only"`, so it stays hidden unless
 Cloudflare requires visitor interaction. Configure a Vercel WAF rate-limit rule
 for `POST /api/contact`: 5 requests per 10 minutes per IP.
 
+Server telemetry disables incoming request-body capture and strips request data
+before events are sent, keeping contact form contents out of Sentry.
+
 Cloudflare must allow every hostname on which the form is tested, including
 preview or local hostnames when applicable.
 
@@ -61,3 +64,8 @@ pnpm build
 The blog sits outside the `[locale]` layout and its `NextIntlClientProvider`.
 Shared header and footer links use `next/link`; localized footer URLs are
 generated with `getPathname` and an explicit locale so they also work on the blog.
+The document language follows the resolved locale; the unlocalized blog remains
+Polish. Generated `/icon/*` routes bypass locale redirects.
+Separate root layouts share `_app/document` to preserve static rendering and
+set the correct HTML language. Navigating between the blog and portfolio loads
+a new document. Global 404 pages use `experimental.globalNotFound`.

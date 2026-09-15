@@ -2,6 +2,10 @@ import { act, fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { NextIntlClientProvider } from 'next-intl'
 import { ContactForm } from './contact-form'
 
+jest.mock('../../../shared/i18n/navigation', () => ({
+  getPathname: () => '/pl/polityka-prywatnosci',
+}))
+
 jest.mock('next-intl', () => ({
   NextIntlClientProvider: ({ children }: { children: React.ReactNode }) =>
     children,

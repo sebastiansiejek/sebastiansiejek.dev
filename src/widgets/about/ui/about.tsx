@@ -23,7 +23,7 @@ export async function About({ locale }: { locale: Locale }) {
     >
       <SiteContainer className="grid grid-cols-5 items-center gap-4 md:gap-12 lg:gap-32 max-md:grid-cols-1">
         <div
-          className="col-span-2 flex min-h-152 -scale-x-100 flex-col justify-between max-md:col-auto max-md:min-h-108"
+          className="relative col-span-2 flex min-h-152 -scale-x-100 flex-col justify-between max-md:col-auto max-md:min-h-108"
           role="img"
           aria-label={t('photoAlt')}
         >
@@ -31,6 +31,7 @@ export async function About({ locale }: { locale: Locale }) {
             src="/images/portfolio/o-mnie.webp"
             fill
             alt=""
+            sizes="(max-width: 767px) 100vw, 40vw"
             className="object-contain mask-b-from-50% mask-b-to-85%"
           />
         </div>

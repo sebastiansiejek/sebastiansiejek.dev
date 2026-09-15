@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   transpilePackages: ['next-mdx-remote'],
+  experimental: { globalNotFound: true },
 }
 
 const createNextIntlPlugin = require('next-intl/plugin')

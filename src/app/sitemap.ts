@@ -1,9 +1,10 @@
 import { MetadataRoute } from 'next'
 import * as process from 'node:process'
 import { getProjectPath, publishedProjectKeys } from 'entities/project'
-import { getAllResources } from 'shared/lib/resources'
+import { getAllResources } from 'shared/lib/resources/index.server'
 import path from 'node:path'
 import { routing } from 'shared/i18n/routing'
+import { getPathname } from 'shared/i18n/navigation'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const siteUrl = process.env.SITE_URL || 'https://sebastiansiejek.dev'
@@ -46,16 +47,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   )
 
   const privacyPages: MetadataRoute.Sitemap = routing.locales.map((locale) => ({
-    url: `${siteUrl}${
-      locale === 'pl' ? '/pl/polityka-prywatnosci' : '/en/privacy'
-    }`,
+    url: `${siteUrl}${getPathname({ locale, href: '/privacy' })}`,
     lastModified: new Date(),
     changeFrequency: 'yearly',
     priority: 0.2,
     alternates: {
       languages: {
-        pl: `${siteUrl}/pl/polityka-prywatnosci`,
-        en: `${siteUrl}/en/privacy`,
+        pl: `${siteUrl}${getPathname({ locale: 'pl', href: '/privacy' })}`,
+        en: `${siteUrl}${getPathname({ locale: 'en', href: '/privacy' })}`,
       },
     },
   }))

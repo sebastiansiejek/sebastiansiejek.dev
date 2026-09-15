@@ -4,3 +4,4 @@ export {
   notFoundMetadata,
   privacyMetadata,
 } from './metadata'
+export { siteMetadata } from './site-metadata'

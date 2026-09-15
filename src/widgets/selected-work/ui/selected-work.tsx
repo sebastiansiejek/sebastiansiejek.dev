@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import type { Locale } from 'next-intl'
 import { getTranslations } from 'next-intl/server'
-import { publishedProjectKeys } from 'entities/project'
+import { getProjectPath, publishedProjectKeys } from 'entities/project'
 import { getLocalizedProjects } from 'entities/project/index.server'
 import { Link as LocalizedLink } from 'shared/i18n/navigation'
 import {
@@ -98,9 +98,7 @@ export async function SelectedWork({ locale }: { locale: Locale }) {
                     {project.summary}
                   </p>
                   <ArrowLink
-                    href={{
-                      pathname: `/projects/${key}`,
-                    }}
+                    href={getProjectPath(locale, key)}
                     className={'mt-6'}
                   >
                     {t('work.view')}{' '}

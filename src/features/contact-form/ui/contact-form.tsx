@@ -13,6 +13,7 @@ import {
 } from '../model/contact-form'
 import { Turnstile } from './turnstile'
 import { siteConfig } from 'shared/config/site'
+import { getPathname } from 'shared/i18n/navigation'
 import { Alert, AlertDescription, AlertTitle } from 'shared/ui/alert'
 import { Button } from 'shared/ui/button'
 import { Field, FieldError, FieldGroup, FieldLabel } from 'shared/ui/field'
@@ -53,8 +54,7 @@ export function ContactForm({
     !turnstileSiteKey,
   )
 
-  const privacyPath =
-    locale === 'pl' ? '/pl/polityka-prywatnosci' : '/en/privacy'
+  const privacyPath = getPathname({ locale, href: '/privacy' })
 
   useEffect(() => {
     startedAtReference.current = Date.now()

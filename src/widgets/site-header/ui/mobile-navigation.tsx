@@ -73,7 +73,7 @@ export function MobileNavigation({
         </SheetTrigger>
 
         <SheetContent
-          className="top-16 bottom-0 h-auto w-4/5 gap-0 rounded-r-3xl sm:max-w-none"
+          className="gap-0 rounded-r-3xl data-[side=left]:top-16 data-[side=left]:h-[calc(100dvh-4rem)] data-[side=left]:w-[80vw] data-[side=left]:sm:max-w-none"
           overlayClassName="top-16"
           showCloseButton={false}
           side="left"
@@ -90,6 +90,7 @@ export function MobileNavigation({
               {links.map((link) => (
               <SheetClose
                 key={link.href}
+                nativeButton={false}
                 render={
                   <Link
                     className="flex min-h-12 items-center rounded-lg text-base font-medium tracking-tight text-foreground no-underline transition-colors duration-200 hover:text-primary focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
@@ -106,6 +107,7 @@ export function MobileNavigation({
               <Separator />
               <MobileThemeSwitcher labels={themeLabels} />
               <SheetClose
+              nativeButton={false}
               render={
                   <Link
                     className="flex min-h-11 items-center rounded-lg text-sm font-semibold text-foreground no-underline transition-colors duration-200 hover:text-primary focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50"

@@ -11,3 +11,5 @@ components through `pnpm dlx shadcn@latest` instead of recreating them.
 
 Before running any command, briefly tell the user what the command is intended
 to check or change.
+
+For route or document-layout changes, read `ARCHITECTURE.md` first.

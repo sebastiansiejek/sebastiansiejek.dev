@@ -94,8 +94,7 @@
         "experience": "I am a Software Engineer with over {years, number} years of commercial experience. I began with bespoke websites and stores, then led a team and developed React and Next.js applications. Today I work on the architecture of a SaaS product used by more than {users, number} people.",
         "approach": "I do my best work where problem analysis, architectural decisions and pragmatic delivery need to meet. I use AI both in software development and to automate everyday work."
       },
-      "photoAlt": "Reserved space for Sebastian Siejek’s portrait",
-      "photoNote": "Portrait coming soon",
+      "photoAlt": "Portrait of Sebastian Siejek, Software Engineer",
       "linkedin": "Full experience on LinkedIn"
     },
     "writing": {
@@ -145,7 +144,8 @@
       }
     },
     "footer": "Designed and built by Sebastian Siejek.",
-    "footerPrivacy": "Privacy"
+    "footerPrivacy": "Privacy",
+    "footerBlog": "Blog (PL)"
   },
   "Projects": {
     "upominkly": {

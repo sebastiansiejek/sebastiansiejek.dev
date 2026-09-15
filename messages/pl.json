@@ -25,7 +25,7 @@
       "description": "Tworzę aplikacje webowe, MVP i automatyzacje - od pierwszej koncepcji, przez development, aż po wdrożenie.",
       "primary": "Opowiedz mi, co chcesz zbudować",
       "secondary": "Zobacz moje projekty",
-      "imageAlt": "Portret Sebastiana Siejek, Software Engineera"
+      "imageAlt": "Portret Sebastiana Siejka, Software Engineera"
     },
     "proofs": {
       "label": "Doświadczenie w liczbach",
@@ -94,8 +94,7 @@
         "experience": "Mam ponad {years, number} lat doświadczenia komercyjnego jako Software Engineer. Zaczynałem od dedykowanych stron i sklepów, później prowadziłem zespół oraz rozwijałem aplikacje w React i Next.js. Dziś pracuję nad architekturą produktu SaaS używanego przez ponad {users, number} osób.",
         "approach": "Najlepiej czuję się tam, gdzie trzeba połączyć analizę problemu, decyzje architektoniczne i sprawne dostarczenie działającego rozwiązania. AI wykorzystuję zarówno w procesie tworzenia oprogramowania, jak i do automatyzacji codziennej pracy."
       },
-      "photoAlt": "Miejsce na portret Sebastiana Siejka",
-      "photoNote": "Portret w przygotowaniu",
+      "photoAlt": "Portret Sebastiana Siejka, Software Engineera",
       "linkedin": "Pełne doświadczenie na LinkedIn"
     },
     "writing": {
@@ -145,7 +144,8 @@
       }
     },
     "footer": "Projektowanie i implementacja: Sebastian Siejek.",
-    "footerPrivacy": "Prywatność"
+    "footerPrivacy": "Prywatność",
+    "footerBlog": "Blog"
   },
   "Projects": {
     "upominkly": {

@@ -3,6 +3,9 @@ import { hasLocale, NextIntlClientProvider } from 'next-intl'
 import { getMessages, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { routing } from 'shared/i18n/routing'
+import { RootDocument } from '_app/document'
+
+export { siteMetadata as metadata } from '_app/seo/index.server'
 
 type LocaleLayoutProperties = PropsWithChildren<{
   params: Promise<{ locale: string }>
@@ -26,8 +29,10 @@ export default async function LocaleLayout({
   const messages = await getMessages({ locale })
 
   return (
-    <NextIntlClientProvider locale={locale} messages={messages}>
-      {children}
-    </NextIntlClientProvider>
+    <RootDocument locale={locale}>
+      <NextIntlClientProvider locale={locale} messages={messages}>
+        {children}
+      </NextIntlClientProvider>
+    </RootDocument>
   )
 }

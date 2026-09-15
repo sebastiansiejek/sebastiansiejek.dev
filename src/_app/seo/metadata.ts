@@ -3,6 +3,7 @@ import type { Locale } from 'next-intl'
 import { getTranslations } from 'next-intl/server'
 import { getProjectPath, type ProjectKey } from 'entities/project'
 import { getLocalizedProjects } from 'entities/project/index.server'
+import { getPathname } from 'shared/i18n/navigation'
 
 const siteUrl = process.env.SITE_URL || 'https://sebastiansiejek.dev'
 
@@ -32,8 +33,8 @@ export const landingMetadata = async (locale: Locale): Promise<Metadata> => {
       type: 'website',
       images: [
         {
-          url: `${siteUrl}/images/portfolio/hero4.webp`,
-          width: 1024,
+          url: `${siteUrl}/images/portfolio/hero.webp`,
+          width: 1109,
           height: 1536,
           alt: siteT('hero.imageAlt'),
         },
@@ -44,7 +45,9 @@ export const landingMetadata = async (locale: Locale): Promise<Metadata> => {
 
 export const privacyMetadata = async (locale: Locale): Promise<Metadata> => {
   const t = await getTranslations({ locale, namespace: 'Metadata.privacy' })
-  const path = locale === 'pl' ? '/pl/polityka-prywatnosci' : '/en/privacy'
+  const path = getPathname({ locale, href: '/privacy' })
+  const polishPath = getPathname({ locale: 'pl', href: '/privacy' })
+  const englishPath = getPathname({ locale: 'en', href: '/privacy' })
   const title = t('title')
   const description = t('description')
 
@@ -54,9 +57,9 @@ export const privacyMetadata = async (locale: Locale): Promise<Metadata> => {
     alternates: {
       canonical: `${siteUrl}${path}`,
       languages: {
-        pl: `${siteUrl}/pl/polityka-prywatnosci`,
-        en: `${siteUrl}/en/privacy`,
-        'x-default': `${siteUrl}/pl/polityka-prywatnosci`,
+        pl: `${siteUrl}${polishPath}`,
+        en: `${siteUrl}${englishPath}`,
+        'x-default': `${siteUrl}${polishPath}`,
       },
     },
     openGraph: {
@@ -101,7 +104,7 @@ export const caseStudyMetadata = async (
         ? [{ url: `${siteUrl}${project.image}`, alt: project.imageAlt }]
         : [
             {
-              url: `${siteUrl}/images/portfolio/hero4.webp`,
+              url: `${siteUrl}/images/portfolio/hero.webp`,
               alt: 'Sebastian Siejek portfolio',
             },
           ],

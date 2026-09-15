@@ -1,4 +1,4 @@
-import { getAllResources, sortResources } from 'shared/lib/resources'
+import { getAllResources, sortResources } from 'shared/lib/resources/index.server'
 import path from 'node:path'
 import { Metadata } from 'next'
 import BlogPosts from 'shared/ui/blog-posts/blog-posts'

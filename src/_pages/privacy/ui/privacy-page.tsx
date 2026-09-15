@@ -1,6 +1,7 @@
 import type { Locale } from 'next-intl'
 import { getTranslations } from 'next-intl/server'
 import { siteConfig } from 'shared/config/site'
+import { getPathname } from 'shared/i18n/navigation'
 import { SiteContainer, SiteShell } from 'shared/ui/site-layout'
 import { SkipLink } from 'shared/ui/skip-link'
 import { TextLink } from 'shared/ui/text-link'
@@ -21,8 +22,10 @@ const sectionKeys = [
 export async function PrivacyPage({ locale }: { locale: Locale }) {
   const t = await getTranslations({ locale, namespace: 'Privacy' })
   const siteT = await getTranslations({ locale, namespace: 'Site' })
-  const alternateHref =
-    locale === 'pl' ? '/en/privacy' : '/pl/polityka-prywatnosci'
+  const alternateHref = getPathname({
+    locale: locale === 'pl' ? 'en' : 'pl',
+    href: '/privacy',
+  })
 
   return (
     <SiteShell lang={locale}>

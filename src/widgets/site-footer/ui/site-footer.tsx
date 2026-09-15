@@ -54,7 +54,7 @@ export async function SiteFooter({
               GitHub
             </a>
             <NextLink className="text-xs text-muted-foreground" href="/blog">
-              Blog
+              {t('footerBlog')}
             </NextLink>
             <NextLink
               className="text-xs text-muted-foreground"
