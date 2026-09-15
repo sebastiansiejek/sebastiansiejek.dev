@@ -26,9 +26,6 @@ importers:
       cn:
         specifier: ^0.2.5
         version: 0.2.5
-      dracula-prism:
-        specifier: ^2.1.16
-        version: 2.1.16
       gray-matter:
         specifier: ^4.0.3
         version: 4.0.3
@@ -4015,9 +4012,6 @@ packages:
   dotenv@17.4.2:
     resolution: {integrity: sha512-nI4U3TottKAcAD9LLud4Cb7b2QztQMUEfHbvhTH09bqXTxnSie8WnjPALV/WMCrJZ6UV/qHJ6L03OqO3LcdYZw==}
     engines: {node: '>=12'}
-
-  dracula-prism@2.1.16:
-    resolution: {integrity: sha512-fNZU8sMYOFYq/K8WFtsVUJEHemYlQJy7E3wm+Lndp3hTWG+Hp3+sCcbQdWVvQTfw+xIJeI+mIrjfUWHb9Q/s2Q==}
 
   dunder-proto@1.0.1:
     resolution: {integrity: sha512-KIN/nDJBQRcXw0MLVhZE9iQHmG68qAVIBg9CqmUYjmQIhgij9U5MFvrqkUL5FbtyyzZuOeOt0zdeRe4UY7ct+A==}
@@ -11202,8 +11196,6 @@ snapshots:
   dotenv@16.5.0: {}
 
   dotenv@17.4.2: {}
-
-  dracula-prism@2.1.16: {}
 
   dunder-proto@1.0.1:
     dependencies:

@@ -1,6 +1,5 @@
 import path from 'node:path'
 import { MDXRemote } from 'next-mdx-remote/rsc'
-import 'dracula-prism/dist/css/dracula-prism.min.css'
 import Image from 'next/image'
 import { TextLink } from 'shared/ui/text-link'
 import { getResourceBySlug, getResourcesPaths } from 'shared/lib/resources/index.server'
@@ -50,17 +49,11 @@ export default async function SinglePost(properties: PageProperties) {
         </h1>
       </SiteContainer>
       <SiteContainer size="tight">
-        <article className="flex flex-col gap-6">
+        <article className="blog-article flex flex-col gap-6">
           <Suspense fallback={<>Loading...</>}>
             <MDXRemote
               source={post.content}
               components={{
-                code: (properties) => (
-                  <code
-                    className="bg-secondary p-1 font-mono text-primary"
-                    {...properties}
-                  />
-                ),
                 ol: (properties) => {
                   return <ol className={'list-decimal pl-4'} {...properties} />
                 },

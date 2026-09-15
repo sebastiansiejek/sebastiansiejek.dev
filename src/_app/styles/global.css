@@ -122,6 +122,21 @@
   }
 }
 
+.blog-article code {
+  @apply rounded-sm bg-secondary px-1 py-0.5 font-mono text-primary;
+  overflow-wrap: anywhere;
+}
+
+.blog-article pre {
+  @apply min-w-0 max-w-full overflow-x-auto rounded-lg border bg-secondary p-4 font-mono text-sm leading-relaxed text-secondary-foreground;
+  tab-size: 4;
+}
+
+.blog-article pre code {
+  @apply rounded-none bg-transparent p-0 text-inherit;
+  overflow-wrap: normal;
+}
+
 .accent-stripe {
   background:
     linear-gradient(

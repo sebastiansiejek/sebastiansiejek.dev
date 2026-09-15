@@ -73,6 +73,10 @@ registry style, icon library, aliases, and the Tailwind CSS entry point.
   supports both color schemes; `data-theme` selectors set only `color-scheme`
   for explicit preferences. Primary and sidebar-primary share the mint
   `#77d9b8` background and dark `#101713` foreground in both themes.
+- Blog articles use scoped `.blog-article` code styles based on the shared
+  semantic tokens. Code blocks follow the active theme, retain whitespace,
+  and scroll horizontally. Inline code retains the primary accent. Do not
+  import third-party code themes that redefine global design tokens.
 - Components use semantic utilities such as `bg-background`, `bg-card`,
   `text-muted-foreground`, `border-border`, and `ring-ring`. Feature code must
   not introduce raw palette utilities for UI states.

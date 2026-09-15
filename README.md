@@ -66,6 +66,9 @@ Shared header and footer links use `next/link`; localized footer URLs are
 generated with `getPathname` and an explicit locale so they also work on the blog.
 The document language follows the resolved locale; the unlocalized blog remains
 Polish. Generated `/icon/*` routes bypass locale redirects.
+The blog shares the portfolio's light/dark palette. Article code blocks use
+theme-aware semantic colors and horizontal scrolling; inline code uses the
+primary accent.
 Separate root layouts share `_app/document` to preserve static rendering and
 set the correct HTML language. Navigating between the blog and portfolio loads
 a new document. Global 404 pages use `experimental.globalNotFound`.
