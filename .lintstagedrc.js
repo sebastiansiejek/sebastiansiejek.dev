@@ -1,10 +1,13 @@
 const path = require('path')
 
 const buildEslintCommand = (filenames) =>
-  `next lint --fix --file ${filenames
-    .map((f) => path.relative(process.cwd(), f))
-    .join(' --file ')}`
+  `eslint --fix --no-warn-ignored --max-warnings 0 ${filenames.map(toRelativePath).join(' ')}`
+
+
+const toRelativePath = (filename) =>
+  JSON.stringify(path.relative(process.cwd(), filename))
 
 module.exports = {
-  '*.{js,jsx,ts,tsx}': [buildEslintCommand],
+  '*.{js,jsx,ts,tsx}': [() => 'pnpm run check-types', buildEslintCommand],
+  '*.{js,jsx,ts,tsx,css}': [() => 'pnpm run lint', buildEslintCommand],
 }

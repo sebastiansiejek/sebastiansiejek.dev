@@ -1,34 +1,100 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# sebastiansiejek.dev
 
-## Getting Started
+Localized portfolio built with Next.js App Router, TypeScript, next-intl,
+Tailwind CSS, and shadcn/ui.
 
-First, run the development server:
+## Local development
+
+Install dependencies and copy the environment template:
 
 ```bash
-npm run dev
-# or
-yarn dev
+pnpm install
+cp .env.local.sample .env.local
+pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The site is available at [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Required environment variables:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- `SITE_URL`: public canonical URL;
+- `NEXT_PUBLIC_SENTRY_DNS`: Sentry client DSN;
+- `RESEND_API_KEY`: server-only Resend API key;
+- `TURNSTILE_SITE_KEY`: Cloudflare Turnstile widget key;
+- `TURNSTILE_SECRET_KEY`: server-only Turnstile verification key.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Keep real values in `.env.local`. Never commit that file.
 
-## Learn More
+## Contact delivery
 
-To learn more about Next.js, take a look at the following resources:
+`POST /api/contact` validates the request, verifies Cloudflare Turnstile, and
+sends the message through Resend. Messages use
+`Portfolio <contact@sebastiansiejek.dev>` as the sender, arrive at the contact
+address in `siteConfig`, and set the visitor's email as `Reply-To`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The form also uses a honeypot, a minimum completion time, request idempotency,
+client and server timeouts, and PII-free Sentry reporting. Turnstile runs only
+after submit with `appearance: "interaction-only"`, so it stays hidden unless
+Cloudflare requires visitor interaction. Configure a Vercel WAF rate-limit rule
+for `POST /api/contact`: 5 requests per 10 minutes per IP.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Server telemetry disables incoming request-body capture and strips request data
+before events are sent, keeping contact form contents out of Sentry.
 
-## Deploy on Vercel
+Cloudflare must allow every hostname on which the form is tested, including
+preview or local hostnames when applicable.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Quality checks
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+pnpm lint
+pnpm check-types
+pnpm test --runInBand
+pnpm build
+```
+
+## Routes
+
+- `/pl` and `/en`: localized portfolio;
+- `/pl/projekty/[slug]` and `/en/projects/[slug]`: case studies;
+- `/pl/polityka-prywatnosci` and `/en/privacy`: privacy policy;
+- `/blog` and `/blog/[slug]`: Polish articles;
+- `/api/contact`: server-only contact endpoint.
+
+The blog sits outside the `[locale]` layout and its `NextIntlClientProvider`.
+Shared header and footer links use `next/link`; localized footer URLs are
+generated with `getPathname` and an explicit locale so they also work on the blog.
+The document language follows the resolved locale; the unlocalized blog remains
+Polish. Static metadata assets bypass locale redirects.
+The blog shares the portfolio's light/dark palette. Article code blocks use
+theme-aware semantic colors and horizontal scrolling; inline code uses the
+primary accent.
+Separate root layouts share `_app/document` to preserve static rendering and
+set the correct HTML language. Navigating between the blog and portfolio loads
+a new document. Global 404 pages use `experimental.globalNotFound`.
+
+## Personal identity
+
+The approved logo is a signature-style single `S` (concept C), not an avatar
+or an `SS` monogram. Its vector silhouette and static palette are defined in
+`src/shared/config/brand.ts`; the header uses `shared/ui/brand-mark` and semantic
+theme tokens.
+
+Regenerate the committed assets after changing the silhouette or palette:
+
+```bash
+pnpm brand:generate
+```
+
+This exports transparent dark/mint SVG marks to `public/images/brand`,
+`src/app/icon.svg`, a 16/32/48 px `src/app/favicon.ico`, a full-background
+180 px `src/app/apple-icon.png`, and 1200 × 630 px Polish/English social cards.
+Next.js discovers the icons automatically for both document roots. No runtime
+image generation or image-generation API is needed. The script uses Node's
+TypeScript support and the existing Sharp dependency; card text uses locally
+available Arial/Helvetica/sans-serif fonts.
+
+Landing and privacy pages have explicit localized Open Graph and Twitter
+large-image cards. Case studies retain their project image, with a branded
+fallback when missing. The blog inherits the Polish branded card from the
+shared site metadata.

@@ -2,6 +2,8 @@ import type { MetadataRoute } from 'next'
 import * as process from 'node:process'
 
 export default function robots(): MetadataRoute.Robots {
+  const siteUrl = process.env.SITE_URL || 'https://sebastiansiejek.dev'
+
   return {
     rules: [
       {
@@ -10,7 +12,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/'],
       },
     ],
-    host: process.env.SITE_URL,
-    sitemap: `${process.env.SITE_URL}/sitemap.xml`,
+    host: siteUrl,
+    sitemap: `${siteUrl}/sitemap.xml`,
   }
 }
