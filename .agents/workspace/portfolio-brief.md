@@ -26,7 +26,7 @@ Approved Polish hero:
 
 Supporting copy:
 
-> Tworzę aplikacje webowe, MVP i automatyzacje - od pierwszej koncepcji, przez development, aż po wdrożenie.
+> Tworzę aplikacje webowe i automatyzacje — od analizy potrzeb, przez development, aż po wdrożenie.
 
 Primary CTA: **Opowiedz mi, co chcesz zbudować.**
 
@@ -38,7 +38,7 @@ Approved English hero:
 
 Supporting copy:
 
-> I build web applications, MVPs, and automations - from initial concept through development to launch.
+> I build web applications and automations — from needs analysis through development to launch.
 
 Voice: direct, calm, specific, professional, and human. Prefer outcomes and decisions over stacks and buzzwords. Present AI as part of a disciplined delivery process and as an automation capability, not as a promise of cheap work.
 
