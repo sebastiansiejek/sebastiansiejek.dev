@@ -72,7 +72,7 @@
       "steps": {
         "discovery": {
           "title": "Rozpoznanie",
-          "description": "Ustalam problem, użytkowników, ograniczenia i kryteria powodzenia."
+          "description": "Ustalam jaki problem rozwiązujemy, dla kogo i jaki efekt chcemy osiągnąć."
         },
         "proposal": {
           "title": "Zakres i propozycja",

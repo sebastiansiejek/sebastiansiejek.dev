@@ -72,7 +72,7 @@
       "steps": {
         "discovery": {
           "title": "Discover",
-          "description": "We define the problem, users, constraints and what success means."
+          "description": "I clarify the problem, who we're solving it for, and the outcome we want to achieve."
         },
         "proposal": {
           "title": "Scope and proposal",
