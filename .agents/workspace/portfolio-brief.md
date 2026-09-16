@@ -180,7 +180,7 @@ Present two primary services, in this order:
 1. Web applications and MVPs.
 2. Process automation and AI-enabled solutions.
 
-Mention websites and e-commerce, including WordPress and WooCommerce implementation, as supplementary capabilities rather than a third equal service. Sebastian can also provide technical discovery, audits, performance optimization, and on-page/technical SEO. Do not position him as a branding, advertising, link-building, or guaranteed-ranking agency. Advanced visual identity work is delivered with a designer.
+Mention websites and e-commerce, including WordPress and WooCommerce implementation, as supplementary capabilities rather than a third equal service. Sebastian can also assess ideas from a technical perspective, conduct audits, optimize performance, and provide on-page/technical SEO. Do not position him as a branding, advertising, link-building, or guaranteed-ranking agency. Advanced visual identity work is delivered with a designer.
 
 Preferred commercial model:
 
